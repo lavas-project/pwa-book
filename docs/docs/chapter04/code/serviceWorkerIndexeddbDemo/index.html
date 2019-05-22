@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+  <head>
+    <title>Service Worker Lifecycle Demo</title>
+  </head>
+  <body>
+    <script>
+      /* global fetch */
+      if ('serviceWorker' in navigator) {
+        // 由于 127.0.0.1:8000 是所有测试 Demo 的 host
+        // 为了防止作用域污染，将安装前注销所有已生效的 Service Worker
+        navigator.serviceWorker.getRegistrations()
+          .then(regs => {
+            for (let reg of regs) {
+              reg.unregister()
+            }
+            navigator.serviceWorker.register('./sw.js')
+          })
+      }
+
+      fetch('./fruits.json')
+        .then(response => response.json())
+        .then(data => {
+          // 将请求返回的数据打印出来
+          console.log(JSON.stringify(data, null, 2))
+        })
+    </script>
+  </body>
+</html>

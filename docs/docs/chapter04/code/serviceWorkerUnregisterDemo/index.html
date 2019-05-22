@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+  <head>
+    <title>Service Worker Unregister Demo</title>
+  </head>
+  <body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        // 正常进行注册 Service Worker
+        navigator.serviceWorker.register('./sw.js?v=20190401235959')
+        let script = document.createElement('script')
+        // 假设这个 JS 中存在 Service Worker 开关全局变量
+        script.src = 'https://some-static-cdn-host/sw-on-off.js'
+        script.async = true
+        script.onload = () => {
+          // Service Worker 开关全局变量的名称
+          if (window.SW_TURN_OFF) {
+            navigator.serviceWorker.getRegistrations()
+              .then(regs => {
+                for (let reg of regs) {
+                  // 注销掉所有的 Service Worker
+                  reg.unregister()
+                }
+              })
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

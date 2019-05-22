@@ -1,0 +1,1190 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.3 App Shell · PWA 应用实战</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lavas <lavas@baidu.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4-app-skeleton.html" />
+    
+    
+    <link rel="prev" href="2-design-and-tech.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    HOME
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter01.html">
+            
+                <a href="../chapter01.html">
+            
+                    
+                    第1章 PWA 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter01/1-how-was-pwa-born.html">
+            
+                <a href="../chapter01/1-how-was-pwa-born.html">
+            
+                    
+                    1.1 为什么会出现 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter01/2-what-is-pwa.html">
+            
+                <a href="../chapter01/2-what-is-pwa.html">
+            
+                    
+                    1.2 什么是 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter01/3-what-are-key-techs.html">
+            
+                <a href="../chapter01/3-what-are-key-techs.html">
+            
+                    
+                    1.3 PWA 的核心技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter01/4-how-is-pwa-going.html">
+            
+                <a href="../chapter01/4-how-is-pwa-going.html">
+            
+                    
+                    1.4 PWA 的发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../chapter01/5-the-future-of-pwa.html">
+            
+                <a href="../chapter01/5-the-future-of-pwa.html">
+            
+                    
+                    1.5 PWA 的未来
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../chapter01/6-your-first-pwa.html">
+            
+                <a href="../chapter01/6-your-first-pwa.html">
+            
+                    
+                    1.6 你的第一个 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter02.html">
+            
+                <a href="../chapter02.html">
+            
+                    
+                    第2章 设计与体验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="1-what-is-good-ux.html">
+            
+                <a href="1-what-is-good-ux.html">
+            
+                    
+                    2.1 什么是好的用户体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2-design-and-tech.html">
+            
+                <a href="2-design-and-tech.html">
+            
+                    
+                    2.2 设计与技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="3-app-shell.html">
+            
+                <a href="3-app-shell.html">
+            
+                    
+                    2.3 App Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="4-app-skeleton.html">
+            
+                <a href="4-app-skeleton.html">
+            
+                    
+                    2.4 骨架屏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="5-responsive-design.html">
+            
+                <a href="5-responsive-design.html">
+            
+                    
+                    2.5 响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter03.html">
+            
+                <a href="../chapter03.html">
+            
+                    
+                    第3章 基础技术简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter03/1-promise.html">
+            
+                <a href="../chapter03/1-promise.html">
+            
+                    
+                    3.1 Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter03/2-async-function.html">
+            
+                <a href="../chapter03/2-async-function.html">
+            
+                    
+                    3.2 Async 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../chapter03/3-fetch-api.html">
+            
+                <a href="../chapter03/3-fetch-api.html">
+            
+                    
+                    3.3 Fetch API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../chapter03/4-cache-api.html">
+            
+                <a href="../chapter03/4-cache-api.html">
+            
+                    
+                    3.4 Cache API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../chapter03/5-indexeddb.html">
+            
+                <a href="../chapter03/5-indexeddb.html">
+            
+                    
+                    3.5 IndexedDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter04.html">
+            
+                <a href="../chapter04.html">
+            
+                    
+                    第4章 Service Worker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chapter04/1-service-worker-introduction.html">
+            
+                <a href="../chapter04/1-service-worker-introduction.html">
+            
+                    
+                    4.1 Service Worker 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chapter04/2-service-worker-register.html">
+            
+                <a href="../chapter04/2-service-worker-register.html">
+            
+                    
+                    4.2 Service Worker 注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chapter04/3-service-worker-dive.html">
+            
+                <a href="../chapter04/3-service-worker-dive.html">
+            
+                    
+                    4.3 Service Worker 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../chapter04/4-service-worker-debug.html">
+            
+                <a href="../chapter04/4-service-worker-debug.html">
+            
+                    
+                    4.4 Service Worker 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter05.html">
+            
+                <a href="../chapter05.html">
+            
+                    
+                    第5章 离线与缓存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chapter05/1-fetch-event-management.html">
+            
+                <a href="../chapter05/1-fetch-event-management.html">
+            
+                    
+                    5.1 资源请求的拦截代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chapter05/2-local-storage-management.html">
+            
+                <a href="../chapter05/2-local-storage-management.html">
+            
+                    
+                    5.2 本地存储管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../chapter05/3-respond-strategy.html">
+            
+                <a href="../chapter05/3-respond-strategy.html">
+            
+                    
+                    5.3 资源请求响应策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../chapter05/4-precache.html">
+            
+                <a href="../chapter05/4-precache.html">
+            
+                    
+                    5.4 预缓存方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../chapter05/5-workbox.html">
+            
+                <a href="../chapter05/5-workbox.html">
+            
+                    
+                    5.5 使用 Workbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chapter06.html">
+            
+                <a href="../chapter06.html">
+            
+                    
+                    第6章 用户留存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter06/1-manifest-json.html">
+            
+                <a href="../chapter06/1-manifest-json.html">
+            
+                    
+                    6.1 Web 应用清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chapter06/2-credentials-api.html">
+            
+                <a href="../chapter06/2-credentials-api.html">
+            
+                    
+                    6.2 凭证管理 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../chapter06/3-notification-api.html">
+            
+                <a href="../chapter06/3-notification-api.html">
+            
+                    
+                    6.3 桌面通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../chapter06/4-web-push-api.html">
+            
+                <a href="../chapter06/4-web-push-api.html">
+            
+                    
+                    6.4 网络推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../chapter06/5-payment-request-api.html">
+            
+                <a href="../chapter06/5-payment-request-api.html">
+            
+                    
+                    6.5 Payment Request API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chapter07.html">
+            
+                <a href="../chapter07.html">
+            
+                    
+                    第7章 安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chapter07/1-https.html">
+            
+                <a href="../chapter07/1-https.html">
+            
+                    
+                    7.1 使用 HTTPS 保护站点安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chapter07/2-CSP.html">
+            
+                <a href="../chapter07/2-CSP.html">
+            
+                    
+                    7.2 内容安全策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../chapter07/3-policy.html">
+            
+                <a href="../chapter07/3-policy.html">
+            
+                    
+                    7.3 同源策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../chapter07/4-vulnerability.html">
+            
+                <a href="../chapter07/4-vulnerability.html">
+            
+                    
+                    7.4 典型的安全漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../chapter08.html">
+            
+                <a href="../chapter08.html">
+            
+                    
+                    第8章 性能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../chapter08/1-loading-performance.html">
+            
+                <a href="../chapter08/1-loading-performance.html">
+            
+                    
+                    8.1 加载性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../chapter08/2-rendering-performance.html">
+            
+                <a href="../chapter08/2-rendering-performance.html">
+            
+                    
+                    8.2 渲染性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../chapter09.html">
+            
+                <a href="../chapter09.html">
+            
+                    
+                    第9章 PWA 与搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../chapter09/1-search-engine-index.html">
+            
+                <a href="../chapter09/1-search-engine-index.html">
+            
+                    
+                    9.1 搜索引擎收录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../chapter09/2-pwa-and-amp-and-mip.html">
+            
+                <a href="../chapter09/2-pwa-and-amp-and-mip.html">
+            
+                    
+                    9.2 PWA 与 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../chapter09/3-whole-site-amp-and-mip.html">
+            
+                <a href="../chapter09/3-whole-site-amp-and-mip.html">
+            
+                    
+                    9.3 全站 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../chapter09/4-preload-pwa.html">
+            
+                <a href="../chapter09/4-preload-pwa.html">
+            
+                    
+                    9.4 AMP/MIP 预加载 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../appendix01.html">
+            
+                <a href="../appendix01.html">
+            
+                    
+                    附录1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../appendix01/1-lighthouse.html">
+            
+                <a href="../appendix01/1-lighthouse.html">
+            
+                    
+                    1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../appendix01/2-lighthouse-score-guide.html">
+            
+                <a href="../appendix01/2-lighthouse-score-guide.html">
+            
+                    
+                    2 Lighthouse 评分指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../appendix01/3-lighthouse-case.html">
+            
+                <a href="../appendix01/3-lighthouse-case.html">
+            
+                    
+                    3 Lighthouse 使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    感谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.3 App Shell</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#app-shell"><b>1. </b>App Shell</a></li><ul><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;-app-shell"><b>1.1. </b>&#x4EC0;&#x4E48;&#x662F; App Shell</a></li><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;-app-shell"><b>1.2. </b>&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528; App Shell</a></li><li><span class="title-icon "></span><a href="#app-shell-&#x7684;&#x6848;&#x4F8B;"><b>1.3. </b>App Shell &#x7684;&#x6848;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x5728;-vue-&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;-app-shell--service-worker"><b>1.4. </b>&#x5982;&#x4F55;&#x5728; Vue &#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528; App Shell + Service Worker</a></li><ul><li><span class="title-icon "></span><a href="#&#x542F;&#x52A8;&#x793A;&#x4F8B;"><b>1.4.1. </b>&#x542F;&#x52A8;&#x793A;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;&#x89E3;&#x6790;"><b>1.4.2. </b>&#x793A;&#x4F8B;&#x89E3;&#x6790;</a></li></ul><li><span class="title-icon "></span><a href="#&#x603B;&#x7ED3;"><b>1.5. </b>&#x603B;&#x7ED3;</a></li></ul></ul></div><a href="#app-shell" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="app-shell"><a name="app-shell" class="anchor-navigation-ex-anchor" href="#app-shell"><i class="fa fa-link" aria-hidden="true"></i></a>1. App Shell</h1>
+<p>&#x5728;&#x7B2C;&#x4E00;&#x7AE0;&#x4E2D;&#x5DF2;&#x7ECF;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x8FC7; App Shell&#xFF0C;&#x8FD9;&#x4E2A;&#x5C0F;&#x8282;&#x6211;&#x4EEC;&#x4F1A;&#x66F4;&#x6DF1;&#x5165;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x6784;&#x5EFA;&#x548C;&#x4F7F;&#x7528; App Shell&#x3002;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x6280;&#x672F;&#x6216;&#x8005; API&#xFF0C;&#x800C;&#x662F;&#x8BBE;&#x8BA1;&#x4E0E;&#x6280;&#x672F;&#x76F8;&#x7ED3;&#x5408;&#x4EA7;&#x751F;&#x7684;&#x4E00;&#x79CD;&#x6574;&#x7AD9;&#x8BBE;&#x8BA1;&#x65B9;&#x6848;&#xFF0C;&#x51CF;&#x5C11;&#x7528;&#x6237;&#x8FDB;&#x5165;&#x9875;&#x9762;&#x7684;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#xFF0C;&#x7528;&#x6237;&#x80FD;&#x591F;&#x5FEB;&#x901F;&#x770B;&#x5230;&#x9875;&#x9762;&#x7684;&#x4E3B;&#x4F53;&#x7ED3;&#x6784;&#xFF0C;&#x867D;&#x7136;&#x8FD9;&#x65F6;&#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#x6CA1;&#x6709;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF0C;&#x4F46;&#x662F;&#x7ED9;&#x7528;&#x6237;&#x611F;&#x5B98;&#x4E0A;&#x7684;&#x4F53;&#x9A8C;&#x662F;&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5F88;&#x5FEB;&#xFF0C;&#x90A3;&#x4E48;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x4EC0;&#x4E48;&#x662F; App Shell&#x3002;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;-app-shell"><a name="&#x4EC0;&#x4E48;&#x662F;-app-shell" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;-app-shell"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x4EC0;&#x4E48;&#x662F; App Shell</h2>
+<p>PWA &#x591A;&#x6570;&#x91C7;&#x7528;&#x5355;&#x9875;&#x5E94;&#x7528;&#xFF08;Single Page Application&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#x7F16;&#x5199;&#xFF0C;&#x8FD9;&#x6837;&#x80FD;&#x51CF;&#x5C11;&#x9875;&#x9762;&#x8DF3;&#x8F6C;&#x5E26;&#x6765;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x5E76;&#x4E14;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x9875;&#x9762;&#x5207;&#x6362;&#x65F6;&#x589E;&#x52A0;&#x8FC7;&#x6E21;&#x52A8;&#x753B;&#xFF0C;&#x907F;&#x514D;&#x51FA;&#x73B0;&#x52A0;&#x8F7D;&#x65F6;&#x7684;&#x767D;&#x5C4F;&#x3002;&#x90A3;&#x4E48;&#x5728;&#x9875;&#x9762;&#x5207;&#x6362;&#x65F6;&#x9875;&#x9762;&#x4E0A;&#x56FA;&#x5B9A;&#x4E0D;&#x52A8;&#x7684;&#x5185;&#x5BB9;&#x5C31;&#x662F; App Shell &#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x5E94;&#x7528;&#x4ECE;&#x663E;&#x793A;&#x5185;&#x5BB9;&#x4E0A;&#x53EF;&#x4EE5;&#x7C97;&#x7565;&#x7684;&#x5212;&#x5206;&#x4E3A;&#x5185;&#x5BB9;&#x90E8;&#x5206;&#x548C;&#x5916;&#x58F3;&#x90E8;&#x5206;&#x3002;App Shell &#x5C31;&#x662F;&#x5916;&#x58F3;&#x90E8;&#x5206;&#xFF0C;&#x5373;&#x9875;&#x9762;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="img/appshell.png" alt="App Shell &#x4E0E;&#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#x793A;&#x610F;&#x56FE;"></p>
+<p>&#x4E0A;&#x9762;&#x53EA;&#x662F; App Shell &#x663E;&#x793A;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x662F;&#x8C01;&#x53BB;&#x52A0;&#x8F7D;&#x5185;&#x5BB9;&#x533A;&#x57DF;&#x5462;&#xFF0C;&#x662F;&#x8C01;&#x63A5;&#x7BA1;&#x4E86;&#x9875;&#x9762;&#x7684;&#x72B6;&#x6001;&#x5462;&#xFF0C;&#x662F;&#x8C01;&#x521D;&#x59CB;&#x5316;&#x9875;&#x9762;&#x7684;&#x6837;&#x5F0F;&#x5462;&#xFF1F;</p>
+<p>&#x4E5F;&#x662F; App Shell&#xFF0C;&#x5B83;&#x4E0D;&#x4EC5;&#x5305;&#x62EC;&#x7528;&#x6237;&#x80FD;&#x770B;&#x5230;&#x7684;&#x9875;&#x9762;&#x6846;&#x67B6;&#x90E8;&#x5206;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x7528;&#x6237;&#x770B;&#x4E0D;&#x5230;&#x7684;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x603B;&#x7ED3;&#x4E00;&#x4E0B; App Shell &#x7684;&#x5B9A;&#x4E49;&#xFF0C;App Shell &#x662F;&#x9875;&#x9762;&#x80FD;&#x591F;&#x5C55;&#x73B0;&#x6240;&#x9700;&#x7684;&#x6700;&#x5C0F;&#x8D44;&#x6E90;&#x96C6;&#x5408;&#xFF0C;&#x5373;&#x652F;&#x6301;&#x7528;&#x6237;&#x754C;&#x9762;&#x6240;&#x9700;&#x7684;&#x6700;&#x5C0F;&#x7684; HTML&#x3001;CSS &#x548C; JavaScript &#x7B49;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x96C6;&#x5408;&#x3002;&#x91C7;&#x7528; App Shell &#x7684;&#x7AD9;&#x70B9;&#xFF0C;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x90FD;&#x4F1A;&#x5148;&#x52A0;&#x8F7D; App Shell &#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x518D;&#x7531; App Shell &#x6839;&#x636E;&#x5F53;&#x524D;&#x9875;&#x9762; URL &#x6E32;&#x67D3;&#x5BF9;&#x5E94;&#x7684;&#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x4E0A;&#x56FE;&#x7ED9;&#x51FA;&#x4E86;&#x57FA;&#x672C;&#x7684; App Shell &#x4F8B;&#x5B50;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x5934;&#x90E8;&#x5BFC;&#x822A;&#xFF0C;&#x4FA7;&#x8FB9;&#x680F;&#x7B49;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x6765;&#x8BF4;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x7A33;&#x5B9A;&#x7684;&#x7ED3;&#x6784;&#x3002;&#x4F46;&#x662F;&#x4E00;&#x4E2A;&#x7AD9;&#x70B9;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A; App Shell&#xFF0C;&#x4EE5;&#x7535;&#x5546;&#x7F51;&#x7AD9;&#x4E3E;&#x4F8B;&#xFF0C;&#x4E0D;&#x540C;&#x54C1;&#x7C7B;&#x7684;&#x5546;&#x54C1;&#x4E3B;&#x9898;&#x9986;&#xFF0C;&#x989C;&#x8272;&#x4E0D;&#x540C;&#xFF0C;&#x751A;&#x81F3;&#x7ED3;&#x6784;&#x4E5F;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x533A;&#x522B;&#xFF0C;&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x8005;&#x7075;&#x6D3B;&#x5904;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x591A;&#x4E2A; Shell&#xFF0C;&#x6216;&#x8005;&#x5728;&#x4E00;&#x4E9B;&#x9875;&#x9762;&#x53BB;&#x6389; Shell&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;-app-shell"><a name="&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;-app-shell" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;-app-shell"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528; App Shell</h2>
+<p>&#x5355;&#x72EC;&#x4F7F;&#x7528; App Shell &#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x4E3B;&#x610F;&#xFF0C;&#x5BF9;&#x4E8E;&#x901F;&#x5EA6;&#x8981;&#x6C42;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#x7AD9;&#x70B9;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x4F1A;&#x5BFC;&#x81F4;&#x7528;&#x6237;&#x770B;&#x5230;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#x7684;&#x65F6;&#x95F4;&#x5EF6;&#x540E;&#xFF0C;&#x90A3;&#x4E48;&#x6709;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x5462;&#xFF1F;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5F00;&#x53D1;&#x8005;&#x4F1A;&#x63D0;&#x5230;&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x7684; HTTP &#x7F13;&#x5B58;&#xFF0C;&#x8FD9;&#x786E;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x4E3B;&#x610F;&#xFF0C;&#x4F46;&#x5B83;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x5F88;&#x96BE;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<ul>
+<li>&#x96BE;&#x4EE5;&#x786E;&#x5B9A;&#x5408;&#x9002;&#x7684; HTTP &#x7F13;&#x5B58;&#x8BBE;&#x7F6E;&#x65F6;&#x95F4;&#xFF0C;&#x4E5F;&#x4E0D;&#x9002;&#x5408;&#x66F4;&#x65B0;&#x6BD4;&#x8F83;&#x9891;&#x7E41;&#x7684;&#x7AD9;&#x70B9;</li>
+<li>HTTP &#x7F13;&#x5B58;&#x53EA;&#x6709;&#x5728; URL &#x76F8;&#x7B49;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x80FD;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x8FD9;&#x4E0D;&#x7B26;&#x5408; PWA &#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x6709;&#x552F;&#x4E00; URL &#x7684;&#x8981;&#x6C42;</li>
+</ul>
+<p>&#x90A3;&#x4E48;&#x6709;&#x6CA1;&#x6709;&#x66F4;&#x597D;&#x7684;&#x7F13;&#x5B58;&#x65B9;&#x6848;&#x5462;&#xFF1F;&#x5728;&#x7B2C;&#x4E00;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x5230;&#x4E86; Service Worker &#x53EF;&#x4EE5;&#x62E6;&#x622A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x548C;&#x64CD;&#x4F5C;&#x672C;&#x5730;&#x7F13;&#x5B58;&#xFF0C;&#x8FD9;&#x7ED9;&#x4E86;&#x6211;&#x4EEC;&#x8DB3;&#x591F;&#x7684;&#x60F3;&#x8C61;&#x7A7A;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED3;&#x5408; App Shell &#x548C; Service Worker &#x6765;&#x89E3;&#x51B3;&#x7F13;&#x5B58;&#x95EE;&#x9898;&#x3002;</p>
+<ol>
+<li>&#x4F7F;&#x7528; Service Worker &#x9884;&#x7F13;&#x5B58; App Shell &#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;</li>
+<li>&#x7528;&#x6237;&#x8BBF;&#x95EE; Web &#x7AD9;&#x70B9;&#x65F6;&#xFF0C;&#x901A;&#x8FC7; Service Worker &#x62E6;&#x622A;&#x8BF7;&#x6C42;</li>
+<li>Service Worker &#x8FD4;&#x56DE;&#x7F13;&#x5B58;&#x4E2D;&#x7684; App Shell &#x7ED9;&#x6D4F;&#x89C8;&#x5668;</li>
+<li>App Shell &#x6839;&#x636E;&#x5F53;&#x524D;&#x7684; URL &#x518D;&#x53BB;&#x8BF7;&#x6C42;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x6765;&#x6E32;&#x67D3;</li>
+</ol>
+<p>&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x6240;&#x6709;&#x95EE;&#x9898;&#x3002;&#x4E0B;&#x9762;&#x662F; App Shell &#x548C; Service Worker &#x7ED3;&#x5408;&#x4F7F;&#x7528;&#x7684;&#x6536;&#x76CA;&#x3002;</p>
+<ul>
+<li>&#x7B2C;&#x4E8C;&#x6B21;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x6781;&#x5FEB;&#x4E14;&#x7A33;&#x5B9A;&#x3002;&#x7531;&#x4E8E; App Shell &#x7684;&#x5185;&#x5BB9;&#x5DF2;&#x7ECF;&#x7F13;&#x5B58;&#x5728;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x4E2D;&#xFF0C;&#x7528;&#x6237;&#x7B2C;&#x4E8C;&#x6B21;&#x8BBF;&#x95EE;&#x4F1A;&#x5728;&#x6781;&#x77ED;&#x7684;&#x65F6;&#x95F4;&#x5185;&#x6E32;&#x67D3;&#x51FA; App Shell</li>
+<li>&#x4E3A;&#x7528;&#x6237;&#x8282;&#x7701;&#x6D41;&#x91CF;&#x3002;&#x7528;&#x6237;&#x5728;&#x540E;&#x7EED;&#x7684;&#x8BBF;&#x95EE;&#x90FD;&#x4E0D;&#x4F1A;&#x518D;&#x8BF7;&#x6C42; App Shell &#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x800C;&#x662F;&#x53EA;&#x8BF7;&#x6C42;&#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x7528;&#x52A0;&#x8F7D;&#x4E00;&#x4E9B;&#x516C;&#x7528;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x5177;&#x6709; Native App &#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002;&#x65E0;&#x8BBA;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x8BBF;&#x95EE;&#x8FD8;&#x662F;&#x540E;&#x7EED;&#x9875;&#x9762;&#x7684;&#x5207;&#x6362;&#xFF0C;&#x90FD;&#x5177;&#x6709;&#x552F;&#x4E00;&#x4E0D;&#x53D8;&#x7684;&#x533A;&#x57DF;&#xFF0C;&#x6CA1;&#x6709;&#x4F20;&#x7EDF; Web &#x9875;&#x9762;&#x5207;&#x6362;&#x7684;&#x767D;&#x5C4F;&#x3002;</li>
+</ul>
+<h2 id="app-shell-&#x7684;&#x6848;&#x4F8B;"><a name="app-shell-&#x7684;&#x6848;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#app-shell-&#x7684;&#x6848;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. App Shell &#x7684;&#x6848;&#x4F8B;</h2>
+<p><a href="https://lavas.baidu.com" target="_blank">https://lavas.baidu.com</a> &#x662F;&#x767E;&#x5EA6; Web &#x751F;&#x6001;&#x56E2;&#x961F;&#x5F00;&#x53D1;&#x7684; Lavas &#x7684;&#x5B98;&#x7F51;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4F53;&#x9A8C;&#x6BD4;&#x8F83;&#x597D;&#x7684; PWA &#x7AD9;&#x70B9;&#xFF0C;&#x90A3;&#x4E48;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x7AD9;&#x70B9;&#x662F;&#x5982;&#x4F55;&#x7ED3;&#x5408; Service Worker &#x548C; App Shell &#x7684;&#x3002;</p>
+<p>&#x4E0B;&#x56FE;&#x53F3;&#x4FA7;&#x5C31;&#x662F; Service Worker &#x7F13;&#x5B58;&#x5728; <a href="https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage" target="_blank">Cache Storage</a> &#x4E2D;&#x7684; App Shell &#x5185;&#x5BB9;&#xFF0C;&#x5DE6;&#x4FA7;&#x9876;&#x4E0A;&#x7684; banner &#x5C31;&#x662F; App Shell &#x7684;&#x53EF;&#x89C1;&#x533A;&#x57DF;&#x3002;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x5916;&#x58F3;&#x90E8;&#x5206;&#x88AB;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x5728;&#x4E0B;&#x6B21;&#x8BBF;&#x95EE;&#x65F6;&#x7531; Service Worker &#x53D6;&#x51FA;&#x5E76;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF0C;&#x5982;&#x679C;&#x628A;&#x7F51;&#x7EDC;&#x65AD;&#x5F00;&#x518D;&#x5237;&#x65B0;&#x9875;&#x9762;&#xFF0C;&#x9875;&#x9762;&#x4F9D;&#x7136;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x6E32;&#x67D3;&#x3002;</p>
+<p><img src="img/lavas_official_site.png" alt="Lavas &#x5B98;&#x7F51; Service Worker &#x7F13;&#x5B58;&#x7684; App Shell &#x5185;&#x5BB9;"></p>
+<p>&#x7ECF;&#x8FC7;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x7684;&#x5206;&#x6790;&#xFF0C;App Shell &#x548C; Service Worker &#x7ED3;&#x5408;&#x9996;&#x5C4F;&#x5C55;&#x73B0;&#x901F;&#x5EA6;&#x4F1A;&#x975E;&#x5E38;&#x5FEB;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FD9;&#x4E2A;&#x6848;&#x4F8B;&#x4E2D;&#xFF0C;&#x9996;&#x5C4F;&#x7684;&#x6027;&#x80FD;&#x5230;&#x5E95;&#x5982;&#x4F55;&#x5462;&#xFF0C;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x4E0B;&#x9762;&#x8FD9;&#x5F20;&#x56FE;&#xFF0C;&#x8FD9;&#x5F20;&#x6E32;&#x67D3;&#x6027;&#x80FD;&#x7684;&#x56FE;&#x662F;&#x5728; PC Chrome &#x4E0A;&#x7EDF;&#x8BA1;&#x7684;&#x3002;</p>
+<p><img src="img/lavas_official_site_performance.png" alt="Lavas &#x5B98;&#x7F51;&#x7684;&#x9996;&#x5C4F;&#x6E32;&#x67D3;&#x901F;&#x5EA6;"></p>
+<p>&#x4ECE;&#x4E0A;&#x56FE;&#x4E2D;&#xFF0C;&#x80FD;&#x770B;&#x5230;&#x5927;&#x6982;&#x5728;&#x65F6;&#x95F4;&#x8F74; 200ms &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5DF2;&#x7ECF;&#x6E32;&#x67D3;&#x51FA;&#x4E86; App Shell&#x3002;&#x67E5;&#x770B;&#x6D4F;&#x89C8;&#x5668;&#x7EDF;&#x8BA1;&#x7684;&#x8BE6;&#x7EC6; Event Log&#xFF0C;&#x4E0A;&#x56FE;&#x4E2D;&#x9875;&#x9762;&#x9996;&#x6B21;&#x7ED8;&#x5236;&#x662F;&#x5728; 230ms&#xFF0C;&#x518D;&#x51CF;&#x53BB;&#x4E0A;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x9500;&#x6BC1;&#x65F6;&#x95F4;&#x5927;&#x6982; 80ms&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5F53;&#x524D;&#x9875;&#x9762;&#x4ECE;&#x5F00;&#x59CB;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x5230;&#x9996;&#x5C4F;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x6240;&#x82B1;&#x6389;&#x7684;&#x65F6;&#x95F4;&#x662F; <strong>150ms</strong>&#xFF0C;&#x5BF9;&#x4E8E;&#x7528;&#x6237;&#x6765;&#x8BF4;&#xFF0C;&#x9875;&#x9762;&#x51E0;&#x4E4E;&#x662F;&#x77AC;&#x95F4;&#x5448;&#x73B0;&#xFF0C;&#x6CA1;&#x6709;&#x767D;&#x5C4F;&#x65F6;&#x95F4;&#x3002;&#x5E76;&#x4E14;&#x4ECE;&#x4E0A;&#x56FE;&#x4E2D;&#xFF0C;&#x4E5F;&#x80FD;&#x770B;&#x51FA;&#x6E32;&#x67D3;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x5148; App Shell&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6E32;&#x67D3;&#x51FA;&#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#xFF0C;&#x548C;&#x6211;&#x4EEC;&#x9884;&#x60F3;&#x7684;&#x4E00;&#x6837;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x7AD9;&#x70B9;&#x8FC7;&#x4E8E;&#x7B80;&#x5355;&#xFF0C;&#x65E0;&#x6CD5;&#x4F53;&#x9A8C; Service Worker &#x548C; App Shell &#x7ED3;&#x5408;&#x7684;&#x4F18;&#x52BF;&#xFF0C;&#x4E0B;&#x9762;&#x5217;&#x51FA;&#x4E86;&#x8BE5;&#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x8F83;&#x590D;&#x6742;&#x7684;&#x4F7F;&#x7528;&#x4E86; App Shell &#x6A21;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x4E5F;&#x540C;&#x6837;&#x662F;&#x4F53;&#x9A8C;&#x975E;&#x5E38;&#x826F;&#x597D;&#x7684; PWA &#x7AD9;&#x70B9;&#x3002;</p>
+<p><a href="https://lavas.baidu.com/12306/" target="_blank">https://lavas.baidu.com/12306/</a>&#xFF0C;&#x8FD9;&#x662F;&#x767E;&#x5EA6; Web &#x751F;&#x6001;&#x56E2;&#x961F;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A; demo&#xFF0C;&#x53C2;&#x8003;&#x4E2D;&#x56FD;&#x94C1;&#x8DEF;&#x5728;&#x7EBF;&#x552E;&#x7968;&#x7CFB;&#x7EDF; 12306&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E2A;&#x7AD9;&#x70B9;&#x53EA;&#x662F; demo&#xFF0C;&#x4E0D;&#x662F; 12306 &#x5B98;&#x65B9;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x4E0D;&#x8981;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x7B49;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x3002;</p>
+</blockquote>
+<h2 id="&#x5982;&#x4F55;&#x5728;-vue-&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;-app-shell--service-worker"><a name="&#x5982;&#x4F55;&#x5728;-vue-&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;-app-shell--service-worker" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x5728;-vue-&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;-app-shell--service-worker"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x5982;&#x4F55;&#x5728; Vue &#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528; App Shell + Service Worker</h2>
+<p>&#x7B2C;&#x4E00;&#x7AE0;&#x7684;&#x4F8B;&#x5B50;&#x4E5F;&#x91C7;&#x7528;&#x4E86; App Shell + Service Worker &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x91C7;&#x7528;&#x4EFB;&#x4F55;&#x6846;&#x67B6;&#x8F85;&#x52A9;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x501F;&#x52A9;&#x4EFB;&#x4F55;&#x6846;&#x67B6;&#x7F16;&#x5199; SPA &#x662F;&#x6BD4;&#x8F83;&#x5C11;&#x89C1;&#x7684;&#x3002;&#x5728;&#x73B0;&#x4EE3;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x91C7;&#x7528; Angular/React/Vue &#x6765;&#x7F16;&#x5199;&#x590D;&#x6742; SPA &#x7684;&#x9879;&#x76EE;&#x5360;&#x5927;&#x591A;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5728;&#x8FD9;&#x4E9B;&#x6846;&#x67B6;&#x4E2D;&#x4F7F;&#x7528; App Shell &#x548C; Service Worker &#x5462;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x7528;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x6F14;&#x793A;&#x4E00;&#x4E0B;&#x3002;</p>
+<h3 id="&#x542F;&#x52A8;&#x793A;&#x4F8B;"><a name="&#x542F;&#x52A8;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x542F;&#x52A8;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.1. &#x542F;&#x52A8;&#x793A;&#x4F8B;</h3>
+<p>&#x548C;&#x7B2C;&#x4E00;&#x7AE0;&#x7684;&#x4F8B;&#x5B50;&#x4E00;&#x6837;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x51C6;&#x5907; Git&#xFF0C;Node.js &#x548C; npm &#x73AF;&#x5883;&#xFF0C;&#x51C6;&#x5907;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x4E0B;&#x8F7D;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x662F;&#x6839;&#x636E; <code>vue-cli</code> &#x521B;&#x5EFA;&#x7684;&#x5F88;&#x57FA;&#x672C;&#x7684; Webpack &#x6A21;&#x677F;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; npm &#x4E0A;&#x7684;&#x6587;&#x6863; <a href="https://www.npmjs.com/package/vue-cli" target="_blank">vue-cli &#x7B80;&#x4ECB;</a>&#x3002;</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x4ECE; GitHub &#x4E0B;&#x8F7D;&#x4EE3;&#x7801;&#x5230;&#x672C;&#x5730; pwa-book-demo &#x76EE;&#x5F55;</span>
+$ <span class="token function">git</span> clone https://github.com/lavas-project/pwa-book-demo.git
+
+<span class="token comment"># &#x8FDB;&#x5165;&#x5230; chapter02/appshell &#x76EE;&#x5F55;</span>
+$ <span class="token function">cd</span> chapter02/appshell
+
+<span class="token comment"># &#x5B89;&#x88C5; npm &#x4F9D;&#x8D56;</span>
+$ <span class="token function">npm</span> <span class="token function">install</span>
+
+<span class="token comment"># &#x542F;&#x52A8; chapter02 appshell &#x793A;&#x4F8B;</span>
+$ <span class="token function">npm</span> run dev
+</code></pre>
+<p>&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x770B;&#x5230;&#x8F93;&#x51FA; <code>Your application is running here: http://localhost:8080</code> &#x540E;&#xFF0C;&#x4EE3;&#x8868;&#x670D;&#x52A1;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x6210;&#x529F;&#xFF0C;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x8BBF;&#x95EE; <code>http://localhost:8080</code>&#xFF0C;&#x80FD;&#x770B;&#x5230;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x7684;&#x9875;&#x9762;&#x3002;</p>
+<p><img src="img/chapter02_demo_screenshot.png" width="50%" title="App Shell demo &#x542F;&#x52A8;&#x6210;&#x529F;&#x793A;&#x610F;&#x56FE;" alt="App Shell demo &#x542F;&#x52A8;&#x6210;&#x529F;&#x793A;&#x610F;&#x56FE;"></p>
+<p>&#x8FD9;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x6253;&#x5F00; Chrome &#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#xFF0C;&#x5E76;&#x5B9A;&#x4F4D;&#x5230; Application &#x680F;&#x76EE;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x6CA1;&#x6709;&#x6CE8;&#x518C; Service Worker&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x4E0B;&#x6CA1;&#x6709;&#x751F;&#x6210; <code>service-worker.js</code> &#x6587;&#x4EF6;&#xFF0C;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x7684;&#x7ECF;&#x9A8C;&#xFF0C;&#x5728;&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x4E0B;&#x542F;&#x7528; Service Worker &#x5BF9;&#x5F00;&#x53D1;&#x8C03;&#x8BD5;&#x4F1A;&#x5E26;&#x6765;&#x5F88;&#x5927;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C; Service Worker &#x5199;&#x7684;&#x4E0D;&#x591F;&#x5B8C;&#x5584;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x5F00;&#x53D1;&#x4E2D;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x5F97;&#x4E0D;&#x5230;&#x53CA;&#x65F6;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x6CA1;&#x6709;&#x7ECF;&#x9A8C;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x4F1A;&#x82B1;&#x8F83;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x6392;&#x67E5;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x7684; demo &#x53EA;&#x6709;&#x5728;&#x7F16;&#x8BD1;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x751F;&#x6210; <code>service-worker.js</code> &#x6587;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x7F16;&#x8BD1;</span>
+$ <span class="token function">npm</span> run build
+<span class="token comment"># &#x8FDB;&#x5165;&#x5230;&#x7F16;&#x8BD1;&#x540E;&#x7684; dist &#x76EE;&#x5F55;</span>
+$ <span class="token function">cd</span> dist
+<span class="token comment"># &#x5B89;&#x88C5;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x8C03;&#x8BD5;&#x670D;&#x52A1;</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> -g edp
+<span class="token comment"># &#x5728; dist &#x76EE;&#x5F55;&#x4E2D;&#x542F;&#x52A8;&#x672C;&#x5730;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x670D;&#x52A1;</span>
+$ edp ws start
+</code></pre>
+<p>&#x5728;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x51FA;&#x4E86;&#x4E0B;&#x9762;&#x7684;&#x6587;&#x672C;&#x540E;&#xFF0C;&#x5373;&#x4EE3;&#x8868;&#x670D;&#x52A1;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x3002;</p>
+<pre class="language-"><code>mockservice
+edp INFO EDP WebServer start, http://xxx.xxx.xxx.xxx:8848
+</code></pre><p>&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x8F93;&#x5165; <code>http://localhost:8848</code>&#xFF0C;&#x80FD;&#x770B;&#x5230;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#x4E0B;&#x76F8;&#x540C;&#x7684;&#x9875;&#x9762;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x4E86; Service Worker&#xFF0C;&#x6253;&#x5F00; Chrome &#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#xFF0C;&#x5B9A;&#x4F4D;&#x5230; Application -&gt; Service Worker&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/chapter02_demo_service_worker.png" alt="Chapter02 demo Service Worker &#x5B89;&#x88C5;&#x6210;&#x529F;&#x793A;&#x610F;&#x56FE;"></p>
+<p>&#x70B9;&#x51FB; Chrome &#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#x5DE6;&#x4FA7;&#x7684; Cache -&gt; Cache Storage&#xFF0C;&#x80FD;&#x770B;&#x5230;&#x6709;&#x4E24;&#x4E2A; Cache Storage &#x5B9E;&#x4F8B;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4EE5; <code>sw-precache-</code> &#x5F00;&#x5934;&#x7684;&#x5B9E;&#x4F8B;&#x91CC;&#x9762;&#x9884;&#x7F13;&#x5B58;&#x4E86; App Shell &#x6240;&#x9700;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x3002;</p>
+<p><img src="img/chapter02_demo_app_shell_in_cache_storage.png" alt="Chapter02 demo App Shell &#x7F13;&#x5B58;&#x5185;&#x5BB9;"></p>
+<h3 id="&#x793A;&#x4F8B;&#x89E3;&#x6790;"><a name="&#x793A;&#x4F8B;&#x89E3;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.2. &#x793A;&#x4F8B;&#x89E3;&#x6790;</h3>
+<h4 id="&#x54EA;&#x4E9B;&#x533A;&#x57DF;&#x662F;-app-shell"><a name="&#x54EA;&#x4E9B;&#x533A;&#x57DF;&#x662F;-app-shell" class="anchor-navigation-ex-anchor" href="#&#x54EA;&#x4E9B;&#x533A;&#x57DF;&#x662F;-app-shell"><i class="fa fa-link" aria-hidden="true"></i></a>&#x54EA;&#x4E9B;&#x533A;&#x57DF;&#x662F; App Shell</h4>
+<p>&#x5728;&#x8FD9;&#x4E2A; Vue &#x7684;&#x793A;&#x4F8B;&#x91CC;&#xFF0C;&#x53EF;&#x89C1;&#x90E8;&#x5206;&#x54EA;&#x4E9B;&#x662F; App Shell &#x5462;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x67E5;&#x770B; <code>src/App.vue</code> &#x6587;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>./assets/logo.png<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bottom-navigation</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bottom-navigation</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x719F;&#x6089; Vue &#x7684;&#x5F00;&#x53D1;&#x8005;&#x90FD;&#x77E5;&#x9053; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">&gt;</span></span></code> &#x6807;&#x7B7E;&#x5728; Vue &#x9879;&#x76EE;&#x91CC;&#x662F;&#x7528;&#x6765;&#x5D4C;&#x5165;&#x5B50;&#x8DEF;&#x7531;&#x7684;&#xFF0C;<code>Home.vue</code> &#x548C; <code>NextPage.vue</code> &#x662F;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;&#x4E24;&#x4E2A;&#x9875;&#x9762;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x8BA4;&#x4E3A;&#xFF0C;&#x5728; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">&gt;</span></span></code> &#x6807;&#x7B7E;&#x4E4B;&#x5916;&#x7684;&#x5185;&#x5BB9;&#x90FD;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F; App Shell&#xFF0C;&#x4E0D;&#x4EC5;&#x5305;&#x62EC;&#x4E0A;&#x9762;&#x7684; img &#x6807;&#x7B7E;&#xFF0C;&#x4E0B;&#x9762;&#x7684; <code>bottom-navigation</code> &#x7EC4;&#x4EF6;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x5728; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span></code> &#x6807;&#x7B7E;&#x5916;&#x9762;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5982; <code>index.html</code> &#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x3002;</p>
+<p><img src="img/chapter02_demo_appshell.png" alt="Chapter02 demo App Shell &#x548C;&#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#x793A;&#x610F;&#x56FE;"></p>
+<h4 id="&#x5982;&#x4F55;&#x7F13;&#x5B58;-app-shell-&#x5185;&#x5BB9;"><a name="&#x5982;&#x4F55;&#x7F13;&#x5B58;-app-shell-&#x5185;&#x5BB9;" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x7F13;&#x5B58;-app-shell-&#x5185;&#x5BB9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5982;&#x4F55;&#x7F13;&#x5B58; App Shell &#x5185;&#x5BB9;</h4>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;<code>service-worker.js</code> &#x6587;&#x4EF6;&#x662F;&#x901A;&#x8FC7; SW Precache Webpack Plugin &#x63D2;&#x4EF6;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://github.com/goldhand/sw-precache-webpack-plugin#readme" target="_blank">sw-precache-webpack-plugin</a> &#x6587;&#x6863;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token comment">// build/webpack.prod.js #13 &#x884C;</span>
+<span class="token comment">// &#x5F15;&#x5165; sw-precache-webpack-plugin &#x63D2;&#x4EF6;</span>
+<span class="token keyword">const</span> SWPrecacheWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;sw-precache-webpack-plugin&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// build/webpack.prod.js #121 &#x884C;</span>
+<span class="token comment">// &#x6DFB;&#x52A0; sw-precache-webpack-plugin &#x63D2;&#x4EF6;&#x751F;&#x6210; Service Worker &#x6587;&#x4EF6;</span>
+<span class="token keyword">new</span> <span class="token class-name">SWPrecacheWebpackPlugin</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>swPrecache<span class="token punctuation">.</span>build<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5B83;&#x7684;&#x914D;&#x7F6E;&#x5199;&#x5728; <code>config/sw-preache.js</code> &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5BF9;&#x5B83;&#x505A;&#x4E00;&#x5B9A;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
+<p>&#x7F16;&#x8BD1;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x5728; <code>dist</code> &#x76EE;&#x5F55;&#x4E2D;&#x751F;&#x6210; <code>service-worker.js</code> &#x6587;&#x4EF6;&#xFF0C;&#x7B2C;&#x56DB;&#x7AE0;&#x4E2D;&#x6709;&#x5BF9; Service Worker &#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x5FC5;&#x5173;&#x5FC3;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x8FC7;&#x591A;&#x7684;&#x7EC6;&#x8282;&#x3002;&#x63D2;&#x4EF6;&#x751F;&#x6210;&#x7684; Service Worker &#x505A;&#x4E86;&#x5F88;&#x591A;&#x4E8B;&#x60C5;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x5217;&#x51FA;&#x4E86;&#x9879;&#x76EE;&#x4E2D;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x5217;&#x8868;</li>
+<li>&#x9884;&#x7F13;&#x5B58;&#x4E86; App Shell &#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;</li>
+<li>&#x5177;&#x6709;&#x9884;&#x7F13;&#x5B58;&#x52A8;&#x6001;&#x66F4;&#x65B0;&#x673A;&#x5236;</li>
+<li>Service Worker &#x7684;&#x66F4;&#x65B0;&#x673A;&#x5236;</li>
+</ul>
+<pre class="language-"><code class="lang-javascript"><span class="token comment">// &#x9884;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B; App Shell &#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;</span>
+<span class="token keyword">var</span> precacheConfig <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;/index.html&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;cb8786927330e5bdd417a47314a7300b&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/css/app.5be76b7d213b43df9723e8ab15122efb.css&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;5b0aa7a24708300b7176f0304923ab39&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/images/icons/icon_144x144.png&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;4bf0757895bd1cda44ee9204fe06a661&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/images/icons/icon_152x152.png&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;c69908d502224c5317453f8ae725bbf0&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/images/icons/icon_192x192.png&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;c69908d502224c5317453f8ae725bbf0&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/images/icons/icon_512x512.png&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;8eaee831d59442821083453b174df0f6&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/js/0.2dd5b370dbfb9afda866.js&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;5455b40e8991749d4aeb904f09389394&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/js/1.f740f9813d49b7661238.js&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;65b7858bacef211f345d0d88fda81092&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/js/app.e9b2b9e109561a7201f5.js&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;a28433e856b3e149bac022df934eb94e&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/js/manifest.69fbe521a6bc723a8ce1.js&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;c6b6fbf7902cd5325b5b1d43045db622&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/js/vendor.7bb72363822163e0f3b3.js&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;38d1baa4e38eeab57826462846900d69&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;/static/manifest.json&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;a521180656694782bc69a54ee5900dfb&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> cacheName <span class="token operator">=</span> <span class="token string">&apos;sw-precache-v3-sw-cache-chapter02-appshell-&apos;</span> <span class="token operator">+</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>registration <span class="token operator">?</span> self<span class="token punctuation">.</span>registration<span class="token punctuation">.</span>scope <span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x603B;&#x7ED3;</h2>
+<p>&#x603B;&#x7ED3;&#x6765;&#x8BF4;&#xFF0C;App Shell &#x628A;&#x7AD9;&#x70B9;&#x5185;&#x5BB9;&#x5212;&#x5206;&#x4E3A;&#x201C;&#x53D8;&#x201D;&#x548C;&#x201C;&#x4E0D;&#x53D8;&#x201D;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x518D;&#x8F85;&#x4EE5; Service Worker &#x6280;&#x672F;&#x5C06;&#x201C;&#x4E0D;&#x53D8;&#x201D;&#x7684;&#x90E8;&#x5206;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x4EE5;&#x8FBE;&#x6210;&#x5FEB;&#x901F;&#x52A0;&#x8F7D;&#x9875;&#x9762;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x901A;&#x8FC7; App Shell &#x548C; Service Worker&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x529E;&#x6CD5;&#x8BA9;&#x201C;&#x4E0D;&#x53D8;&#x201D;&#x7684;&#x90E8;&#x5206;&#x5FEB;&#x901F;&#x5C55;&#x73B0;&#xFF0C;&#x90A3;&#x4E48;&#x9488;&#x5BF9;&#x201C;&#x53D8;&#x201D;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4EC0;&#x4E48;&#x529E;&#x6CD5;&#x8BA9;&#x5B83;&#x5C55;&#x73B0;&#x5F97;&#x66F4;&#x5FEB;&#x5462;&#xFF0C;&#x6216;&#x8005;&#x8BA9;&#x5B83;&#x201C;&#x770B;&#x8D77;&#x6765;&#x201D;&#x66F4;&#x5FEB;&#xFF1F;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x518D;&#x63D0;&#x51FA;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x5B83;&#x867D;&#x7136;&#x4E0D;&#x80FD;&#x5728;&#x5B9E;&#x8D28;&#x4E0A;&#x63D0;&#x5347;&#x9875;&#x9762;&#x7684;&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x8BA9;&#x5B83;&#x5728;&#x611F;&#x5B98;&#x4E0A;&#x66F4;&#x5FEB;&#xFF0C;&#x5B83;&#x5C31;&#x662F;&#x4E0B;&#x4E00;&#x8282;&#x8981;&#x4ECB;&#x7ECD;&#x7684;&#x9AA8;&#x67B6;&#x5C4F;&#x3002;</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9;2019 <a href="https://github.com/lavas-project" target="_blank">&#x767E;&#x5EA6; Web &#x751F;&#x6001;&#x56E2;&#x961F;</a> <br>   <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;"></a> &#x672C;&#x4E66;&#x91C7;&#x7528; <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x56FD;&#x9645;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a> &#x8FDB;&#x884C;&#x8BB8;&#x53EF;&#x3002;<br>    &#x672C;&#x4E66;&#x4ECD;&#x5728;&#x52D8;&#x8BEF;&#x9636;&#x6BB5;&#xFF0C;&#x8BF7;&#x52FF;&#x4EE5;&#x4EFB;&#x4F55;&#x5F62;&#x5F0F;&#x79C1;&#x81EA;&#x4F20;&#x64AD;&#xFF0C;&#x6211;&#x4EEC;&#x4FDD;&#x7559;&#x5BF9;&#x672C;&#x4E66;&#x7684;&#x7248;&#x6743; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-05-22 14:25:16 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2-design-and-tech.html" class="navigation navigation-prev " aria-label="Previous page: 2.2 设计与技术">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4-app-skeleton.html" class="navigation navigation-next " aria-label="Next page: 2.4 骨架屏">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.3 App Shell","level":"1.3.3","depth":2,"next":{"title":"2.4 骨架屏","level":"1.3.4","depth":2,"path":"chapter02/4-app-skeleton.md","ref":"chapter02/4-app-skeleton.md","articles":[]},"previous":{"title":"2.2 设计与技术","level":"1.3.2","depth":2,"path":"chapter02/2-design-and-tech.md","ref":"chapter02/2-design-and-tech.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-livereload","simple-page-toc","prism","prism-themes","-highlight","advanced-emoji","include-codeblock","-sharing","sharing-plus","ace","emphasize","splitter","page-footer-ex","expandable-chapters-small","sectionx","local-video","anchor-navigation-ex","favicon","todo","3-ba","chart","github"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"emphasize":{},"ace":{},"github":{"url":"https://github.com/lavas-project/pwa-book"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"page-footer-ex":{"copyright":"Copyright ©2019 [百度 Web 生态团队](https://github.com/lavas-project) <br/>   [![知识共享许可协议](https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/) 本书采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-nd/4.0/) 进行许可。<br/>    本书仍在勘误阶段，请勿以任何形式私自传播，我们保留对本书的版权","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"该文件修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"isRewritePageTitle":false,"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"3-ba":{"configuration":"auto","token":"xxxxxxxx"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"lavas <lavas@baidu.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PWA 应用实战","language":"zh-hans","gitbook":"3.2.3","description":"PWA 开发实战"},"file":{"path":"chapter02/3-app-shell.md","mtime":"2019-05-22T06:25:16.041Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-22T11:11:24.851Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

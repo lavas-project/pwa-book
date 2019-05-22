@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+  <head>
+    <title>Service Worker Scope Demo1 PageB</title>
+  </head>
+  <body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/root-sw.js?v=20190402235959')
+      }
+    </script>
+  </body>
+</html>

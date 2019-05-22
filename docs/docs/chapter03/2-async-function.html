@@ -1,0 +1,1408 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.2 Async 函数 · PWA 应用实战</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lavas <lavas@baidu.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3-fetch-api.html" />
+    
+    
+    <link rel="prev" href="1-promise.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    HOME
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter01.html">
+            
+                <a href="../chapter01.html">
+            
+                    
+                    第1章 PWA 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter01/1-how-was-pwa-born.html">
+            
+                <a href="../chapter01/1-how-was-pwa-born.html">
+            
+                    
+                    1.1 为什么会出现 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter01/2-what-is-pwa.html">
+            
+                <a href="../chapter01/2-what-is-pwa.html">
+            
+                    
+                    1.2 什么是 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter01/3-what-are-key-techs.html">
+            
+                <a href="../chapter01/3-what-are-key-techs.html">
+            
+                    
+                    1.3 PWA 的核心技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter01/4-how-is-pwa-going.html">
+            
+                <a href="../chapter01/4-how-is-pwa-going.html">
+            
+                    
+                    1.4 PWA 的发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../chapter01/5-the-future-of-pwa.html">
+            
+                <a href="../chapter01/5-the-future-of-pwa.html">
+            
+                    
+                    1.5 PWA 的未来
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../chapter01/6-your-first-pwa.html">
+            
+                <a href="../chapter01/6-your-first-pwa.html">
+            
+                    
+                    1.6 你的第一个 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter02.html">
+            
+                <a href="../chapter02.html">
+            
+                    
+                    第2章 设计与体验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter02/1-what-is-good-ux.html">
+            
+                <a href="../chapter02/1-what-is-good-ux.html">
+            
+                    
+                    2.1 什么是好的用户体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter02/2-design-and-tech.html">
+            
+                <a href="../chapter02/2-design-and-tech.html">
+            
+                    
+                    2.2 设计与技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chapter02/3-app-shell.html">
+            
+                <a href="../chapter02/3-app-shell.html">
+            
+                    
+                    2.3 App Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../chapter02/4-app-skeleton.html">
+            
+                <a href="../chapter02/4-app-skeleton.html">
+            
+                    
+                    2.4 骨架屏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../chapter02/5-responsive-design.html">
+            
+                <a href="../chapter02/5-responsive-design.html">
+            
+                    
+                    2.5 响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter03.html">
+            
+                <a href="../chapter03.html">
+            
+                    
+                    第3章 基础技术简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="1-promise.html">
+            
+                <a href="1-promise.html">
+            
+                    
+                    3.1 Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="2-async-function.html">
+            
+                <a href="2-async-function.html">
+            
+                    
+                    3.2 Async 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3-fetch-api.html">
+            
+                <a href="3-fetch-api.html">
+            
+                    
+                    3.3 Fetch API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="4-cache-api.html">
+            
+                <a href="4-cache-api.html">
+            
+                    
+                    3.4 Cache API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="5-indexeddb.html">
+            
+                <a href="5-indexeddb.html">
+            
+                    
+                    3.5 IndexedDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter04.html">
+            
+                <a href="../chapter04.html">
+            
+                    
+                    第4章 Service Worker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chapter04/1-service-worker-introduction.html">
+            
+                <a href="../chapter04/1-service-worker-introduction.html">
+            
+                    
+                    4.1 Service Worker 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chapter04/2-service-worker-register.html">
+            
+                <a href="../chapter04/2-service-worker-register.html">
+            
+                    
+                    4.2 Service Worker 注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chapter04/3-service-worker-dive.html">
+            
+                <a href="../chapter04/3-service-worker-dive.html">
+            
+                    
+                    4.3 Service Worker 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../chapter04/4-service-worker-debug.html">
+            
+                <a href="../chapter04/4-service-worker-debug.html">
+            
+                    
+                    4.4 Service Worker 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter05.html">
+            
+                <a href="../chapter05.html">
+            
+                    
+                    第5章 离线与缓存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chapter05/1-fetch-event-management.html">
+            
+                <a href="../chapter05/1-fetch-event-management.html">
+            
+                    
+                    5.1 资源请求的拦截代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chapter05/2-local-storage-management.html">
+            
+                <a href="../chapter05/2-local-storage-management.html">
+            
+                    
+                    5.2 本地存储管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../chapter05/3-respond-strategy.html">
+            
+                <a href="../chapter05/3-respond-strategy.html">
+            
+                    
+                    5.3 资源请求响应策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../chapter05/4-precache.html">
+            
+                <a href="../chapter05/4-precache.html">
+            
+                    
+                    5.4 预缓存方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../chapter05/5-workbox.html">
+            
+                <a href="../chapter05/5-workbox.html">
+            
+                    
+                    5.5 使用 Workbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chapter06.html">
+            
+                <a href="../chapter06.html">
+            
+                    
+                    第6章 用户留存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter06/1-manifest-json.html">
+            
+                <a href="../chapter06/1-manifest-json.html">
+            
+                    
+                    6.1 Web 应用清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chapter06/2-credentials-api.html">
+            
+                <a href="../chapter06/2-credentials-api.html">
+            
+                    
+                    6.2 凭证管理 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../chapter06/3-notification-api.html">
+            
+                <a href="../chapter06/3-notification-api.html">
+            
+                    
+                    6.3 桌面通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../chapter06/4-web-push-api.html">
+            
+                <a href="../chapter06/4-web-push-api.html">
+            
+                    
+                    6.4 网络推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../chapter06/5-payment-request-api.html">
+            
+                <a href="../chapter06/5-payment-request-api.html">
+            
+                    
+                    6.5 Payment Request API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chapter07.html">
+            
+                <a href="../chapter07.html">
+            
+                    
+                    第7章 安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chapter07/1-https.html">
+            
+                <a href="../chapter07/1-https.html">
+            
+                    
+                    7.1 使用 HTTPS 保护站点安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chapter07/2-CSP.html">
+            
+                <a href="../chapter07/2-CSP.html">
+            
+                    
+                    7.2 内容安全策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../chapter07/3-policy.html">
+            
+                <a href="../chapter07/3-policy.html">
+            
+                    
+                    7.3 同源策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../chapter07/4-vulnerability.html">
+            
+                <a href="../chapter07/4-vulnerability.html">
+            
+                    
+                    7.4 典型的安全漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../chapter08.html">
+            
+                <a href="../chapter08.html">
+            
+                    
+                    第8章 性能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../chapter08/1-loading-performance.html">
+            
+                <a href="../chapter08/1-loading-performance.html">
+            
+                    
+                    8.1 加载性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../chapter08/2-rendering-performance.html">
+            
+                <a href="../chapter08/2-rendering-performance.html">
+            
+                    
+                    8.2 渲染性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../chapter09.html">
+            
+                <a href="../chapter09.html">
+            
+                    
+                    第9章 PWA 与搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../chapter09/1-search-engine-index.html">
+            
+                <a href="../chapter09/1-search-engine-index.html">
+            
+                    
+                    9.1 搜索引擎收录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../chapter09/2-pwa-and-amp-and-mip.html">
+            
+                <a href="../chapter09/2-pwa-and-amp-and-mip.html">
+            
+                    
+                    9.2 PWA 与 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../chapter09/3-whole-site-amp-and-mip.html">
+            
+                <a href="../chapter09/3-whole-site-amp-and-mip.html">
+            
+                    
+                    9.3 全站 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../chapter09/4-preload-pwa.html">
+            
+                <a href="../chapter09/4-preload-pwa.html">
+            
+                    
+                    9.4 AMP/MIP 预加载 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../appendix01.html">
+            
+                <a href="../appendix01.html">
+            
+                    
+                    附录1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../appendix01/1-lighthouse.html">
+            
+                <a href="../appendix01/1-lighthouse.html">
+            
+                    
+                    1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../appendix01/2-lighthouse-score-guide.html">
+            
+                <a href="../appendix01/2-lighthouse-score-guide.html">
+            
+                    
+                    2 Lighthouse 评分指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../appendix01/3-lighthouse-case.html">
+            
+                <a href="../appendix01/3-lighthouse-case.html">
+            
+                    
+                    3 Lighthouse 使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    感谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.2 Async 函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#async-&#x51FD;&#x6570;"><b>1. </b>Async &#x51FD;&#x6570;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8BED;&#x6CD5;&#x8BF4;&#x660E;"><b>1.1. </b>&#x8BED;&#x6CD5;&#x8BF4;&#x660E;</a></li><ul><li><span class="title-icon "></span><a href="#async-&#x51FD;&#x6570;&#x5B9A;&#x4E49;"><b>1.1.1. </b>Async &#x51FD;&#x6570;&#x5B9A;&#x4E49;</a></li><li><span class="title-icon "></span><a href="#async-&#x51FD;&#x6570;&#x9519;&#x8BEF;&#x5904;&#x7406;"><b>1.1.2. </b>Async &#x51FD;&#x6570;&#x9519;&#x8BEF;&#x5904;&#x7406;</a></li><li><span class="title-icon "></span><a href="#await-&#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;"><b>1.1.3. </b>await &#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;</a></li><li><span class="title-icon "></span><a href="#await-&#x8868;&#x8FBE;&#x5F0F;&#x9519;&#x8BEF;&#x7528;&#x6CD5;"><b>1.1.4. </b>await &#x8868;&#x8FBE;&#x5F0F;&#x9519;&#x8BEF;&#x7528;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#await-&#x8868;&#x8FBE;&#x5F0F;&#x5F02;&#x5E38;&#x6355;&#x83B7;"><b>1.1.5. </b>await &#x8868;&#x8FBE;&#x5F0F;&#x5F02;&#x5E38;&#x6355;&#x83B7;</a></li></ul><li><span class="title-icon "></span><a href="#async-&#x51FD;&#x6570;&#x7528;&#x6CD5;&#x4E3E;&#x4F8B;"><b>1.2. </b>Async &#x51FD;&#x6570;&#x7528;&#x6CD5;&#x4E3E;&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5E38;&#x89C4;&#x7528;&#x6CD5;"><b>1.2.1. </b>&#x5E38;&#x89C4;&#x7528;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x987A;&#x5E8F;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;"><b>1.2.2. </b>&#x987A;&#x5E8F;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</a></li><li><span class="title-icon "></span><a href="#&#x5E76;&#x53D1;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;"><b>1.2.3. </b>&#x5E76;&#x53D1;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</a></li></ul></ul></ul></div><a href="#async-&#x51FD;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="async-&#x51FD;&#x6570;"><a name="async-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#async-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Async &#x51FD;&#x6570;</h1>
+<p>&#x4E0A;&#x4E00;&#x8282;&#x4ECB;&#x7ECD;&#x4E86; Promise &#x5BF9;&#x8C61;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x5229;&#x7528; Promise &#x5C06;&#x8FC7;&#x53BB;&#x57FA;&#x4E8E;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x5F02;&#x6B65;&#x8FC7;&#x7A0B;&#x6539;&#x9020;&#x6210;&#x57FA;&#x4E8E;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x6837;&#x66F4;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7EBF;&#x6027;&#x7684;&#x601D;&#x7EF4;&#x4E60;&#x60EF;&#x3002;&#x4F46;&#x5B9E;&#x8DF5;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x73B0;&#xFF0C;&#x8FD9;&#x79CD;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x7684;&#x5F02;&#x6B65;&#x65B9;&#x6848;&#x4ECD;&#x7136;&#x4E0D;&#x591F;&#x76F4;&#x89C2;&#xFF0C;&#x6211;&#x4EEC;&#x66F4;&#x5E0C;&#x671B;&#x91C7;&#x7528;&#x7C7B;&#x4F3C;&#x4E8E;&#x540C;&#x6B65;&#x51FD;&#x6570;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x5F02;&#x6B65;&#x3002;&#x56E0;&#x6B64;&#x5728; ES2017 &#x6807;&#x51C6;&#x4E2D;&#x5F15;&#x5165;&#x4E86; Async &#x51FD;&#x6570;&#xFF08;Async Functions&#xFF09;&#x7528;&#x4E8E;&#x8FDB;&#x4E00;&#x6B65;&#x7B80;&#x5316;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x7531;&#x4E8E; Async &#x51FD;&#x6570;&#x8BED;&#x6CD5;&#x6BD4;&#x8F83;&#x65B0;&#xFF0C;&#x76EE;&#x524D;&#x53EA;&#x5728;&#x6700;&#x65B0;&#x7248;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x5F97;&#x5230;&#x4E86;&#x652F;&#x6301;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86; Async &#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x51C6;&#x5907; Babel &#x7B49;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#xFF0C;&#x5C06; Async &#x51FD;&#x6570;&#x8BED;&#x6CD5;&#x8F6C;&#x6362;&#x6210; ES5 &#x8BED;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;</p>
+<p><img src="img/async-function.png" alt="Async &#x51FD;&#x6570;&#x517C;&#x5BB9;&#x6027;"></p>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x6F14;&#x793A; Async &#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E4B;&#x524D;&#x9996;&#x5148;&#x51C6;&#x5907;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x51FD;&#x6570; <code>sleep()</code>&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x662F;&#x5C06; setTimeout &#x65B9;&#x6CD5;&#x7528; Promise &#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x5305;&#x88C5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">sleep</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> time<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x4E00;&#x8282;&#x7684;&#x5B66;&#x4E60;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x94FE;&#x5F0F;&#x8C03;&#x7528; <code>Promise.then</code> &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x5F02;&#x6B65;&#x8FC7;&#x7A0B;&#x3002;&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5F53;&#x4E2D;&#xFF0C;&#x5728;&#x6267;&#x884C; <code>main()</code> 1 &#x79D2;&#x4E4B;&#x540E;&#x5C06;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x51FA;&#x201C;&#x7ED3;&#x675F;&#x201D;&#x7684;&#x6587;&#x6848;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x5F00;&#x59CB;&#xFF1A;&apos;</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x7ED3;&#x675F;&#xFF1A;&apos;</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6539;&#x7528; Async &#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x529F;&#x80FD;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x5F00;&#x59CB;&#xFF1A;&apos;</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x7ED3;&#x675F;&#xFF1A;&apos;</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>async</code> &#x548C; <code>await</code> &#x4FEE;&#x9970;&#x7B26;&#x6539;&#x5199;&#x4E4B;&#x540E;&#x7684; <code>main()</code> &#x5C31;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x4E66;&#x5199;&#x590D;&#x6742;&#x7684; Promise &#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x4E86;&#xFF0C;&#x540C;&#x65F6; Async &#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x4E5F;&#x66F4;&#x4E3A;&#x63A5;&#x8FD1;&#x540C;&#x6B65;&#x51FD;&#x6570;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x4E66;&#x5199;&#x4F53;&#x9A8C;&#x8FD8;&#x662F;&#x9605;&#x8BFB;&#x4F53;&#x9A8C;&#x90FD;&#x5F97;&#x5230;&#x4E86;&#x8F83;&#x5927;&#x7684;&#x63D0;&#x5347;&#x3002;</p>
+<h2 id="&#x8BED;&#x6CD5;&#x8BF4;&#x660E;"><a name="&#x8BED;&#x6CD5;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x8BED;&#x6CD5;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x8BED;&#x6CD5;&#x8BF4;&#x660E;</h2>
+<h3 id="async-&#x51FD;&#x6570;&#x5B9A;&#x4E49;"><a name="async-&#x51FD;&#x6570;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#async-&#x51FD;&#x6570;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. Async &#x51FD;&#x6570;&#x5B9A;&#x4E49;</h3>
+<p>Async &#x51FD;&#x6570;&#x9700;&#x8981;&#x901A;&#x8FC7; <code>async</code> &#x4FEE;&#x9970;&#x7B26;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#xFF0C;&#x4E0B;&#x9762;&#x6240;&#x4E3E;&#x4F8B;&#x7684;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#x90FD;&#x662F;&#x5408;&#x6CD5;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// &#x666E;&#x901A;&#x51FD;&#x6570;</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token comment">/* &#x53C2;&#x6570; */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">/* &#x51FD;&#x6570;&#x4F53; */</span><span class="token punctuation">}</span>
+<span class="token comment">// &#x533F;&#x540D;&#x51FD;&#x6570;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// &#x7BAD;&#x5934;&#x51FD;&#x6570;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// &#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x7B80;&#x5199;</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token keyword">async</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;</span>
+list<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Async &#x51FD;&#x6570;&#x4F1A;&#x5C06;&#x51FD;&#x6570;&#x4F53;&#x7684;&#x6240;&#x6709;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x9690;&#x5F0F;&#x7684; Promise &#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string">&apos;Hello World&apos;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> promise
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span>promise<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="async-&#x51FD;&#x6570;&#x9519;&#x8BEF;&#x5904;&#x7406;"><a name="async-&#x51FD;&#x6570;&#x9519;&#x8BEF;&#x5904;&#x7406;" class="anchor-navigation-ex-anchor" href="#async-&#x51FD;&#x6570;&#x9519;&#x8BEF;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. Async &#x51FD;&#x6570;&#x9519;&#x8BEF;&#x5904;&#x7406;</h3>
+<p>&#x5047;&#x5982; Async &#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;&#x4F53;&#x5728;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B58;&#x5728;&#x672A;&#x6355;&#x83B7;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x7684; Promise &#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x901A;&#x8FC7; reject &#x65B9;&#x6CD5;&#x5C06;&#x5F02;&#x5E38;&#x503C;&#x4F20;&#x9012;&#x4E0B;&#x53BB;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">&apos;&#x51FA;&#x9519;&#x4E86;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">&apos;&#x51FA;&#x9519;&#x4E86;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5047;&#x5982; Async &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E86;&#x5F02;&#x6B65;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x7684; Promise &#x5BF9;&#x8C61;&#x72B6;&#x6001;&#x53D8;&#x66F4;&#x4E3A; rejected&#xFF0C;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&apos;&#x51FA;&#x9519;&#x4E86;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span>
+    Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&apos;&#x51FA;&#x9519;&#x4E86;&apos;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x4E00;&#x6765;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x6765;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x6253;&#x5370; &apos;&#x51FA;&#x9519;&#x4E86;&apos;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+<span class="token comment">// &#x6216;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// &#x6253;&#x5370; &apos;&#x51FA;&#x9519;&#x4E86;&apos;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="await-&#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;"><a name="await-&#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#await-&#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. await &#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;</h3>
+<p>Async &#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;&#x4F53;&#x4E2D;&#x53EF;&#x80FD;&#x5B58;&#x5728; await &#x8868;&#x8FBE;&#x5F0F;&#x3002;await &#x8868;&#x8FBE;&#x5F0F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728; Promise &#x5BF9;&#x8C61;&#x524D;&#x589E;&#x52A0; <code>await</code> &#x5173;&#x952E;&#x5B57;&#x5373;&#x53EF;&#xFF0C;&#x540C;&#x65F6; await &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x5C31;&#x662F; Promise &#x901A;&#x8FC7; resolve() &#x6240;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// sleep(1000) &#x8FD4;&#x56DE; Promise &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x5728; 1s &#x540E; resolve</span>
+  <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token comment">// val1 === &apos;Hello World&apos;</span>
+  <span class="token keyword">let</span> val1 <span class="token operator">=</span> <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World&apos;</span><span class="token punctuation">)</span>
+  <span class="token comment">// &#x7B49;&#x5F85; 1s &#x540E;&#x5BF9; val2 &#x8FDB;&#x884C;&#x8D4B;&#x503C;</span>
+  <span class="token comment">// val2 === &apos;Hello World&apos;</span>
+  <span class="token keyword">let</span> val2 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&apos;Hello World&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>await &#x8868;&#x8FBE;&#x5F0F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A; Async &#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&apos;Hello World&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">result</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// &#x6253;&#x5370; Hello World</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5F53; <code>await</code> &#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x8DDF;&#x7684;&#x4E0D;&#x662F; Promise &#x5BF9;&#x8C61;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A; Promise &#x5BF9;&#x8C61;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// &#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x4ECE; Async &#x51FD;&#x6570;&#x4F53;&#x5185;&#x8282;&#x9009;</span>
+
+<span class="token keyword">let</span> val <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token string">&apos;Hello World&apos;</span>
+<span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="token keyword">let</span> val <span class="token operator">=</span> <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5F53; Async &#x51FD;&#x6570;&#x6267;&#x884C;&#x5230; await &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6682;&#x505C;&#x6267;&#x884C;&#xFF0C;&#x7B49;&#x5F85; await &#x8868;&#x8FBE;&#x5F0F;&#x7684; Promise &#x5BF9;&#x8C61;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x66F4;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x53BB;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x6B65;&#x9AA4;&#x3002;</p>
+<h3 id="await-&#x8868;&#x8FBE;&#x5F0F;&#x9519;&#x8BEF;&#x7528;&#x6CD5;"><a name="await-&#x8868;&#x8FBE;&#x5F0F;&#x9519;&#x8BEF;&#x7528;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#await-&#x8868;&#x8FBE;&#x5F0F;&#x9519;&#x8BEF;&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.4. await &#x8868;&#x8FBE;&#x5F0F;&#x9519;&#x8BEF;&#x7528;&#x6CD5;</h3>
+<p>&#x9700;&#x8981;&#x5F3A;&#x8C03;&#x7684;&#x662F;&#xFF0C;await &#x8868;&#x8FBE;&#x5F0F;&#x53EA;&#x80FD;&#x5728; Async &#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#x4E4B;&#x5916;&#x4F7F;&#x7528;&#xFF0C;&#x7A0B;&#x5E8F;&#x5C06;&#x4F1A;&#x62A5;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF08;SynaxError&#xFF09;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E3E;&#x4F8B;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// &#x9519;&#x8BEF;&#xFF0C;await &#x8868;&#x8FBE;&#x5F0F;&#x5FC5;&#x987B;&#x5728; Async &#x51FD;&#x6570;&#x4E2D;&#x6267;&#x884C;</span>
+<span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// &#x9519;&#x8BEF;&#xFF0C;foo &#x4E0D;&#x662F; Async &#x51FD;&#x6570;</span>
+  <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x9519;&#x8BEF;&#xFF0C;&#x56E0;&#x4E3A;&#x8BE5;&#x533F;&#x540D;&#x51FD;&#x6570;&#x4E0D;&#x662F; Async &#x51FD;&#x6570;</span>
+    <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">bar</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> intervals <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">]</span>
+  intervals<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">interval</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x9519;&#x8BEF;&#xFF0C;&#x56E0;&#x4E3A;&#x8BE5;&#x533F;&#x540D;&#x51FD;&#x6570;&#x4E0D;&#x662F; Async &#x51FD;&#x6570;</span>
+    <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="await-&#x8868;&#x8FBE;&#x5F0F;&#x5F02;&#x5E38;&#x6355;&#x83B7;"><a name="await-&#x8868;&#x8FBE;&#x5F0F;&#x5F02;&#x5E38;&#x6355;&#x83B7;" class="anchor-navigation-ex-anchor" href="#await-&#x8868;&#x8FBE;&#x5F0F;&#x5F02;&#x5E38;&#x6355;&#x83B7;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.5. await &#x8868;&#x8FBE;&#x5F0F;&#x5F02;&#x5E38;&#x6355;&#x83B7;</h3>
+<p><code>await</code> &#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x8DDF;&#x7684; Promise &#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x4F1A;&#x6267;&#x884C; reject&#xFF0C;&#x8FD9;&#x65F6; await &#x8868;&#x8FBE;&#x5F0F;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x5F02;&#x5E38;&#x503C;&#x5C31;&#x662F; reject &#x65B9;&#x6CD5;&#x6240;&#x56DE;&#x4F20;&#x7684;&#x503C;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>try/catch</code> &#x6355;&#x83B7;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;&#x5E76;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&apos;&#x53D1;&#x751F;&#x9519;&#x8BEF;&apos;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x6253;&#x5370; &apos;&#x53D1;&#x751F;&#x9519;&#x8BEF;&apos;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5176;&#x6548;&#x679C;&#x4E0E;&#x76F4;&#x63A5;&#x5BF9; Promise &#x5BF9;&#x8C61;&#x7684;&#x5F02;&#x5E38;&#x8FDB;&#x884C;&#x6355;&#x83B7;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&apos;&#x53D1;&#x751F;&#x9519;&#x8BEF;&apos;</span><span class="token punctuation">)</span>
+    <span class="token comment">// &#x6253;&#x5370; &apos;&#x53D1;&#x751F;&#x9519;&#x8BEF;&apos;</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E0D;&#x5BF9; await &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x629B;&#x9519;&#x8FDB;&#x884C;&#x6355;&#x83B7;&#x5904;&#x7406;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x4F1A;&#x7EE7;&#x7EED;&#x5411;&#x5916;&#x4F20;&#x9012;&#xFF0C;&#x5E76;&#x6700;&#x7EC8;&#x4EE5; Promise.reject &#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x9519;&#x8BEF;&#x629B;&#x5230; Async &#x51FD;&#x6570;&#x5916;&#x90E8;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&apos;&#x53D1;&#x751F;&#x9519;&#x8BEF;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x6253;&#x5370; &apos;&#x53D1;&#x751F;&#x9519;&#x8BEF;&apos;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="async-&#x51FD;&#x6570;&#x7528;&#x6CD5;&#x4E3E;&#x4F8B;"><a name="async-&#x51FD;&#x6570;&#x7528;&#x6CD5;&#x4E3E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#async-&#x51FD;&#x6570;&#x7528;&#x6CD5;&#x4E3E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Async &#x51FD;&#x6570;&#x7528;&#x6CD5;&#x4E3E;&#x4F8B;</h2>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x5B66;&#x4E60;&#x5BF9; Async &#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x529F;&#x80FD;&#x6709;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x4E86;&#x89E3;&#x4E4B;&#x540E;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x51C6;&#x5907;&#x51E0;&#x4E2A;&#x793A;&#x4F8B;&#x6765;&#x52A0;&#x6DF1;&#x7406;&#x89E3;&#x3002;</p>
+<h3 id="&#x5E38;&#x89C4;&#x7528;&#x6CD5;"><a name="&#x5E38;&#x89C4;&#x7528;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x89C4;&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x5E38;&#x89C4;&#x7528;&#x6CD5;</h3>
+<p>&#x5728;&#x672C;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x5C06;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x5E76;&#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#x3001;&#x8BFB;&#x53D6;&#x5F02;&#x6B65;&#x6570;&#x636E;&#x3001;&#x6355;&#x83B7;&#x5F02;&#x6B65;&#x5F02;&#x5E38;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x9996;&#x5148;&#x6267;&#x884C; getRandomNumber() &#x5F02;&#x6B65;&#x5730;&#x83B7;&#x53D6;&#x4E00;&#x4E2A; 0 - 1 &#x4E4B;&#x95F4;&#x7684;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x9001;&#x5165; shouldLargerThan() &#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#xFF0C;&#x5F53;&#x968F;&#x673A;&#x6570;&#x5C0F;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x6570;&#x503C; 0.5 &#x65F6;&#xFF0C;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x53CD;&#x4E4B;&#x5219;&#x901A;&#x8FC7;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x7B80;&#x5355;&#x5B9E;&#x73B0; getRandomNumber &#x548C; shouldLargerThan &#x7684;&#x529F;&#x80FD;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// &#x4E00;&#x79D2;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; 0 - 1 &#x7684;&#x968F;&#x673A;&#x6570;</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getRandomNumber</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x4E00;&#x79D2;&#x540E;&#x67E5;&#x770B;&#x4F20;&#x5165;&#x7684;&#x6570;&#x5B57;&#x662F;&#x5426;&#x5927;&#x4E8E;&#x671F;&#x671B;&#x503C; spec</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">shouldLargerThan</span> <span class="token punctuation">(</span><span class="token parameter">spec<span class="token punctuation">,</span> num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token comment">// &#x5F53;&#x6570;&#x503C;&#x5C0F;&#x4E8E; 0.5 &#x65F6;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&lt;</span> spec<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token string">&apos;&#x5C0F;&#x4E8E; &apos;</span> <span class="token operator">+</span> spec
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; &apos;</span> <span class="token operator">+</span> spec<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x6267;&#x884C;&#x6574;&#x4E2A;&#x5F02;&#x6B65;&#x8FC7;&#x7A0B;&#x7684; Async &#x51FD;&#x6570; <code>run()</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">run</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// &#x83B7;&#x53D6;&#x5F02;&#x6B65;&#x6570;&#x636E;</span>
+  <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getRandomNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">shouldLargerThan</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x6355;&#x83B7;&#x5F02;&#x5E38;</span>
+    <span class="token comment">// &#x6253;&#x5370; &apos;&#x5C0F;&#x4E8E; 0.5&apos;</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x7ED3;&#x675F;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x4EFB;&#x52A1;&#x5168;&#x90E8;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// ... &#xFF08;&#x7B49;&#x5F85; 1s&#xFF09;</span>
+<span class="token comment">// 0.3&#xFF08;&#x5047;&#x8BBE;&#x751F;&#x6210;&#x7684;&#x968F;&#x673A;&#x6570;&#x4E3A; 0.3&#xFF09;</span>
+<span class="token comment">// ... &#xFF08;&#x7B49;&#x5F85; 1s&#xFF09;</span>
+<span class="token comment">// &#x5C0F;&#x4E8E; 0.5</span>
+<span class="token comment">// &#x7ED3;&#x675F;</span>
+<span class="token comment">// &#x4EFB;&#x52A1;&#x5168;&#x90E8;&#x6267;&#x884C;&#x5B8C;&#x6BD5;</span>
+</code></pre>
+<h3 id="&#x987A;&#x5E8F;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;"><a name="&#x987A;&#x5E8F;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x987A;&#x5E8F;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. &#x987A;&#x5E8F;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</h3>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5B9A;&#x4E49; 3 &#x4E2A;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4ED6;&#x4EEC;&#x90FD;&#x4F1A;&#x5728;&#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#x6253;&#x5370;&#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#x4FE1;&#x606F;&#xFF0C;&#x7B49;&#x5F85;&#x4E00;&#x79D2;&#x4E4B;&#x540E;&#x518D;&#x6253;&#x5370;&#x4EFB;&#x52A1;&#x7ED3;&#x675F;&#x4FE1;&#x606F;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">task1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Task1 &#x5F00;&#x59CB;&apos;</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Task1 &#x7ED3;&#x675F;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">task2</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Task2 &#x5F00;&#x59CB;&apos;</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Task2 &#x7ED3;&#x675F;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">task3</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Task3 &#x5F00;&#x59CB;&apos;</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Task3 &#x7ED3;&#x675F;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6309;&#x987A;&#x5E8F;&#x4F9D;&#x6B21;&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x4EFB;&#x52A1;&#xFF0C;&#x6839;&#x636E;&#x524D;&#x9762;&#x6240;&#x5B66;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528; await &#x8868;&#x8FBE;&#x5F0F;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">task1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">task2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">task3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// Task1 &#x5F00;&#x59CB;</span>
+<span class="token comment">// ... &#xFF08;&#x7B49;&#x5F85; 1s&#xFF09;</span>
+<span class="token comment">// Task1 &#x7ED3;&#x675F;</span>
+<span class="token comment">// Task2 &#x5F00;&#x59CB;</span>
+<span class="token comment">// ... &#xFF08;&#x7B49;&#x5F85; 1s&#xFF09;</span>
+<span class="token comment">// Task2 &#x7ED3;&#x675F;</span>
+<span class="token comment">// Task3 &#x5F00;&#x59CB;</span>
+<span class="token comment">// ... &#xFF08;&#x7B49;&#x5F85; 1s&#xFF09;</span>
+<span class="token comment">// Task3 &#x7ED3;&#x675F;</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; for &#x5FAA;&#x73AF;&#x6765;&#x7B80;&#x5316;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5C55;&#x793A;&#x4E86;&#x4F7F;&#x7528; for &#x5FAA;&#x73AF;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528; for...of &#x6216;&#x8005; while &#x7B49;&#x5FAA;&#x73AF;&#x8BED;&#x53E5;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> tasks <span class="token operator">=</span> <span class="token punctuation">[</span>task1<span class="token punctuation">,</span> task2<span class="token punctuation">,</span> task3<span class="token punctuation">]</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> tasks<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> tasks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x91CC;&#x7684; for &#x5FAA;&#x73AF;&#x65E0;&#x6CD5;&#x7528; forEach &#x4EE3;&#x66FF;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A; forEach &#x53EA;&#x4F1A;&#x540C;&#x6B65;&#x6267;&#x884C;&#x5B83;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D7;&#x5230; await &#x7684;&#x963B;&#x585E;&#x5F71;&#x54CD;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">tasks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter">task</span> <span class="token operator">=&gt;</span> <span class="token keyword">await</span> <span class="token function">task</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> task <span class="token keyword">of</span> tasks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">task</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x5E76;&#x53D1;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;"><a name="&#x5E76;&#x53D1;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x5E76;&#x53D1;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. &#x5E76;&#x53D1;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</h3>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8FD9;&#x4E9B;&#x4EFB;&#x52A1;&#x5E76;&#x884C;&#x6267;&#x884C;&#xFF0C;&#x90A3;&#x4E48;&#x4E0D;&#x4F7F;&#x7528; await &#x8868;&#x8FBE;&#x5F0F;&#x5C31;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">task1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">task2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">task3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// Task1 &#x5F00;&#x59CB;</span>
+<span class="token comment">// Task2 &#x5F00;&#x59CB;</span>
+<span class="token comment">// Task3 &#x5F00;&#x59CB;</span>
+
+<span class="token comment">// ... &#xFF08;&#x7B49;&#x5F85; 1s&#xFF09;</span>
+
+<span class="token comment">// Task1 &#x7ED3;&#x675F;</span>
+<span class="token comment">// Task2 &#x7ED3;&#x675F;</span>
+<span class="token comment">// Task3 &#x7ED3;&#x675F;</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; for/while/forEach &#x7B49;&#x7B49;&#x5404;&#x79CD;&#x5FAA;&#x73AF;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x7B80;&#x5316;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> tasks <span class="token operator">=</span> <span class="token punctuation">[</span>task1<span class="token punctuation">,</span> task2<span class="token punctuation">,</span> task3<span class="token punctuation">]</span>
+  tasks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">task</span> <span class="token operator">=&gt;</span> <span class="token function">task</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x5168;&#x90E8;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x53BB;&#x6267;&#x884C;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x7ED3;&#x5408; Promise.all &#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token function">task1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">task2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">task3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x4EFB;&#x52A1;&#x5168;&#x90E8;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// Task1 &#x5F00;&#x59CB;</span>
+<span class="token comment">// Task2 &#x5F00;&#x59CB;</span>
+<span class="token comment">// Task3 &#x5F00;&#x59CB;</span>
+
+<span class="token comment">// ... &#x7B49;&#x5F85; 1s</span>
+
+<span class="token comment">// Task1 &#x7ED3;&#x675F;</span>
+<span class="token comment">// Task2 &#x7ED3;&#x675F;</span>
+<span class="token comment">// Task3 &#x7ED3;&#x675F;</span>
+<span class="token comment">// &#x4EFB;&#x52A1;&#x5168;&#x90E8;&#x6267;&#x884C;&#x5B8C;&#x6BD5;</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528; <code>Array.map</code> &#x6765;&#x7B80;&#x5316;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> tasks <span class="token operator">=</span> <span class="token punctuation">[</span>task1<span class="token punctuation">,</span> task2<span class="token punctuation">,</span> task3<span class="token punctuation">]</span>
+  <span class="token keyword">const</span> promises <span class="token operator">=</span> tasks<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">task</span> <span class="token operator">=&gt;</span> <span class="token function">task</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>promises<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x4EFB;&#x52A1;&#x5168;&#x90E8;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9;2019 <a href="https://github.com/lavas-project" target="_blank">&#x767E;&#x5EA6; Web &#x751F;&#x6001;&#x56E2;&#x961F;</a> <br>   <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;"></a> &#x672C;&#x4E66;&#x91C7;&#x7528; <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x56FD;&#x9645;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a> &#x8FDB;&#x884C;&#x8BB8;&#x53EF;&#x3002;<br>    &#x672C;&#x4E66;&#x4ECD;&#x5728;&#x52D8;&#x8BEF;&#x9636;&#x6BB5;&#xFF0C;&#x8BF7;&#x52FF;&#x4EE5;&#x4EFB;&#x4F55;&#x5F62;&#x5F0F;&#x79C1;&#x81EA;&#x4F20;&#x64AD;&#xFF0C;&#x6211;&#x4EEC;&#x4FDD;&#x7559;&#x5BF9;&#x672C;&#x4E66;&#x7684;&#x7248;&#x6743; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-05-17 16:26:29 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-promise.html" class="navigation navigation-prev " aria-label="Previous page: 3.1 Promise">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3-fetch-api.html" class="navigation navigation-next " aria-label="Next page: 3.3 Fetch API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.2 Async 函数","level":"1.4.2","depth":2,"next":{"title":"3.3 Fetch API","level":"1.4.3","depth":2,"path":"chapter03/3-fetch-api.md","ref":"chapter03/3-fetch-api.md","articles":[]},"previous":{"title":"3.1 Promise","level":"1.4.1","depth":2,"path":"chapter03/1-promise.md","ref":"chapter03/1-promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-livereload","simple-page-toc","prism","prism-themes","-highlight","advanced-emoji","include-codeblock","-sharing","sharing-plus","ace","emphasize","splitter","page-footer-ex","expandable-chapters-small","sectionx","local-video","anchor-navigation-ex","favicon","todo","3-ba","chart","github"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"emphasize":{},"ace":{},"github":{"url":"https://github.com/lavas-project/pwa-book"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"page-footer-ex":{"copyright":"Copyright ©2019 [百度 Web 生态团队](https://github.com/lavas-project) <br/>   [![知识共享许可协议](https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/) 本书采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-nd/4.0/) 进行许可。<br/>    本书仍在勘误阶段，请勿以任何形式私自传播，我们保留对本书的版权","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"该文件修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"isRewritePageTitle":false,"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"3-ba":{"configuration":"auto","token":"xxxxxxxx"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"lavas <lavas@baidu.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PWA 应用实战","language":"zh-hans","gitbook":"3.2.3","description":"PWA 开发实战"},"file":{"path":"chapter03/2-async-function.md","mtime":"2019-05-17T08:26:29.436Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-22T11:11:24.851Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

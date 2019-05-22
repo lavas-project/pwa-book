@@ -1,0 +1,1186 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.4 Service Worker 调试 · PWA 应用实战</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lavas <lavas@baidu.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../chapter05.html" />
+    
+    
+    <link rel="prev" href="3-service-worker-dive.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    HOME
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter01.html">
+            
+                <a href="../chapter01.html">
+            
+                    
+                    第1章 PWA 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter01/1-how-was-pwa-born.html">
+            
+                <a href="../chapter01/1-how-was-pwa-born.html">
+            
+                    
+                    1.1 为什么会出现 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter01/2-what-is-pwa.html">
+            
+                <a href="../chapter01/2-what-is-pwa.html">
+            
+                    
+                    1.2 什么是 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter01/3-what-are-key-techs.html">
+            
+                <a href="../chapter01/3-what-are-key-techs.html">
+            
+                    
+                    1.3 PWA 的核心技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter01/4-how-is-pwa-going.html">
+            
+                <a href="../chapter01/4-how-is-pwa-going.html">
+            
+                    
+                    1.4 PWA 的发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../chapter01/5-the-future-of-pwa.html">
+            
+                <a href="../chapter01/5-the-future-of-pwa.html">
+            
+                    
+                    1.5 PWA 的未来
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../chapter01/6-your-first-pwa.html">
+            
+                <a href="../chapter01/6-your-first-pwa.html">
+            
+                    
+                    1.6 你的第一个 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter02.html">
+            
+                <a href="../chapter02.html">
+            
+                    
+                    第2章 设计与体验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter02/1-what-is-good-ux.html">
+            
+                <a href="../chapter02/1-what-is-good-ux.html">
+            
+                    
+                    2.1 什么是好的用户体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter02/2-design-and-tech.html">
+            
+                <a href="../chapter02/2-design-and-tech.html">
+            
+                    
+                    2.2 设计与技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chapter02/3-app-shell.html">
+            
+                <a href="../chapter02/3-app-shell.html">
+            
+                    
+                    2.3 App Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../chapter02/4-app-skeleton.html">
+            
+                <a href="../chapter02/4-app-skeleton.html">
+            
+                    
+                    2.4 骨架屏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../chapter02/5-responsive-design.html">
+            
+                <a href="../chapter02/5-responsive-design.html">
+            
+                    
+                    2.5 响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter03.html">
+            
+                <a href="../chapter03.html">
+            
+                    
+                    第3章 基础技术简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter03/1-promise.html">
+            
+                <a href="../chapter03/1-promise.html">
+            
+                    
+                    3.1 Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter03/2-async-function.html">
+            
+                <a href="../chapter03/2-async-function.html">
+            
+                    
+                    3.2 Async 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../chapter03/3-fetch-api.html">
+            
+                <a href="../chapter03/3-fetch-api.html">
+            
+                    
+                    3.3 Fetch API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../chapter03/4-cache-api.html">
+            
+                <a href="../chapter03/4-cache-api.html">
+            
+                    
+                    3.4 Cache API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../chapter03/5-indexeddb.html">
+            
+                <a href="../chapter03/5-indexeddb.html">
+            
+                    
+                    3.5 IndexedDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter04.html">
+            
+                <a href="../chapter04.html">
+            
+                    
+                    第4章 Service Worker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="1-service-worker-introduction.html">
+            
+                <a href="1-service-worker-introduction.html">
+            
+                    
+                    4.1 Service Worker 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="2-service-worker-register.html">
+            
+                <a href="2-service-worker-register.html">
+            
+                    
+                    4.2 Service Worker 注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="3-service-worker-dive.html">
+            
+                <a href="3-service-worker-dive.html">
+            
+                    
+                    4.3 Service Worker 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="4-service-worker-debug.html">
+            
+                <a href="4-service-worker-debug.html">
+            
+                    
+                    4.4 Service Worker 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter05.html">
+            
+                <a href="../chapter05.html">
+            
+                    
+                    第5章 离线与缓存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chapter05/1-fetch-event-management.html">
+            
+                <a href="../chapter05/1-fetch-event-management.html">
+            
+                    
+                    5.1 资源请求的拦截代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chapter05/2-local-storage-management.html">
+            
+                <a href="../chapter05/2-local-storage-management.html">
+            
+                    
+                    5.2 本地存储管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../chapter05/3-respond-strategy.html">
+            
+                <a href="../chapter05/3-respond-strategy.html">
+            
+                    
+                    5.3 资源请求响应策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../chapter05/4-precache.html">
+            
+                <a href="../chapter05/4-precache.html">
+            
+                    
+                    5.4 预缓存方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../chapter05/5-workbox.html">
+            
+                <a href="../chapter05/5-workbox.html">
+            
+                    
+                    5.5 使用 Workbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chapter06.html">
+            
+                <a href="../chapter06.html">
+            
+                    
+                    第6章 用户留存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter06/1-manifest-json.html">
+            
+                <a href="../chapter06/1-manifest-json.html">
+            
+                    
+                    6.1 Web 应用清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chapter06/2-credentials-api.html">
+            
+                <a href="../chapter06/2-credentials-api.html">
+            
+                    
+                    6.2 凭证管理 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../chapter06/3-notification-api.html">
+            
+                <a href="../chapter06/3-notification-api.html">
+            
+                    
+                    6.3 桌面通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../chapter06/4-web-push-api.html">
+            
+                <a href="../chapter06/4-web-push-api.html">
+            
+                    
+                    6.4 网络推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../chapter06/5-payment-request-api.html">
+            
+                <a href="../chapter06/5-payment-request-api.html">
+            
+                    
+                    6.5 Payment Request API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chapter07.html">
+            
+                <a href="../chapter07.html">
+            
+                    
+                    第7章 安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chapter07/1-https.html">
+            
+                <a href="../chapter07/1-https.html">
+            
+                    
+                    7.1 使用 HTTPS 保护站点安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chapter07/2-CSP.html">
+            
+                <a href="../chapter07/2-CSP.html">
+            
+                    
+                    7.2 内容安全策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../chapter07/3-policy.html">
+            
+                <a href="../chapter07/3-policy.html">
+            
+                    
+                    7.3 同源策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../chapter07/4-vulnerability.html">
+            
+                <a href="../chapter07/4-vulnerability.html">
+            
+                    
+                    7.4 典型的安全漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../chapter08.html">
+            
+                <a href="../chapter08.html">
+            
+                    
+                    第8章 性能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../chapter08/1-loading-performance.html">
+            
+                <a href="../chapter08/1-loading-performance.html">
+            
+                    
+                    8.1 加载性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../chapter08/2-rendering-performance.html">
+            
+                <a href="../chapter08/2-rendering-performance.html">
+            
+                    
+                    8.2 渲染性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../chapter09.html">
+            
+                <a href="../chapter09.html">
+            
+                    
+                    第9章 PWA 与搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../chapter09/1-search-engine-index.html">
+            
+                <a href="../chapter09/1-search-engine-index.html">
+            
+                    
+                    9.1 搜索引擎收录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../chapter09/2-pwa-and-amp-and-mip.html">
+            
+                <a href="../chapter09/2-pwa-and-amp-and-mip.html">
+            
+                    
+                    9.2 PWA 与 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../chapter09/3-whole-site-amp-and-mip.html">
+            
+                <a href="../chapter09/3-whole-site-amp-and-mip.html">
+            
+                    
+                    9.3 全站 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../chapter09/4-preload-pwa.html">
+            
+                <a href="../chapter09/4-preload-pwa.html">
+            
+                    
+                    9.4 AMP/MIP 预加载 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../appendix01.html">
+            
+                <a href="../appendix01.html">
+            
+                    
+                    附录1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../appendix01/1-lighthouse.html">
+            
+                <a href="../appendix01/1-lighthouse.html">
+            
+                    
+                    1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../appendix01/2-lighthouse-score-guide.html">
+            
+                <a href="../appendix01/2-lighthouse-score-guide.html">
+            
+                    
+                    2 Lighthouse 评分指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../appendix01/3-lighthouse-case.html">
+            
+                <a href="../appendix01/3-lighthouse-case.html">
+            
+                    
+                    3 Lighthouse 使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    感谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.4 Service Worker 调试</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#service-worker-&#x8C03;&#x8BD5;"><b>1. </b>Service Worker &#x8C03;&#x8BD5;</a></li><ul><li><span class="title-icon "></span><a href="#debug-&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x5F00;&#x53D1;&#x8DF3;&#x8FC7;&#x7B49;&#x5F85;&#x72B6;&#x6001;"><b>1.1. </b>debug &#x73AF;&#x5883;&#x4E0B;&#x7684;&#x5F00;&#x53D1;&#x8DF3;&#x8FC7;&#x7B49;&#x5F85;&#x72B6;&#x6001;</a></li><li><span class="title-icon "></span><a href="#&#x501F;&#x52A9;-chrome-devtool-&#x8FDB;&#x884C;&#x8C03;&#x8BD5;"><b>1.2. </b>&#x501F;&#x52A9; Chrome Devtool &#x8FDB;&#x884C;&#x8C03;&#x8BD5;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;&#x770B;-service-worker-&#x7F13;&#x5B58;&#x5185;&#x5BB9;"><b>1.3. </b>&#x67E5;&#x770B; Service Worker &#x7F13;&#x5B58;&#x5185;&#x5BB9;</a></li><li><span class="title-icon "></span><a href="#&#x7F51;&#x7EDC;&#x8DDF;&#x8E2A;"><b>1.4. </b>&#x7F51;&#x7EDC;&#x8DDF;&#x8E2A;</a></li><li><span class="title-icon "></span><a href="#&#x771F;&#x673A;&#x8C03;&#x8BD5;"><b>1.5. </b>&#x771F;&#x673A;&#x8C03;&#x8BD5;</a></li><ul><li><span class="title-icon "></span><a href="#android-inspect-&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;"><b>1.5.1. </b>Android inspect &#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;</a></li><li><span class="title-icon "></span><a href="#ios-&#x8FDC;&#x7A0B;&#x771F;&#x673A;&#x8C03;&#x8BD5;"><b>1.5.2. </b>iOS &#x8FDC;&#x7A0B;&#x771F;&#x673A;&#x8C03;&#x8BD5;</a></li></ul></ul></ul></div><a href="#service-worker-&#x8C03;&#x8BD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="service-worker-&#x8C03;&#x8BD5;"><a name="service-worker-&#x8C03;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#service-worker-&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Service Worker &#x8C03;&#x8BD5;</h1>
+<p>&#x5728;&#x5F00;&#x53D1; Service Worker &#x6587;&#x4EF6;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x4F55;&#x8C03;&#x8BD5;&#x5462;&#xFF1F;&#x600E;&#x4E48;&#x624D;&#x80FD;&#x786E;&#x4FDD;&#x7EBF;&#x4E0B;&#x5F00;&#x53D1;&#x7684; Service Worker &#x6587;&#x4EF6;&#x5728;&#x7ECF;&#x8FC7;&#x6CE8;&#x518C;&#x540E;&#x5230;&#x7EBF;&#x4E0A;&#x53BB;&#x8FD0;&#x884C;&#x662F;&#x7B26;&#x5408;&#x9884;&#x671F;&#x7684;&#x5462;&#xFF1F;&#x5728;&#x8FD9;&#x5C0F;&#x8282;&#x4E2D;&#x5C06;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x8C03;&#x8BD5; Service Worker&#x3002;</p>
+<p>Service Worker &#x4F5C;&#x4E3A;&#x72EC;&#x7ACB;&#x4E8E;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x72EC;&#x7ACB;&#x7EBF;&#x7A0B;&#xFF0C;&#x5728;&#x8C03;&#x8BD5;&#x65B9;&#x9762;&#x5176;&#x5B9E;&#x548C;&#x5E38;&#x89C4;&#x7684; JavaScript &#x5F00;&#x53D1;&#x7C7B;&#x4F3C;&#xFF0C;&#x901A;&#x5E38;&#x5F00;&#x53D1;&#x8005;&#x5173;&#x6CE8;&#x7684;&#x70B9;&#x5927;&#x6982;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>Service Worker &#x6587;&#x4EF6; JavaScript &#x4EE3;&#x7801;&#x662F;&#x5426;&#x6709;&#x62A5;&#x9519;&#x3002;</li>
+<li>Service Worker &#x80FD;&#x5426;&#x987A;&#x5229;&#x5B89;&#x88C5;&#x3001;&#x6FC0;&#x6D3B;&#x6216;&#x8005;&#x66F4;&#x65B0;&#x3002;</li>
+<li>&#x5728;&#x4E0D;&#x540C;&#x673A;&#x578B;&#x4E0A;&#x7684;&#x517C;&#x5BB9;&#x6027;&#x662F;&#x4E0D;&#x662F;&#x6709;&#x95EE;&#x9898;&#x3002;</li>
+<li>&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x8D44;&#x6E90;&#x548C;&#x8BF7;&#x6C42;&#x7684;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x7684;&#x9A8C;&#x8BC1;&#x3002;</li>
+</ul>
+<h2 id="debug-&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x5F00;&#x53D1;&#x8DF3;&#x8FC7;&#x7B49;&#x5F85;&#x72B6;&#x6001;"><a name="debug-&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x5F00;&#x53D1;&#x8DF3;&#x8FC7;&#x7B49;&#x5F85;&#x72B6;&#x6001;" class="anchor-navigation-ex-anchor" href="#debug-&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x5F00;&#x53D1;&#x8DF3;&#x8FC7;&#x7B49;&#x5F85;&#x72B6;&#x6001;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. debug &#x73AF;&#x5883;&#x4E0B;&#x7684;&#x5F00;&#x53D1;&#x8DF3;&#x8FC7;&#x7B49;&#x5F85;&#x72B6;&#x6001;</h2>
+<p>&#x6839;&#x636E; Service Worker &#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x6D4F;&#x89C8;&#x5668;&#x8FD8;&#x5728;&#x4F7F;&#x7528;&#x65E7;&#x7684; Service Worker &#x7248;&#x672C;&#xFF0C;&#x5373;&#x4F7F;&#x6709; Service Worker &#x65B0;&#x7684;&#x7248;&#x672C;&#x4E5F;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x6FC0;&#x6D3B;&#xFF0C;&#x53EA;&#x80FD;&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x5E76;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x76F4;&#x5230;&#x6D4F;&#x89C8;&#x5668; Tab &#x6807;&#x7B7E;&#x88AB;&#x91CD;&#x65B0;&#x5173;&#x95ED;&#x6253;&#x5F00;&#x3002;</p>
+<p>&#x5728;&#x5F00;&#x53D1;&#x8C03;&#x8BD5; Service Worker &#x65F6;&#xFF0C;&#x80AF;&#x5B9A;&#x5E0C;&#x671B;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x540E;&#x7ACB;&#x5373;&#x6FC0;&#x6D3B;&#xFF0C;&#x901A;&#x5E38;&#x5F00;&#x53D1;&#x8005;&#x4E0D;&#x5E0C;&#x671B;&#x6BCF;&#x6B21;&#x90FD;&#x91CD;&#x65B0;&#x6253;&#x5F00;&#x5F53;&#x524D;&#x9875;&#x9762;&#x8C03;&#x8BD5;&#xFF0C;&#x4E3A;&#x6B64;&#x53EF;&#x4EE5;&#x5728; <code>install</code> &#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x901A;&#x8FC7; <code>skipWaiting()</code> &#x6765;&#x8DF3;&#x8FC7; Service Worker &#x7684; waiting &#x72B6;&#x6001;&#x3002;&#x8FD9;&#x6837;&#x6BCF;&#x6B21; Service Worker &#x5B89;&#x88C5;&#x540E;&#x5C31;&#x4F1A;&#x88AB;&#x7ACB;&#x5373;&#x6FC0;&#x6D3B;&#xFF0C;&#x901A;&#x5E38;&#x5728; <code>sw.js</code> &#x4E2D;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;install&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">ENV</span> <span class="token operator">===</span> <span class="token string">&apos;development&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span><span class="token function">skipWaiting</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="&#x501F;&#x52A9;-chrome-devtool-&#x8FDB;&#x884C;&#x8C03;&#x8BD5;"><a name="&#x501F;&#x52A9;-chrome-devtool-&#x8FDB;&#x884C;&#x8C03;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x501F;&#x52A9;-chrome-devtool-&#x8FDB;&#x884C;&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x501F;&#x52A9; Chrome Devtool &#x8FDB;&#x884C;&#x8C03;&#x8BD5;</h2>
+<p>&#x4F7F;&#x7528; Chrome &#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FDB;&#x5165;&#x63A7;&#x5236;&#x53F0; <code>Application -&gt; Service Workers</code> &#x9762;&#x677F;&#x67E5;&#x770B;&#x548C;&#x8C03;&#x8BD5;&#x3002;&#x5176;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE; 4-16 &#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="img/chrome_debug.png" alt="&#x56FE; 4-16 Chrome Devtools Service Worker &#x8C03;&#x8BD5;&#x9762;&#x677F;"></p>
+<p>&#x5982;&#x679C; Service Worker &#x7EBF;&#x7A0B;&#x5DF2;&#x5B89;&#x88C5;&#x5230;&#x5F53;&#x524D;&#x6253;&#x5F00;&#x7684;&#x9875;&#x9762;&#x4E0A;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x770B;&#x5230;&#x5B83;&#x5C06;&#x5217;&#x793A;&#x5728;&#x6B64;&#x7A97;&#x683C;&#x4E2D;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x5728;&#x4E0A;&#x56FE; 4-16 &#x4E2D;&#xFF0C;&#x5C55;&#x793A;&#x7684;&#x662F;&#x5728; <code>https://lavas-project.github.io/lavas-demo/news-v2/#/</code> &#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x5B89;&#x88C5;&#x4E86;&#x4E00;&#x4E2A; Service Worker &#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x66F4;&#x719F;&#x7EC3;&#x7684;&#x8FD0;&#x7528; Chrome Devtools &#x8C03;&#x8BD5; Service Worker&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;&#x719F;&#x6089;&#x4EE5;&#x4E0B;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#xFF1A;</p>
+<ul>
+<li><p><strong>Offline</strong>&#xFF1A; &#x590D;&#x9009;&#x6846;&#x53EF;&#x4EE5;&#x5C06; DevTools &#x5207;&#x6362;&#x81F3;&#x79BB;&#x7EBF;&#x6A21;&#x5F0F;&#x3002;&#x5B83;&#x7B49;&#x540C;&#x4E8E; Network &#x7A97;&#x683C;&#x4E2D;&#x7684;&#x79BB;&#x7EBF;&#x6A21;&#x5F0F;&#x3002;</p>
+</li>
+<li><p><strong>Update on reload</strong>&#xFF1A;&#x590D;&#x9009;&#x6846;&#x53EF;&#x4EE5;&#x5F3A;&#x5236; Service Worker &#x7EBF;&#x7A0B;&#x5728;&#x6BCF;&#x6B21;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x65F6;&#x66F4;&#x65B0;&#x3002;</p>
+</li>
+<li><p><strong>Bypass for network</strong>&#xFF1A;&#x590D;&#x9009;&#x6846;&#x53EF;&#x4EE5;&#x7ED5;&#x8FC7; Service Worker &#x7EBF;&#x7A0B;&#x5E76;&#x5F3A;&#x5236;&#x6D4F;&#x89C8;&#x5668;&#x8F6C;&#x81F3;&#x7F51;&#x7EDC;&#x5BFB;&#x627E;&#x8BF7;&#x6C42;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+</li>
+<li><p><strong>Update</strong>&#xFF1A;&#x6309;&#x94AE;&#x53EF;&#x4EE5;&#x5BF9;&#x6307;&#x5B9A;&#x7684; Service Worker &#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x6027;&#x66F4;&#x65B0;&#x3002;</p>
+</li>
+<li><p><strong>Push</strong>&#xFF1A;&#x6309;&#x94AE;&#x53EF;&#x4EE5;&#x5728;&#x6CA1;&#x6709;&#x8D1F;&#x8F7D;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6A21;&#x62DF;&#x63A8;&#x9001;&#x901A;&#x77E5;&#x3002;</p>
+</li>
+<li><p><strong>Sync</strong>&#xFF1A;&#x6309;&#x94AE;&#x53EF;&#x4EE5;&#x6A21;&#x62DF;&#x540E;&#x53F0;&#x540C;&#x6B65;&#x4E8B;&#x4EF6;&#x3002;</p>
+</li>
+<li><p><strong>Unregister</strong>&#xFF1A;&#x6309;&#x94AE;&#x53EF;&#x4EE5;&#x6CE8;&#x9500;&#x6307;&#x5B9A;&#x7684; Service Worker &#x7EBF;&#x7A0B;&#x3002;</p>
+</li>
+<li><p><strong>Source</strong>&#xFF1A;&#x544A;&#x8BC9;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684; Service Worker &#x7EBF;&#x7A0B;&#x7684;&#x5B89;&#x88C5;&#x65F6;&#x95F4;&#xFF0C;&#x94FE;&#x63A5;&#x662F; Service Worker &#x7EBF;&#x7A0B;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;&#x70B9;&#x51FB;&#x94FE;&#x63A5;&#x4F1A;&#x5C06;&#x5B9A;&#x5411;&#x5E76;&#x8DF3;&#x8F6C;&#x81F3; Service Worker &#x7EBF;&#x7A0B;&#x6765;&#x6E90;&#x3002;</p>
+</li>
+<li><p><strong>Status</strong>&#xFF1A;&#x544A;&#x8BC9; Service Worker &#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x3002;&#x6B64;&#x884C;&#x4E0A;&#x7684;&#x6570;&#x5B57;&#x6307;&#x793A; Service Worker &#x7EBF;&#x7A0B;&#x5DF2;&#x88AB;&#x66F4;&#x65B0;&#x7684;&#x6B21;&#x6570;&#x3002;&#x5982;&#x679C;&#x542F;&#x7528; <code>update on reload</code> &#x590D;&#x9009;&#x6846;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x6CE8;&#x610F;&#x5230;&#x6BCF;&#x6B21;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x65F6;&#x6B64;&#x6570;&#x5B57;&#x90FD;&#x4F1A;&#x589E;&#x5927;&#x3002;&#x5728;&#x72B6;&#x6001;&#x65C1;&#x8FB9;&#x4F1A;&#x770B;&#x5230; <code>start</code> &#x6309;&#x94AE;&#xFF08;&#x5982;&#x679C; Service Worker &#x7EBF;&#x7A0B;&#x5DF2;&#x505C;&#x6B62;&#xFF09;&#x6216; <code>stop</code> &#x6309;&#x94AE;&#xFF08;&#x5982;&#x679C; Service Worker &#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#xFF09;&#x3002;Service Worker &#x7EBF;&#x7A0B;&#x8BBE;&#x8BA1;&#x4E3A;&#x53EF;&#x7531;&#x6D4F;&#x89C8;&#x5668;&#x968F;&#x65F6;&#x505C;&#x6B62;&#x548C;&#x542F;&#x52A8;&#x3002; &#x4F7F;&#x7528; stop &#x6309;&#x94AE;&#x660E;&#x786E;&#x505C;&#x6B62; Service Worker &#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x6A21;&#x62DF;&#x8FD9;&#x4E00;&#x70B9;&#x3002;&#x505C;&#x6B62; Service Worker &#x7EBF;&#x7A0B;&#x662F;&#x6D4B;&#x8BD5; Service Worker &#x7EBF;&#x7A0B;&#x518D;&#x6B21;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x65F6;&#x7684;&#x4EE3;&#x7801;&#x884C;&#x4E3A;&#x65B9;&#x5F0F;&#x7684;&#x7EDD;&#x4F73;&#x65B9;&#x6CD5;&#x3002;&#x5B83;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x63ED;&#x793A;&#x7531;&#x4E8E;&#x5BF9;&#x6301;&#x7EED;&#x5168;&#x5C40;&#x72B6;&#x6001;&#x7684;&#x4E0D;&#x5B8C;&#x5584;&#x5047;&#x8BBE;&#x800C;&#x5F15;&#x53D1;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+<li><p><strong>Clients</strong>&#xFF1A;&#x544A;&#x8BC9; Service Worker &#x7EBF;&#x7A0B;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x539F;&#x70B9;&#x3002;&#x5982;&#x679C;&#x5DF2;&#x542F;&#x7528; <code>show all</code> &#x590D;&#x9009;&#x6846;&#xFF0C;<code>focus</code> &#x6309;&#x94AE;&#x5C06;&#x975E;&#x5E38;&#x5B9E;&#x7528;&#x3002; &#x5728;&#x6B64;&#x590D;&#x9009;&#x6846;&#x542F;&#x7528;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5217;&#x51FA;&#x6240;&#x6709;&#x6CE8;&#x518C;&#x7684; Service Worker &#x7EBF;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x65F6;&#x5019;&#x70B9;&#x51FB;&#x6B63;&#x5728;&#x4E0D;&#x540C;&#x6807;&#x7B7E;&#x4E2D;&#x8FD0;&#x884C;&#x7684; Service Worker &#x7EBF;&#x7A0B;&#x65C1;&#x7684; <code>focus</code> &#x6309;&#x94AE;&#xFF0C;Chrome &#x4F1A;&#x805A;&#x7126;&#x5230;&#x8BE5;&#x6807;&#x7B7E;&#x3002;</p>
+</li>
+</ul>
+<p>&#x5982;&#x679C; Service Worker &#x6587;&#x4EF6;&#x5728;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x4EFB;&#x4F55;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5C06;&#x663E;&#x793A;&#x4E00;&#x4E2A; <code>Error</code> &#x65B0;&#x6807;&#x7B7E;&#xFF0C;&#x5982;&#x4E0B;&#x56FE; 4-17 &#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/chrome_debug_error.png" alt="&#x56FE; 4-17 Chrome Devtools &#x4E2D;&#x7684; Service Worker &#x62A5;&#x9519;&#x4FE1;&#x606F;"></p>
+<p>&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE; <code>Chrome://serviceworker-internals</code> &#x6765;&#x6253;&#x5F00; serviceWorker &#x7684;&#x914D;&#x7F6E;&#x9762;&#x677F;&#xFF0C;&#x67E5;&#x770B;&#x6240;&#x6709;&#x6CE8;&#x518C;&#x7684; Service Worker &#x60C5;&#x51B5;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;
+&#x5982;&#x65E0;&#x5FC5;&#x8981;&#xFF0C;&#x4E0D;&#x8981;&#x9009;&#x4E2D;&#x9876;&#x90E8;&#x7684; <code>Open DevTools window and pause javaScript execution on Service Worker startup for debugging</code> &#x590D;&#x9009;&#x6846;&#xFF0C;&#x5426;&#x5219;&#x6BCF;&#x5F53;&#x5237;&#x65B0;&#x9875;&#x9762;&#x8C03;&#x8BD5;&#x65F6;&#x90FD;&#x4F1A;&#x5F39;&#x51FA;&#x4E00;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#x7A97;&#x53E3;&#x6765;&#x3002;</p>
+</blockquote>
+<p>&#x5728; Firefox &#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>Tools -&gt; Web Developer -&gt; Service Workers</code> &#x6253;&#x5F00;&#x8C03;&#x8BD5;&#x9762;&#x677F;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; <code>about:debugging#workers</code> &#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8BE5;&#x9762;&#x677F;&#x3002;</p>
+<h2 id="&#x67E5;&#x770B;-service-worker-&#x7F13;&#x5B58;&#x5185;&#x5BB9;"><a name="&#x67E5;&#x770B;-service-worker-&#x7F13;&#x5B58;&#x5185;&#x5BB9;" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x770B;-service-worker-&#x7F13;&#x5B58;&#x5185;&#x5BB9;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x67E5;&#x770B; Service Worker &#x7F13;&#x5B58;&#x5185;&#x5BB9;</h2>
+<p>&#x901A;&#x8FC7;&#x524D;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x5DF2;&#x7ECF;&#x4E86;&#x89E3;&#x8FC7;&#xFF0C;Service Worker &#x4F7F;&#x7528; Cache API &#x8FDB;&#x884C;&#x7F13;&#x5B58;&#x7684;&#x8BFB;&#x5199;&#xFF0C;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x5728; Chrome DevTools &#x4E0A;&#x67E5;&#x770B;&#x7F13;&#x5B58;&#x7684;&#x8D44;&#x6E90;&#x5217;&#x8868;&#x3002;</p>
+<p>Cache Storage &#x9009;&#x9879;&#x5361;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5DF2;&#x4F7F;&#x7528;&#xFF08;Service Worker &#x7EBF;&#x7A0B;&#xFF09;Cache API &#x7F13;&#x5B58;&#x7684;&#x53EA;&#x8BFB;&#x8D44;&#x6E90;&#x5217;&#x8868;&#xFF0C;&#x5982;&#x4E0B;&#x56FE; 4-18 &#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/sw_cache.png" alt="&#x56FE; 4-18 Chrome Devtools &#x4E2D;&#x5C55;&#x793A;&#x7684;&#x7F13;&#x5B58;&#x5217;&#x8868;"></p>
+<p>&#x5982;&#x679C;&#x6253;&#x5F00;&#x4E86;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7F13;&#x5B58;&#xFF0C;&#x90A3;&#x5728; Application &#x6807;&#x7B7E;&#x4E0B;&#x7684; Caches &#x9762;&#x677F;&#x5C06;&#x770B;&#x5230;&#x5B83;&#x4EEC;&#x4F1A;&#x9648;&#x5217;&#x5728; Cache Storage &#x4E0B;&#x62C9;&#x83DC;&#x5355;&#x4E0B;&#x65B9;&#xFF0C;&#x5982;&#x4E0B;&#x56FE; 4-19 &#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/multiple_caches.png" alt="&#x56FE; 4-19 Chrome Devtools  &#x4E2D;&#x5C55;&#x793A;&#x591A;&#x4E2A;&#x7F13;&#x5B58;&#x5217;&#x8868;"></p>
+<p>&#x5F53;&#x7136;&#xFF0C;Cache Storage &#x63D0;&#x4F9B;&#x6E05;&#x9664; Cache &#x5217;&#x8868;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x9009;&#x62E9; <code>Cache Storage</code> &#x9009;&#x9879;&#x5361;&#x540E;&#x5728; Cache Storge &#x7F13;&#x5B58;&#x7684; key &#x7684; item &#x4E0A;&#x53F3;&#x952E;&#x70B9;&#x51FB;&#x51FA;&#x73B0; <code>delete</code> &#xFF0C;&#x70B9;&#x51FB; <code>delete</code> &#x5C31;&#x53EF;&#x4EE5;&#x6E05;&#x9664;&#x8BE5;&#x7F13;&#x5B58;&#x4E86;&#xFF0C;&#x5982;&#x4E0B;&#x56FE; 4-20 &#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/clear_caches.png" alt="&#x56FE; 4-20 Chrome Devtools &#x4E2D;&#x6E05;&#x695A;&#x7F13;&#x5B58;&#x5185;&#x5BB9;"></p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9; <code>Clear Storage</code> &#x9009;&#x9879;&#x5361;&#x8FDB;&#x884C;&#x6E05;&#x9664;&#x7F13;&#x5B58;&#x3002;</p>
+<h2 id="&#x7F51;&#x7EDC;&#x8DDF;&#x8E2A;"><a name="&#x7F51;&#x7EDC;&#x8DDF;&#x8E2A;" class="anchor-navigation-ex-anchor" href="#&#x7F51;&#x7EDC;&#x8DDF;&#x8E2A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x7F51;&#x7EDC;&#x8DDF;&#x8E2A;</h2>
+<p>&#x6B64;&#x5916;&#x7ECF;&#x8FC7; Service Worker &#x7684; <code>fetch</code> &#x8BF7;&#x6C42; Chrome &#x90FD;&#x4F1A;&#x5728; Chrome DevTools Network &#x6807;&#x7B7E;&#x9875;&#x91CC;&#x6807;&#x6CE8;&#x51FA;&#x6765;&#xFF0C;&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>&#x6765;&#x81EA; Service Worker &#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x5728; Size &#x5B57;&#x6BB5;&#x4E2D;&#x6807;&#x6CE8;&#x4E3A; <code>from ServiceWorker</code></li>
+<li>Service Worker &#x53D1;&#x51FA;&#x7684;&#x8BF7;&#x6C42;&#x4F1A;&#x5728; Name &#x5B57;&#x6BB5;&#x4E2D;&#x6DFB;&#x52A0; &#x2699;  &#x56FE;&#x6807;&#x3002;</li>
+</ul>
+<p>&#x5982;&#x4E0B;&#x56FE; 4-21 &#x6240;&#x793A;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>300</code> &#x7684;&#x8BF7;&#x6C42;&#x662F;&#x4E00;&#x5F20; jpeg &#x56FE;&#x7247;&#xFF0C; &#x5176; URL &#x4E3A; <code>https://unsplash.it/200/300</code>&#xFF0C;&#x8BE5;&#x8BF7;&#x6C42;&#x662F;&#x7531; Service Worker &#x4EE3;&#x7406;&#x7684;&#xFF0C; &#x56E0;&#x6B64;&#x88AB;&#x6807;&#x6CE8;&#x4E3A; <code>from ServiceWorker</code>&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x54CD;&#x5E94;&#x9875;&#x9762;&#x8BF7;&#x6C42;&#xFF0C;Service Worker &#x4E5F;&#x53D1;&#x51FA;&#x4E86;&#x540D;&#x4E3A; <code>300</code> &#x7684;&#x8BF7;&#x6C42;&#xFF08;&#x8FD9;&#x662F;&#x56FE; 4-21 &#x4E2D;&#x7B2C;&#x4E8C;&#x4E2A;&#x8BF7;&#x6C42;&#xFF09;&#xFF0C;&#x4F46; Service Worker &#x628A; URL &#x6539;&#x6210;&#x4E86; <code>https://unsplash.it/g/200/300</code>&#xFF0C;&#x56E0;&#x6B64;&#x8FD4;&#x56DE;&#x7ED9;&#x9875;&#x9762;&#x7684;&#x56FE;&#x7247;&#x662F;&#x7070;&#x8272;&#x7684;&#x3002;</p>
+<p><img src="img/service_worker_network.png" alt="&#x56FE; 4-21 Service Worker &#x7F51;&#x7EDC;&#x8DDF;&#x8E2A;&#x60C5;&#x51B5;"></p>
+<h2 id="&#x771F;&#x673A;&#x8C03;&#x8BD5;"><a name="&#x771F;&#x673A;&#x8C03;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x771F;&#x673A;&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x771F;&#x673A;&#x8C03;&#x8BD5;</h2>
+<p>&#x7531;&#x4E8E; Service Worker &#x5FC5;&#x987B;&#x8981;&#x5728; HTTPS &#x73AF;&#x5883;&#x4E0B;&#x624D;&#x80FD;&#x88AB;&#x6CE8;&#x518C;&#x6210;&#x529F;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x771F;&#x673A;&#x8C03;&#x8BD5;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x8FD8;&#x9700;&#x8981;&#x89E3;&#x51B3; HTTPS &#x8C03;&#x8BD5;&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x7136; <code>127.0.0.1</code> &#x548C; <code>localhost</code> &#x662F;&#x88AB;&#x5141;&#x8BB8;&#x7684; host&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x771F;&#x673A;&#x8C03;&#x8BD5;&#x4E0A;&#x65E0;&#x6CD5;&#x6307;&#x5B9A;&#x4E3A;&#x5230; PC &#x4E0A;&#x7684;&#x672C;&#x5730;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x771F;&#x673A; debug &#x5FC5;&#x987B;&#x8981;&#x6C42;&#x662F;&#x5DF2;&#x7ECF;&#x90E8;&#x7F72;&#x597D;&#x7684; https PWA &#x7AD9;&#x70B9;&#x3002;</p>
+<h3 id="android-inspect-&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;"><a name="android-inspect-&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#android-inspect-&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.1. Android inspect &#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;</h3>
+<p>&#x5BF9;&#x4E8E; Android &#x8BBE;&#x5907;&#xFF0C;&#x53EF;&#x4EE5;&#x501F;&#x52A9;&#x4E8E; Chrome &#x7684; inspect &#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x8C03;&#x8BD5; PWA&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x51E0;&#x4E2A;&#x4E8B;&#x9879;&#x662F;&#x9700;&#x8981;&#x63D0;&#x524D;&#x51C6;&#x5907;&#x7684;&#xFF1A;</p>
+<ul>
+<li>PC &#x4E0A;&#x5DF2;&#x5B89;&#x88C5; Chrome 32 &#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x3002;</li>
+<li>PC &#x4E0A;&#x5DF2;&#x5B89;&#x88C5; USB &#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF08;&#x5982;&#x679C;&#x4F7F;&#x7528; Windows&#xFF09;&#xFF0C;&#x786E;&#x4FDD;&#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x5668;&#x62A5;&#x544A;&#x6B63;&#x786E;&#x7684; USB &#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x3002;</li>
+<li>&#x4E00;&#x6839;&#x53EF;&#x4EE5;&#x5C06; Android &#x8BBE;&#x5907;&#x8FDE;&#x63A5;&#x81F3;&#x5F00;&#x53D1;&#x8BA1;&#x7B97;&#x673A;&#x7684; USB &#x7EBF;&#x3002;</li>
+<li>&#x4E00;&#x53F0; Android 4.0 &#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x7684; Android &#x8BBE;&#x5907;&#x3002;</li>
+</ul>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#xFF1A;</p>
+<ol>
+<li>&#x5C06; Android &#x8BBE;&#x5907;&#x901A;&#x8FC7; USB &#x7EBF;&#x4E0E; PC &#x8FDE;&#x63A5;&#x3002;</li>
+<li>&#x5728; Android &#x8BBE;&#x5907;&#x4E0A;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x8BBE;&#x7F6E;&#xFF0C;&#x9009;&#x62E9; <code>&#x8BBE;&#x7F6E; &gt; &#x5F00;&#x53D1;&#x8005;&#x9009;&#x9879; &gt; &#x5F00;&#x542F; USB &#x8C03;&#x8BD5;</code>&#x3002;</li>
+<li>&#x5728; PC &#x4E0A;&#x6253;&#x5F00; Chrome&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; Google &#x5E10;&#x6237;&#x767B;&#x5F55;&#x5230; Chrome&#x3002;&#xFF08;&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;&#x5728;&#x9690;&#x8EAB;&#x6A21;&#x5F0F;&#x6216;&#x8BBF;&#x5BA2;&#x6A21;&#x5F0F;&#x4E0B;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;&#xFF09;&#x3002;</li>
+<li>&#x5728; PC &#x7684; Chrome &#x6D4F;&#x89C8;&#x5668;&#x5730;&#x5740;&#x680F;&#x8F93;&#x5165; <code>chrome://inspect</code>&#x3002;</li>
+<li>&#x5728; <code>Remote Target</code> &#x4E0B;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684; Android &#x8BBE;&#x5907;&#x3002;</li>
+<li>&#x70B9;&#x51FB;&#x8FDC;&#x7A0B;&#x8BBE;&#x5907;&#x94FE;&#x63A5;&#x8FDB;&#x5165; Chrome Devtools&#x3002;</li>
+</ol>
+<p>&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#x5C31;&#x53EF;&#x4EE5;&#x5728; Chrome &#x7684; Devtools &#x76F4;&#x63A5;&#x8C03;&#x8BD5;&#x8FD0;&#x884C;&#x5728; Android &#x624B;&#x673A;&#x7AEF; Chrome &#x7684; PWA &#x7AD9;&#x70B9;&#xFF0C;&#x4F53;&#x9A8C;&#x5B8C;&#x5168;&#x548C;&#x5728;&#x672C;&#x5730; PC &#x7535;&#x8111;&#x4E0A; debug &#x4E00;&#x6478;&#x4E00;&#x6837;&#x3002;</p>
+<h3 id="ios-&#x8FDC;&#x7A0B;&#x771F;&#x673A;&#x8C03;&#x8BD5;"><a name="ios-&#x8FDC;&#x7A0B;&#x771F;&#x673A;&#x8C03;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#ios-&#x8FDC;&#x7A0B;&#x771F;&#x673A;&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.2. iOS &#x8FDC;&#x7A0B;&#x771F;&#x673A;&#x8C03;&#x8BD5;</h3>
+<p>&#x5BF9;&#x4E8E; iOS &#x8BBE;&#x5907;&#x8FD0;&#x884C;&#x7684; PWA&#xFF0C;&#x771F;&#x673A; debug &#x6709;&#x70B9;&#x9EBB;&#x70E6;&#xFF0C;&#x597D;&#x5728; Apple Safari &#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x53EF;&#x4EE5;&#x501F;&#x52A9;&#x4E8E; Web Inspector&#xFF08;web &#x68C0;&#x67E5;&#x5668;&#xFF09;&#x673A;&#x5236;&#x6765;&#x5B8C;&#x6210;&#x771F;&#x673A;&#x8C03;&#x8BD5;&#x3002;&#x5728;&#x5F00;&#x59CB;&#x8C03;&#x8BD5;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x51C6;&#x5907;&#x4EE5;&#x4E0B;&#x5DE5;&#x5177;&#xFF1A;</p>
+<ul>
+<li>&#x4E00;&#x53F0; Mac &#x7535;&#x8111;&#x3002;</li>
+<li>&#x4E00;&#x4E2A; icloud &#x8D26;&#x53F7;&#x3002;</li>
+<li>&#x4E00;&#x4E2A; Apple &#x7684;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#xFF08;iPhone&#xFF09;&#x3002;</li>
+<li>&#x7528; iCloud &#x8D26;&#x53F7;&#x767B;&#x9646; Mac &#x548C; iPhone&#x3002;</li>
+<li>&#x5BF9; iPhone &#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF1A;<code>&#x8BBE;&#x7F6E; &gt; Apple ID &#x7528;&#x6237;&#x4E2D;&#x5FC3;&#x5165;&#x53E3; &gt; iCloud &gt; &#x6253;&#x5F00; Safari</code>&#x3002;</li>
+<li>&#x5BF9; iPhone &#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF1A;<code>&#x8BBE;&#x7F6E; &gt; Safari&#x6D4F;&#x89C8;&#x5668; &gt; &#x9AD8;&#x7EA7; &gt; &#x6253;&#x5F00; Web Inspector</code>&#x3002;</li>
+<li>&#x5BF9; Mac &#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF1A;<code>&#xF8FF; &gt; &#x7CFB;&#x7EDF;&#x504F;&#x597D;&#x8BBE;&#x7F6E; &gt; iCloud &gt; &#x52FE;&#x4E0A; Safari</code>&#x3002;</li>
+<li>&#x5BF9; Mac &#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF1A;<code>&#x6253;&#x5F00; Safari &gt; Safari &#x83DC;&#x5355; &gt; &#x504F;&#x597D;&#x8BBE;&#x7F6E; &gt; &#x9AD8;&#x7EA7; &gt; &#x52FE;&#x9009;&#x201C;&#x5728;&#x83DC;&#x5355;&#x680F;&#x4E2D;&#x663E;&#x793A;&#x5F00;&#x53D1;&#x83DC;&#x5355;&#x201D;</code>&#xFF08;&#x8FD9;&#x65F6;&#x5019; Safari &#x7684;&#x7CFB;&#x7EDF;&#x83DC;&#x5355;&#x680F;&#x591A;&#x4E86;&#x4E00;&#x4E2A; <code>&#x5F00;&#x53D1;</code> &#x6807;&#x7B7E;&#xFF09;&#x3002;</li>
+</ul>
+<p>&#x5F53;&#x5B8C;&#x6210;&#x4E86;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x540E;&#xFF0C;&#x4E0B;&#x9762;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x8C03;&#x8BD5;&#x4E86;&#xFF0C;&#x8C03;&#x8BD5;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x7528; USB &#x7EBF;&#x8FDE;&#x63A5; iPhone &#x548C; Mac&#x3002;</li>
+<li>&#x5728; iPhone &#x4E0A;&#x6253;&#x5F00; PWA &#x7AD9;&#x70B9;&#x3002;</li>
+<li>&#x6253;&#x5F00; Mac &#x4E0A; Safari &#x83DC;&#x5355;&#x680F;&#x7684; <code>&#x5F00;&#x53D1;</code> &#x6807;&#x7B7E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x70B9;&#x51FB;&#x8FDB; <code>&#x6211;&#x7684; iPhone</code>&#x3002;</li>
+<li>&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x53D1;&#x73B0; <code>&#x6211;&#x7684; iPhone</code> &#x5B50;&#x83DC;&#x5355;&#x91CC;&#x6709;&#x5728; iphone &#x4E0A;&#x6253;&#x5F00;&#x7684; PWA &#x7AD9;&#x70B9;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x7528; Safari &#x7684; Devtools &#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x3002;</li>
+</ol>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9;2019 <a href="https://github.com/lavas-project" target="_blank">&#x767E;&#x5EA6; Web &#x751F;&#x6001;&#x56E2;&#x961F;</a> <br>   <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;"></a> &#x672C;&#x4E66;&#x91C7;&#x7528; <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x56FD;&#x9645;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a> &#x8FDB;&#x884C;&#x8BB8;&#x53EF;&#x3002;<br>    &#x672C;&#x4E66;&#x4ECD;&#x5728;&#x52D8;&#x8BEF;&#x9636;&#x6BB5;&#xFF0C;&#x8BF7;&#x52FF;&#x4EE5;&#x4EFB;&#x4F55;&#x5F62;&#x5F0F;&#x79C1;&#x81EA;&#x4F20;&#x64AD;&#xFF0C;&#x6211;&#x4EEC;&#x4FDD;&#x7559;&#x5BF9;&#x672C;&#x4E66;&#x7684;&#x7248;&#x6743; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-05-17 16:26:29 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3-service-worker-dive.html" class="navigation navigation-prev " aria-label="Previous page: 4.3 Service Worker 工作原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../chapter05.html" class="navigation navigation-next " aria-label="Next page: 第5章 离线与缓存">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.4 Service Worker 调试","level":"1.5.4","depth":2,"next":{"title":"第5章 离线与缓存","level":"1.6","depth":1,"path":"chapter05.md","ref":"chapter05.md","articles":[{"title":"5.1 资源请求的拦截代理","level":"1.6.1","depth":2,"path":"chapter05/1-fetch-event-management.md","ref":"chapter05/1-fetch-event-management.md","articles":[]},{"title":"5.2 本地存储管理","level":"1.6.2","depth":2,"path":"chapter05/2-local-storage-management.md","ref":"chapter05/2-local-storage-management.md","articles":[]},{"title":"5.3 资源请求响应策略","level":"1.6.3","depth":2,"path":"chapter05/3-respond-strategy.md","ref":"chapter05/3-respond-strategy.md","articles":[]},{"title":"5.4 预缓存方案","level":"1.6.4","depth":2,"path":"chapter05/4-precache.md","ref":"chapter05/4-precache.md","articles":[]},{"title":"5.5 使用 Workbox","level":"1.6.5","depth":2,"path":"chapter05/5-workbox.md","ref":"chapter05/5-workbox.md","articles":[]}]},"previous":{"title":"4.3 Service Worker 工作原理","level":"1.5.3","depth":2,"path":"chapter04/3-service-worker-dive.md","ref":"chapter04/3-service-worker-dive.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-livereload","simple-page-toc","prism","prism-themes","-highlight","advanced-emoji","include-codeblock","-sharing","sharing-plus","ace","emphasize","splitter","page-footer-ex","expandable-chapters-small","sectionx","local-video","anchor-navigation-ex","favicon","todo","3-ba","chart","github"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"emphasize":{},"ace":{},"github":{"url":"https://github.com/lavas-project/pwa-book"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"page-footer-ex":{"copyright":"Copyright ©2019 [百度 Web 生态团队](https://github.com/lavas-project) <br/>   [![知识共享许可协议](https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/) 本书采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-nd/4.0/) 进行许可。<br/>    本书仍在勘误阶段，请勿以任何形式私自传播，我们保留对本书的版权","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"该文件修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"isRewritePageTitle":false,"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"3-ba":{"configuration":"auto","token":"xxxxxxxx"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"lavas <lavas@baidu.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PWA 应用实战","language":"zh-hans","gitbook":"3.2.3","description":"PWA 开发实战"},"file":{"path":"chapter04/4-service-worker-debug.md","mtime":"2019-05-17T08:26:29.442Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-22T11:11:24.851Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

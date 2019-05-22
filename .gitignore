@@ -1,5 +1,6 @@
 # Referenced from https://github.com/github/gitignore/blob/master/Node.gitignore
 
+_book
 # Logs
 logs
 *.log

@@ -1,0 +1,1374 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.2 Service Worker 注册 · PWA 应用实战</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lavas <lavas@baidu.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3-service-worker-dive.html" />
+    
+    
+    <link rel="prev" href="1-service-worker-introduction.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    HOME
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter01.html">
+            
+                <a href="../chapter01.html">
+            
+                    
+                    第1章 PWA 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter01/1-how-was-pwa-born.html">
+            
+                <a href="../chapter01/1-how-was-pwa-born.html">
+            
+                    
+                    1.1 为什么会出现 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter01/2-what-is-pwa.html">
+            
+                <a href="../chapter01/2-what-is-pwa.html">
+            
+                    
+                    1.2 什么是 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter01/3-what-are-key-techs.html">
+            
+                <a href="../chapter01/3-what-are-key-techs.html">
+            
+                    
+                    1.3 PWA 的核心技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter01/4-how-is-pwa-going.html">
+            
+                <a href="../chapter01/4-how-is-pwa-going.html">
+            
+                    
+                    1.4 PWA 的发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../chapter01/5-the-future-of-pwa.html">
+            
+                <a href="../chapter01/5-the-future-of-pwa.html">
+            
+                    
+                    1.5 PWA 的未来
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../chapter01/6-your-first-pwa.html">
+            
+                <a href="../chapter01/6-your-first-pwa.html">
+            
+                    
+                    1.6 你的第一个 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter02.html">
+            
+                <a href="../chapter02.html">
+            
+                    
+                    第2章 设计与体验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter02/1-what-is-good-ux.html">
+            
+                <a href="../chapter02/1-what-is-good-ux.html">
+            
+                    
+                    2.1 什么是好的用户体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter02/2-design-and-tech.html">
+            
+                <a href="../chapter02/2-design-and-tech.html">
+            
+                    
+                    2.2 设计与技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chapter02/3-app-shell.html">
+            
+                <a href="../chapter02/3-app-shell.html">
+            
+                    
+                    2.3 App Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../chapter02/4-app-skeleton.html">
+            
+                <a href="../chapter02/4-app-skeleton.html">
+            
+                    
+                    2.4 骨架屏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../chapter02/5-responsive-design.html">
+            
+                <a href="../chapter02/5-responsive-design.html">
+            
+                    
+                    2.5 响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter03.html">
+            
+                <a href="../chapter03.html">
+            
+                    
+                    第3章 基础技术简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter03/1-promise.html">
+            
+                <a href="../chapter03/1-promise.html">
+            
+                    
+                    3.1 Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter03/2-async-function.html">
+            
+                <a href="../chapter03/2-async-function.html">
+            
+                    
+                    3.2 Async 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../chapter03/3-fetch-api.html">
+            
+                <a href="../chapter03/3-fetch-api.html">
+            
+                    
+                    3.3 Fetch API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../chapter03/4-cache-api.html">
+            
+                <a href="../chapter03/4-cache-api.html">
+            
+                    
+                    3.4 Cache API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../chapter03/5-indexeddb.html">
+            
+                <a href="../chapter03/5-indexeddb.html">
+            
+                    
+                    3.5 IndexedDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter04.html">
+            
+                <a href="../chapter04.html">
+            
+                    
+                    第4章 Service Worker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="1-service-worker-introduction.html">
+            
+                <a href="1-service-worker-introduction.html">
+            
+                    
+                    4.1 Service Worker 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="2-service-worker-register.html">
+            
+                <a href="2-service-worker-register.html">
+            
+                    
+                    4.2 Service Worker 注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="3-service-worker-dive.html">
+            
+                <a href="3-service-worker-dive.html">
+            
+                    
+                    4.3 Service Worker 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="4-service-worker-debug.html">
+            
+                <a href="4-service-worker-debug.html">
+            
+                    
+                    4.4 Service Worker 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter05.html">
+            
+                <a href="../chapter05.html">
+            
+                    
+                    第5章 离线与缓存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chapter05/1-fetch-event-management.html">
+            
+                <a href="../chapter05/1-fetch-event-management.html">
+            
+                    
+                    5.1 资源请求的拦截代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chapter05/2-local-storage-management.html">
+            
+                <a href="../chapter05/2-local-storage-management.html">
+            
+                    
+                    5.2 本地存储管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../chapter05/3-respond-strategy.html">
+            
+                <a href="../chapter05/3-respond-strategy.html">
+            
+                    
+                    5.3 资源请求响应策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../chapter05/4-precache.html">
+            
+                <a href="../chapter05/4-precache.html">
+            
+                    
+                    5.4 预缓存方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../chapter05/5-workbox.html">
+            
+                <a href="../chapter05/5-workbox.html">
+            
+                    
+                    5.5 使用 Workbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chapter06.html">
+            
+                <a href="../chapter06.html">
+            
+                    
+                    第6章 用户留存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter06/1-manifest-json.html">
+            
+                <a href="../chapter06/1-manifest-json.html">
+            
+                    
+                    6.1 Web 应用清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chapter06/2-credentials-api.html">
+            
+                <a href="../chapter06/2-credentials-api.html">
+            
+                    
+                    6.2 凭证管理 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../chapter06/3-notification-api.html">
+            
+                <a href="../chapter06/3-notification-api.html">
+            
+                    
+                    6.3 桌面通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../chapter06/4-web-push-api.html">
+            
+                <a href="../chapter06/4-web-push-api.html">
+            
+                    
+                    6.4 网络推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../chapter06/5-payment-request-api.html">
+            
+                <a href="../chapter06/5-payment-request-api.html">
+            
+                    
+                    6.5 Payment Request API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chapter07.html">
+            
+                <a href="../chapter07.html">
+            
+                    
+                    第7章 安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chapter07/1-https.html">
+            
+                <a href="../chapter07/1-https.html">
+            
+                    
+                    7.1 使用 HTTPS 保护站点安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chapter07/2-CSP.html">
+            
+                <a href="../chapter07/2-CSP.html">
+            
+                    
+                    7.2 内容安全策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../chapter07/3-policy.html">
+            
+                <a href="../chapter07/3-policy.html">
+            
+                    
+                    7.3 同源策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../chapter07/4-vulnerability.html">
+            
+                <a href="../chapter07/4-vulnerability.html">
+            
+                    
+                    7.4 典型的安全漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../chapter08.html">
+            
+                <a href="../chapter08.html">
+            
+                    
+                    第8章 性能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../chapter08/1-loading-performance.html">
+            
+                <a href="../chapter08/1-loading-performance.html">
+            
+                    
+                    8.1 加载性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../chapter08/2-rendering-performance.html">
+            
+                <a href="../chapter08/2-rendering-performance.html">
+            
+                    
+                    8.2 渲染性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../chapter09.html">
+            
+                <a href="../chapter09.html">
+            
+                    
+                    第9章 PWA 与搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../chapter09/1-search-engine-index.html">
+            
+                <a href="../chapter09/1-search-engine-index.html">
+            
+                    
+                    9.1 搜索引擎收录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../chapter09/2-pwa-and-amp-and-mip.html">
+            
+                <a href="../chapter09/2-pwa-and-amp-and-mip.html">
+            
+                    
+                    9.2 PWA 与 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../chapter09/3-whole-site-amp-and-mip.html">
+            
+                <a href="../chapter09/3-whole-site-amp-and-mip.html">
+            
+                    
+                    9.3 全站 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../chapter09/4-preload-pwa.html">
+            
+                <a href="../chapter09/4-preload-pwa.html">
+            
+                    
+                    9.4 AMP/MIP 预加载 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../appendix01.html">
+            
+                <a href="../appendix01.html">
+            
+                    
+                    附录1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../appendix01/1-lighthouse.html">
+            
+                <a href="../appendix01/1-lighthouse.html">
+            
+                    
+                    1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../appendix01/2-lighthouse-score-guide.html">
+            
+                <a href="../appendix01/2-lighthouse-score-guide.html">
+            
+                    
+                    2 Lighthouse 评分指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../appendix01/3-lighthouse-case.html">
+            
+                <a href="../appendix01/3-lighthouse-case.html">
+            
+                    
+                    3 Lighthouse 使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../thanks.html">
+            
+                <a href="../thanks.html">
+            
+                    
+                    感谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.2 Service Worker 注册</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#service-worker-&#x6CE8;&#x518C;"><b>1. </b>Service Worker &#x6CE8;&#x518C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F5C;&#x7528;&#x57DF;"><b>1.1. </b>&#x4F5C;&#x7528;&#x57DF;</a></li><li><span class="title-icon "></span><a href="#service-worker-&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;"><b>1.2. </b>Service Worker &#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;</a></li><li><span class="title-icon "></span><a href="#service-worker-&#x6CE8;&#x518C;&#x8BBE;&#x8BA1;"><b>1.3. </b>Service Worker &#x6CE8;&#x518C;&#x8BBE;&#x8BA1;</a></li><ul><li><span class="title-icon "></span><a href="#spa-&#x6CE8;&#x518C;-service-worker"><b>1.3.1. </b>SPA &#x6CE8;&#x518C; Service Worker</a></li><li><span class="title-icon "></span><a href="#mpa-&#x6CE8;&#x518C;-service-worker"><b>1.3.2. </b>MPA &#x6CE8;&#x518C; Service Worker</a></li></ul><li><span class="title-icon "></span><a href="#service-worker-&#x66F4;&#x65B0;"><b>1.4. </b>Service Worker &#x66F4;&#x65B0;</a></li><li><span class="title-icon "></span><a href="#service-worker-&#x5BB9;&#x9519;"><b>1.5. </b>Service Worker &#x5BB9;&#x9519;</a></li><li><span class="title-icon "></span><a href="#&#x5C0F;&#x7ED3;"><b>1.6. </b>&#x5C0F;&#x7ED3;</a></li></ul></ul></div><a href="#service-worker-&#x6CE8;&#x518C;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="service-worker-&#x6CE8;&#x518C;"><a name="service-worker-&#x6CE8;&#x518C;" class="anchor-navigation-ex-anchor" href="#service-worker-&#x6CE8;&#x518C;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Service Worker &#x6CE8;&#x518C;</h1>
+<p>&#x901A;&#x8FC7;&#x524D;&#x9762;&#x5BF9; Service Worker &#x6982;&#x5FF5;&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9; Service Worker &#x7684;&#x4E00;&#x4E9B;&#x6982;&#x5FF5;&#x548C;&#x539F;&#x7406;&#x6709;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x5728;&#x672C;&#x8282;&#x5C06;&#x4F1A;&#x91CD;&#x70B9;&#x4ECB;&#x7ECD; Service Worker &#x6CE8;&#x518C;&#x7684;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x3002;&#x4E3B;&#x8981;&#x4F1A;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4E3A; Web App &#x6CE8;&#x518C;&#x4E00;&#x4E2A; Service Worker&#x3001;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x9879;&#x76EE;&#x67B6;&#x6784;&#x4E0B;&#x6CE8;&#x518C; Service Worker &#x7684;&#x65B9;&#x6CD5;&#x3001;Service Worker &#x6CE8;&#x518C;&#x7684;&#x4E00;&#x4E9B;&#x7EC6;&#x8282;&#x548C;&#x6CE8;&#x610F;&#x70B9;&#x7B49;&#x3002;</p>
+<h2 id="&#x4F5C;&#x7528;&#x57DF;"><a name="&#x4F5C;&#x7528;&#x57DF;" class="anchor-navigation-ex-anchor" href="#&#x4F5C;&#x7528;&#x57DF;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x4F5C;&#x7528;&#x57DF;</h2>
+<p>Service Worker &#x662F;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#xFF0C;Service Worker &#x4F5C;&#x7528;&#x57DF;&#x662F;&#x4E00;&#x4E2A; URL path &#x5730;&#x5740;&#xFF0C;&#x6307;&#x7684;&#x662F; Servcie Worker &#x80FD;&#x591F;&#x63A7;&#x5236;&#x7684;&#x9875;&#x9762;&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x67D0;&#x4E2A; Service Worker &#x7684;&#x4F5C;&#x7528;&#x57DF;&#x4E3A; <code>https://somehost/a/b/</code>&#xFF0C;&#x90A3;&#x8FD9;&#x4E2A; Service Worker &#x80FD;&#x63A7;&#x5236; <code>https://somehost/a/b/</code> &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x9875;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E0B;&#x9762;&#x5217;&#x51FA;&#x7684;&#x9875;&#x9762;&#xFF1A;</p>
+<ul>
+<li><code>https://somehost/a/b/index.html</code></li>
+<li><code>https://somehost/a/b/c/index.html</code></li>
+<li><code>https://somehost/a/b/anothor.html</code></li>
+<li>...</li>
+</ul>
+<p>&#x6240;&#x8C13;&#x7684; &#x201C;&#x63A7;&#x5236;&#x9875;&#x9762;&#x201D; &#x6307;&#x7684;&#x662F; Service Worker &#x53EF;&#x4EE5;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x9875;&#x9762;&#x91CC;&#x9762;&#x7684;&#x8D44;&#x6E90;&#x8BF7;&#x6C42;&#x548C;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7; Service Worker &#x81EA;&#x8EAB;&#x7684;&#x8C03;&#x5EA6;&#x673A;&#x5236;&#x6784;&#x5EFA;&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x3002;&#x5982;&#x679C;&#x9875;&#x9762;&#x4E0D;&#x5728; Service Worker &#x7684;&#x4F5C;&#x7528;&#x57DF;&#x8303;&#x56F4;&#x5185;&#xFF0C;Service Worker &#x5C31;&#x65E0;&#x6CD5;&#x5904;&#x7406;&#x9875;&#x9762;&#x7684;&#x4EFB;&#x4F55;&#x8D44;&#x6E90;&#x6216;&#x8BF7;&#x6C42;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x52A0;&#x6DF1;&#x5BF9; Service Worker &#x4F5C;&#x7528;&#x57DF;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x8FD8;&#x662F;&#x6765;&#x770B;&#x4E0B; serviceWorkerDemo &#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x5728; <code>index.html</code> &#x4E2D;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        navigator.serviceWorker.register(&apos;./sw.js&apos;)
+          .then(reg =&gt; {
+            console.log(reg)
+          })
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x9996;&#x5148;&#x4ECE;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA; <code>navigator.serviceWorker.register()</code> &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A; Promise&#xFF0C;&#x8FD9;&#x4E2A; Promise &#x4E2D; resolve &#x8FD4;&#x56DE;&#x7684;&#x662F; Service Worker &#x6CE8;&#x518C;&#x6210;&#x529F;&#x540E;&#x8FD4;&#x56DE;&#x7684; ServiceWorkerRegistration &#x5BF9;&#x8C61;&#x3002;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#x5C06;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6253;&#x5370;&#x51FA;&#x6765;&#x7684;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x56FE; 4-4 &#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/service_worker_registration.png" alt="&#x56FE; 4-4 ServiceWorkerRegistration &#x5BF9;&#x8C61;&#x5185;&#x5BB9;"></p>
+<p>ServiceWorkerRegistration &#x5BF9;&#x8C61;&#x4E2D;&#x7684; scope &#x7684;&#x503C;&#x5C31;&#x662F;&#x5F53;&#x524D;&#x7684; Service Worker &#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#x4E3A; <code>http://127.0.0.1:8000/</code>&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x66F4;&#x76F4;&#x89C2;&#x7684;&#x770B;&#x5230; Service Worker &#x4F5C;&#x7528;&#x57DF;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A; serviceWorkerScopeDemo &#x9879;&#x76EE;&#xFF0C;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token keyword">.</span>
+&#x2514;&#x2500;&#x2500; serviceWorkerScopeDemo
+    &#x251C;&#x2500;&#x2500; a
+    &#x2502;   &#x2514;&#x2500;&#x2500; b
+    &#x2502;       &#x2514;&#x2500;&#x2500; sw.js
+    &#x2514;&#x2500;&#x2500; index.html
+</code></pre>
+<p>&#x5C06; <code>sw.js</code> &#x653E;&#x5165; <code>/a/b/</code> &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x5C06; <code>index.html</code> &#x4E2D;&#x7684;&#x6CE8;&#x518C; Service Worker &#x903B;&#x8F91;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Scope Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        navigator.serviceWorker.register(&apos;./a/b/sw.js&apos;)
+          .then(reg =&gt; {
+            console.log(reg.scope)
+            // http://127.0.0.1:8000/a/b/
+          })
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x5C06; <code>navigator.serviceWorker.register()</code> &#x65B9;&#x6CD5;&#x7684; Service Worker &#x6587;&#x4EF6; URL &#x6539;&#x6210; <code>./a/b/sw.js</code>&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x6253;&#x5370;&#x51FA;&#x6765;&#x7684; scope &#x7ED3;&#x679C;&#x4E3A; <code>http://127.0.0.1:8000/a/b/</code>&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x5728;&#x6CE8;&#x518C; <code>sw.js</code> &#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5FFD;&#x7565; Service Worker &#x4F5C;&#x7528;&#x57DF;&#x7684;&#x95EE;&#x9898;&#xFF0C;Service Worker &#x9ED8;&#x8BA4;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5C31;&#x662F;&#x6CE8;&#x518C;&#x65F6;&#x5019;&#x7684; path, &#x4F8B;&#x5982;&#xFF1A;Service Worker &#x6CE8;&#x518C;&#x7684; path &#x4E3A; <code>/a/b/sw.js</code>&#xFF0C;&#x5219; scope &#x9ED8;&#x8BA4;&#x4E3A; <code>/a/b/</code>&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x6CE8;&#x518C;&#x65F6;&#x5019;&#x5728; <code>navigator.serviceWorker.register()</code> &#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165; <code>{scope: &apos;/some/scope/&apos;}</code> &#x53C2;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x81EA;&#x5DF1;&#x6307;&#x5B9A;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Scope Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        navigator.serviceWorker.register(&apos;./a/b/sw.js&apos;, {
+          // &#x624B;&#x52A8;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;
+          scope: &apos;/a/b/c/&apos;
+        }).then(reg =&gt; {
+          console.log(reg.scope)
+          // http://127.0.0.1:8000/a/b/c/
+        })
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x5C06; scope &#x914D;&#x7F6E; <code>{scope: &apos;/a/b/c/&apos;}</code> &#x4F20;&#x5165; <code>navigator.serviceWorker.register()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x8FD0;&#x884C;&#x540E;&#x6253;&#x5370;&#x51FA;&#x6765;&#x7684;&#x5185;&#x5BB9;&#x4E3A; <code>http://127.0.0.1:8000/a/b/c/</code>&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x4E3A; Service Worker &#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x4F5C;&#x7528;&#x57DF;&#x662F;&#x4E0D;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x6307;&#x5B9A;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x4FEE;&#x6539; <code>index.html</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Scope Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        navigator.serviceWorker.register(&apos;./a/b/sw.js&apos;, {
+          scope: &apos;/a/&apos;
+        }).then(reg =&gt; {
+          console.log(reg.scope)
+        })
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x5C06;&#x4F5C;&#x7528;&#x57DF;&#x6307;&#x5B9A;&#x4E3A; <code>/a/</code>&#xFF0C;&#x8FD0;&#x884C;&#x540E;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x62A5;&#x9519;&#x7684;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#x56FE; 4-5 &#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/service_worker_scope_error.png" alt="&#x56FE; 4-5 Service Worker &#x4F5C;&#x7528;&#x57DF;&#x62A5;&#x9519;&#x4FE1;&#x606F;"></p>
+<p>&#x901A;&#x8FC7;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x77E5;&#x9053; <code>sw.js</code> &#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684; URL &#x7684; path &#x662F; <code>/a/b/</code>&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x6700;&#x5927;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x90FD;&#x662F; <code>/a/b/</code>&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x8D85;&#x8FC7;&#x6700;&#x5927;&#x4F5C;&#x7528;&#x57DF;&#x8303;&#x56F4;&#x7684; <code>/a/</code> &#x4E3A;&#x4F5C;&#x7528;&#x57DF;&#x3002;</p>
+<p>&#x901A;&#x4FD7;&#x7684;&#x8BB2;&#xFF0C;Service Worker &#x6700;&#x591A;&#x53EA;&#x80FD;&#x5728; Service Worker &#x6587;&#x4EF6; URL path &#x8303;&#x56F4;&#x5185;&#x53D1;&#x6325;&#x4F5C;&#x7528;&#xFF0C;&#x4EE5;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E3A;&#x4F8B;&#xFF0C;<code>/a/b/</code>&#xFF0C;<code>/a/b/c/</code>&#xFF0C;<code>/a/b/c/d/</code> &#x4E0B;&#x7684;&#x9875;&#x9762;&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x6CE8;&#x518C;&#x7684; Service Worker &#x63A7;&#x5236;&#x3002;&#x4F46;&#x662F; <code>/a/</code>&#x3001;<code>/e/f/</code> &#x76EE;&#x5F55;&#x4E0B;&#x9762;&#x7684;&#x9875;&#x9762;&#x662F;&#x4E0D;&#x53D7;&#x6CE8;&#x518C;&#x7684; Service Worker &#x7684;&#x63A7;&#x5236;&#x7684;&#xFF08;&#x5F53;&#x7136;&#x6D4F;&#x89C8;&#x5668;&#x4E5F;&#x4F1A;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x544A;&#x77E5;&#x5F00;&#x53D1;&#x8005;&#xFF09;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5728;&#x6700;&#x5927;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x624D;&#x80FD;&#x901A;&#x8FC7; scope &#x914D;&#x7F6E;&#x5728;&#x6CE8;&#x518C; Service Worker &#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;
+&#x7C7B;&#x4F3C;&#x4E8E; Ajax &#x7684;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BF9;&#x8BF7;&#x6C42;&#x7684; Access-Control-Allow-Origin &#x8BBE;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x5668;&#x5BF9; sw.js &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF0C;&#x5C31;&#x80FD;&#x591F;&#x7A81;&#x7834;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x5BF9; sw.js &#x8BF7;&#x6C42;&#x8BBE;&#x7F6E; Service-Worker-Allowed &#x8BF7;&#x6C42;&#x5934;&#x4E3A;&#x66F4;&#x5927;&#x63A7;&#x5236;&#x8303;&#x56F4;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x63A7;&#x5236;&#x8303;&#x56F4;&#x7684; scope &#x5373;&#x53EF;&#x3002;&#x5982;&#xFF1A;<code>Service-Worker-Allowed: /a/</code>&#x3002;</p>
+</blockquote>
+<h2 id="service-worker-&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;"><a name="service-worker-&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;" class="anchor-navigation-ex-anchor" href="#service-worker-&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Service Worker &#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;</h2>
+<p>&#x901A;&#x8FC7;&#x5BF9; Service Woker &#x4F5C;&#x7528;&#x57DF;&#x7684;&#x4E86;&#x89E3;&#x4F1A;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;<strong>&#x4F1A;&#x4E0D;&#x4F1A;&#x5B58;&#x5728;&#x591A;&#x4E2A; Service Worker &#x63A7;&#x5236;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x60C5;&#x51B5;&#x5462;&#xFF1F;</strong> &#x63A5;&#x4E0B;&#x6765;&#x518D;&#x65B0;&#x5EFA; serviceWorkerScopeDemo1 &#x9879;&#x76EE;&#x6765;&#x4E86;&#x89E3;&#x6CE8;&#x518C;&#x591A;&#x4E2A; Service Worker &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x6709;&#x4E9B;&#x4EC0;&#x4E48;&#x795E;&#x5947;&#x7684;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#x3002;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token keyword">.</span>
+&#x2514;&#x2500;&#x2500; serviceWorkerScopeDemo1
+    &#x251C;&#x2500;&#x2500; a/
+    &#x2502;   &#x251C;&#x2500;&#x2500; a-sw.js
+    &#x2502;   &#x2514;&#x2500;&#x2500; index.html
+    &#x251C;&#x2500;&#x2500; b/
+    &#x2502;   &#x2514;&#x2500;&#x2500; index.html
+    &#x2514;&#x2500;&#x2500; root-sw.js
+</code></pre>
+<p>&#x5982;&#x679C; <code>/a/index.html</code> &#x9875;&#x9762;&#x662F;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x6CE8;&#x518C; Service Worker&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Scope DEMO1 PageA<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        navigator.serviceWorker.register(&apos;./a-sw.js&apos;)
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x800C; <code>/b/index.html</code> &#x9875;&#x9762;&#x662F;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x6CE8;&#x518C; Service Worker&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Scope DEMO1 PageB<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        navigator.serviceWorker.register(&apos;../root-sw.js&apos;)
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p><code>http://127.0.0.1:8000/a/index.html</code> &#x9875;&#x9762;&#xFF08;&#x79F0;&#x4E3A; A &#x9875;&#x9762;&#xFF09;&#x5728; <code>/a/</code> &#x4F5C;&#x7528;&#x57DF;&#x4E0B;&#x6CE8;&#x518C;&#x4E86;&#x4E00;&#x4E2A; Service Worker&#xFF0C;&#x800C; <code>http://127.0.0.1:8000/b/index.html</code> &#x9875;&#x9762;&#xFF08;&#x79F0;&#x4E3A; B &#x9875;&#x9762;&#xFF09;&#x5728; <code>/</code> &#x4F5C;&#x7528;&#x57DF;&#x4E0B;&#x6CE8;&#x518C;&#x4E86;&#x4E00;&#x4E2A; Service Worker&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B; B &#x9875;&#x9762;&#x7684; Service Worker &#x5C31;&#x53EF;&#x4EE5;&#x63A7;&#x5236; A &#x9875;&#x9762;&#xFF0C;&#x56E0;&#x4E3A; B &#x9875;&#x9762;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x662F;&#x5305;&#x542B; A &#x9875;&#x9762;&#x7684;&#x6700;&#x5927;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x5C31;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;</strong>&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x56FE; 4-6 &#x6240;&#x793A;&#x7684;&#x60C5;&#x51B5;&#xFF0C;A &#x9875;&#x9762;&#x88AB;&#x4E24;&#x4E2A; Service Worker &#x6240;&#x63A7;&#x5236;&#x3002;</p>
+<p><img src="img/service_worker_scope_pollute.png" alt="&#x56FE; 4-6 Service Worker &#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;"></p>
+<p>&#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x5F00;&#x53D1;&#x8005;&#x5728; Chrome &#x6D4F;&#x89C8;&#x5668;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Devtools &#x8FDB;&#x884C;&#x624B;&#x52A8; &#x201C;unregister&#x201D; &#x6765;&#x6E05;&#x9664;&#x6389;&#x6C61;&#x67D3;&#x7684; Service Worker&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5728;&#x7EBF;&#x4E0A;&#x73AF;&#x5883;&#x88AB;&#x5B89;&#x88C5;&#x4E86; Service Worker &#x4E4B;&#x540E;&#x8FD9;&#x5C31;&#x662F;&#x4E2A;&#x6301;&#x4E45;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x9664;&#x975E;&#x7528;&#x6237;&#x624B;&#x52A8;&#x6E05;&#x9664;&#x5B58;&#x50A8;&#x7684;&#x7F13;&#x5B58;&#xFF08;&#x8FD9;&#x4E2A;&#x4E5F;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#xFF09;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x4F1A;&#x51FA;&#x73B0; Service Worker &#x4EA4;&#x53C9;&#x63A7;&#x5236;&#x9875;&#x9762;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x7EBF;&#x4E0A;&#x51FA;&#x73B0;&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;&#x7684;&#x60C5;&#x51B5;&#x4E5F;&#x662F;&#x6709;&#x529E;&#x6CD5;&#x89E3;&#x51B3;&#x7684;&#xFF0C;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x7684;&#x4E00;&#x79CD;&#x505A;&#x6CD5;&#x662F;&#x5728; A &#x9875;&#x9762;&#x65B0;&#x4E0A;&#x7EBF;&#x7684; <code>/a/index.html</code> &#x7248;&#x672C;&#x4E2D;&#x6CE8;&#x518C; Service Worker &#x4E4B;&#x524D;&#x501F;&#x52A9; <code>navigator.serviceWorker.getRegistrations()</code> &#x65B9;&#x6CD5;&#x5C06;&#x6C61;&#x67D3;&#x7684; Service Worker &#x5148;&#x6CE8;&#x9500;&#x6389;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6CE8;&#x518C;&#x81EA;&#x5DF1;&#x7684;&#x6240;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x7684; Service Worker&#x3002;&#x5177;&#x4F53;&#x505A;&#x6CD5;&#x8FD8;&#x662F;&#x770B;&#x4E0B;&#x793A;&#x4F8B;&#xFF0C;&#x5C06; serviceWorkerScopeDemo1 &#x9879;&#x76EE;&#x7684; <code>/a/index.html</code> &#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x540E;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Scope Demo1 PageA<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        navigator.serviceWorker.getRegistrations()
+          .then(regs =&gt; {
+            for (let reg of regs) {
+              // &#x6CE8;&#x9500;&#x6389;&#x4E0D;&#x662F;&#x5F53;&#x524D;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x6240;&#x6709;&#x7684; Service Worker
+              if (reg.scope !== &apos;https://127.0.0.1:8000/a/&apos;) {
+                reg.unregister()
+              }
+            }
+            // &#x6CE8;&#x9500;&#x6389;&#x6C61;&#x67D3; Service Worker &#x4E4B;&#x540E;&#x518D;&#x91CD;&#x65B0;&#x6CE8;&#x518C;&#x81EA;&#x5DF1;&#x4F5C;&#x7528;&#x57DF;&#x7684; Service Worker
+            navigator.serviceWorker.register(&apos;./a-sw.js&apos;)
+          })
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD0;&#x884C; serviceWorkerDemo &#x9879;&#x76EE;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;A &#x9875;&#x9762;&#x53EA;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x88AB;&#x81EA;&#x5DF1;&#x6CE8;&#x518C;&#x7684; Service Worker &#x751F;&#x6548;&#xFF0C;&#x5728;&#x590D;&#x6742;&#x7684;&#x9879;&#x76EE;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;Service Worker &#x7684;&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;&#x95EE;&#x9898;&#x4F1A;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#xFF0C;&#x5728;&#x8BBE;&#x8BA1; Service Worker &#x6CE8;&#x518C;&#x903B;&#x8F91;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5927;&#x578B;&#x7684; Web App &#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x8003;&#x8651;&#x5230;&#x8FD9;&#x70B9;&#x3002;</p>
+<h2 id="service-worker-&#x6CE8;&#x518C;&#x8BBE;&#x8BA1;"><a name="service-worker-&#x6CE8;&#x518C;&#x8BBE;&#x8BA1;" class="anchor-navigation-ex-anchor" href="#service-worker-&#x6CE8;&#x518C;&#x8BBE;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Service Worker &#x6CE8;&#x518C;&#x8BBE;&#x8BA1;</h2>
+<p>&#x7531;&#x4E8E; Service Worker &#x6CE8;&#x518C;&#x4F1A;&#x6709;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;&#x95EE;&#x9898;&#xFF0C;&#x800C; Web App &#x9879;&#x76EE;&#x53C8;&#x6709;&#x591A;&#x79CD;&#x5F62;&#x5F0F;&#x5B58;&#x5728;&#xFF0C;&#x6709; SPA&#xFF08;&#x5355;&#x9875;&#x9762;&#x5E94;&#x7528;&#xFF09;&#xFF0C;MPA&#xFF08;&#x591A;&#x9875;&#x9762;&#x5E94;&#x7528;&#xFF09;&#x7B49;&#x67B6;&#x6784;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x5230;&#x5E95;&#x600E;&#x4E48;&#x8FDB;&#x884C; Service Worker &#x6CE8;&#x518C;&#x624D;&#x5408;&#x9002;&#x5462;&#xFF1F;</p>
+<h3 id="spa-&#x6CE8;&#x518C;-service-worker"><a name="spa-&#x6CE8;&#x518C;-service-worker" class="anchor-navigation-ex-anchor" href="#spa-&#x6CE8;&#x518C;-service-worker"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. SPA &#x6CE8;&#x518C; Service Worker</h3>
+<p>SPA &#x5728;&#x5DE5;&#x7A0B;&#x67B6;&#x6784;&#x4E0A;&#x53EA;&#x6709;&#x4E00;&#x4E2A; <code>index.html</code> &#x7684;&#x5165;&#x53E3;&#xFF0C;&#x7AD9;&#x70B9;&#x7684;&#x5185;&#x5BB9;&#x90FD;&#x662F;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x4E4B;&#x540E;&#x5728;&#x524D;&#x7AEF;&#x6E32;&#x67D3;&#x7684;&#xFF0C;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x9875;&#x9762;&#x5207;&#x6362;&#x90FD;&#x662F;&#x5728;&#x524D;&#x7AEF;&#x8DEF;&#x7531;&#x63A7;&#x5236;&#x7684;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x4F1A;&#x5C06;&#x8FD9;&#x4E2A; <code>index.html</code> &#x90E8;&#x7F72;&#x5230; <code>https://somehost</code>&#xFF0C;SPA &#x7684; Service Worker &#x53EA;&#x9700;&#x8981;&#x5728; <code>index.html</code> &#x4E2D;&#x6CE8;&#x518C;&#x4E00;&#x6B21;&#x3002;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x4F1A;&#x5C06; <code>sw.js</code> &#x76F4;&#x63A5;&#x653E;&#x5728;&#x7AD9;&#x70B9;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x4FDD;&#x8BC1;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4; Service Worker &#x7684;&#x4F5C;&#x7528;&#x57DF;&#x901A;&#x5E38;&#x5C31;&#x662F; <code>/</code>&#xFF0C;&#x8FD9;&#x6837; Service Worker &#x80FD;&#x591F;&#x63A7;&#x5236; <code>index.html</code>&#xFF0C;&#x4ECE;&#x800C;&#x63A7;&#x5236;&#x6574;&#x4E2A; SPA &#x7684;&#x7F13;&#x5B58;&#x3002;</p>
+<p>SPA &#x6BCF;&#x6B21;&#x8DEF;&#x7531;&#x7684;&#x5207;&#x6362;&#x90FD;&#x662F;&#x524D;&#x7AEF;&#x6E32;&#x67D3;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x672C;&#x8D28;&#x4E0A;&#x8FD8;&#x662F;&#x5728; <code>index.html</code> &#x4E0A;&#x7684;&#x524D;&#x7AEF;&#x4EA4;&#x4E92;&#x3002;&#x901A;&#x5E38; Service Worker &#x4F1A;&#x9884;&#x5148;&#x7F13;&#x5B58; SPA &#x4E2D;&#x7684; AppShell &#x6240;&#x9700;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x4EE5;&#x53CA; <code>index.html</code>&#x3002;&#x5F53;&#x7136;&#x6709;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x4ECE; <code>https://somehost/a</code> &#x9875;&#x9762;&#x5207;&#x6362;&#x5230; <code>https://somehost/b</code> &#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5237;&#x65B0;&#x9875;&#x9762;&#x9996;&#x5148;&#x6E32;&#x67D3;&#x7684;&#x8FD8;&#x662F; <code>index.html</code>&#xFF0C;&#x5728;&#x6267;&#x884C; SPA &#x7684;&#x8DEF;&#x7531;&#x903B;&#x8F91;&#x4E4B;&#x540E;&#xFF0C;&#x901A;&#x8FC7; SPA &#x524D;&#x7AEF;&#x8DEF;&#x7531;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x7EE7;&#x7EED;&#x5728;&#x524D;&#x7AEF;&#x6E32;&#x67D3;&#x76F8;&#x5E94;&#x7684;&#x8DEF;&#x7531;&#x5BF9;&#x5E94;&#x7684;&#x6E32;&#x67D3;&#x903B;&#x8F91;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x7684;&#x903B;&#x8F91;&#x90FD;&#x662F;&#x5728;&#x5DF2;&#x7ECF;&#x7F13;&#x5B58;&#x7684; JavaScript &#x4E2D;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<h3 id="mpa-&#x6CE8;&#x518C;-service-worker"><a name="mpa-&#x6CE8;&#x518C;-service-worker" class="anchor-navigation-ex-anchor" href="#mpa-&#x6CE8;&#x518C;-service-worker"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. MPA &#x6CE8;&#x518C; Service Worker</h3>
+<p>MPA &#x8FD9;&#x79CD;&#x67B6;&#x6784;&#x7684;&#x6A21;&#x5F0F;&#x5728;&#x73B0;&#x5982;&#x4ECA;&#x7684;&#x5927;&#x578B; Web App &#x975E;&#x5E38;&#x5E38;&#x89C1;&#xFF0C;&#x8FD9;&#x79CD; Web App &#x76F8;&#x6BD4;&#x8F83;&#x4E8E; SPA &#x80FD;&#x591F;&#x627F;&#x53D7;&#x66F4;&#x91CD;&#x7684;&#x4E1A;&#x52A1;&#x4F53;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x5229;&#x4E8E;&#x5927;&#x578B; Web App &#x7684;&#x540E;&#x671F;&#x7EF4;&#x62A4;&#x548C;&#x6269;&#x5C55;&#x3002;MPA &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x662F;&#x6709;&#x591A;&#x4E2A; HTML &#x6587;&#x4EF6;&#x5BF9;&#x5E94;&#x7740;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x8DEF;&#x7531;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4; <code>https://somehost/a</code> &#x6620;&#x5C04;&#x5230; <code>a.html</code>&#xFF0C;<code>https://somehost/b</code> &#x6620;&#x5C04;&#x5230; <code>b.html</code>&#x3002;</p>
+<p>&#x90A3;&#x4E48; MPA &#x67B6;&#x6784;&#x4E0B;&#x600E;&#x4E48;&#x53BB;&#x6CE8;&#x518C; Service Worker &#x5462;&#xFF1F;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x9875;&#x9762;&#x6CE8;&#x518C;&#x4E0D;&#x540C;&#x7684; Service Worker&#xFF0C;&#x8FD8;&#x662F;&#x6240;&#x6709;&#x7684;&#x9875;&#x9762;&#x90FD;&#x6CE8;&#x518C;&#x540C;&#x4E00;&#x4E2A; Service Worker&#xFF1F;&#x7ED3;&#x8BBA;&#x662F;&#xFF1A;&#x9700;&#x8981;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x6765;&#x5B9A;&#x3002;</p>
+<h4 id="mpa-&#x6CE8;&#x518C;&#x5355;&#x4E2A;-service-worker"><a name="mpa-&#x6CE8;&#x518C;&#x5355;&#x4E2A;-service-worker" class="anchor-navigation-ex-anchor" href="#mpa-&#x6CE8;&#x518C;&#x5355;&#x4E2A;-service-worker"><i class="fa fa-link" aria-hidden="true"></i></a>MPA &#x6CE8;&#x518C;&#x5355;&#x4E2A; Service Worker</h4>
+<p>&#x5728;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x4E1A;&#x52A1;&#x76F8;&#x4F3C;&#x5EA6;&#x8F83;&#x9AD8;&#xFF0C;&#x6216;&#x8005;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x516C;&#x5171;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x6216;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x8F83;&#x591A;&#xFF0C;&#x8FD9;&#x79CD; MPA &#x662F;&#x975E;&#x5E38;&#x9002;&#x5408;&#x5728;&#x6240;&#x6709;&#x7684;&#x9875;&#x9762;&#x53EA;&#x6CE8;&#x518C;&#x4E00;&#x4E2A; Service Worker&#x3002;</p>
+<p>&#x4F8B;&#x5982; <code>https://somehost/a</code> &#x548C; <code>htps://somehost/b</code> &#x4E4B;&#x95F4;&#x7684;&#x516C;&#x5171;&#x5185;&#x5BB9;&#x8F83;&#x591A;&#xFF0C;&#x5219;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x5728; <code>/</code> &#x4F5C;&#x7528;&#x57DF;&#x4E0B;&#x6CE8;&#x518C;&#x4E00;&#x4E2A; Service Worker&#x3002;&#x8FD9;&#x6837;&#x8FD9;&#x4E2A; Service Worker &#x80FD;&#x591F;&#x63A7;&#x5236; <code>https://somehost</code> &#x57DF;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x9875;&#x9762;&#x3002;</p>
+<p>MPA &#x7EF4;&#x62A4;&#x5355;&#x4E2A; Service Worker &#x6709;&#x5982;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x6574;&#x4E2A;&#x7AD9;&#x70B9;&#x7684;&#x7F13;&#x5B58;&#x3002;</li>
+<li>&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x9875;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x6C61;&#x67D3;&#x3002;</li>
+<li>&#x540E;&#x671F;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#x76F8;&#x5BF9;&#x8F83;&#x4F4E;&#x3002;</li>
+</ul>
+<h4 id="mpa-&#x6CE8;&#x518C;&#x591A;&#x4E2A;-service-worker"><a name="mpa-&#x6CE8;&#x518C;&#x591A;&#x4E2A;-service-worker" class="anchor-navigation-ex-anchor" href="#mpa-&#x6CE8;&#x518C;&#x591A;&#x4E2A;-service-worker"><i class="fa fa-link" aria-hidden="true"></i></a>MPA &#x6CE8;&#x518C;&#x591A;&#x4E2A; Service Worker</h4>
+<p>MPA &#x6CE8;&#x518C;&#x591A;&#x4E2A; Service Worker &#x9002;&#x7528;&#x4E8E;&#x4E3B;&#x7AD9;&#x975E;&#x5E38;&#x5E9E;&#x5927;&#x7684; Web App&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x4EE5; path &#x5206;&#x9694;&#x7684;&#x5F62;&#x5F0F;&#x94FA;&#x5C55;&#x5782;&#x7C7B;&#x5B50;&#x7AD9;&#x7684;&#x5927;&#x578B; Web App&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5C31;&#x4E0D;&#x9002;&#x5408;&#x53EA;&#x5728; <code>/</code> &#x4F5C;&#x7528;&#x57DF;&#x4E0B;&#x53EA;&#x6CE8;&#x518C;&#x4E00;&#x4E2A; Service Worker &#x4E86;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;<code>https://somehost/a</code> &#x548C; <code>https://somehost/b</code> &#x51E0;&#x4E4E;&#x662F;&#x4E24;&#x4E2A;&#x7AD9;&#x70B9;&#xFF0C;&#x5176;&#x4E2D;&#x516C;&#x5171;&#x4F7F;&#x7528;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x6216;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x975E;&#x5E38;&#x5C11;&#xFF0C;&#x5219;&#x6BD4;&#x8F83;&#x9002;&#x5408;&#x6BCF;&#x4E2A;&#x5B50;&#x7AD9;&#x6CE8;&#x518C;&#x7EF4;&#x62A4;&#x81EA;&#x5DF1;&#x7684; Service Worker&#xFF0C;<code>https://somehost/a</code> &#x6CE8;&#x518C; Servcie Worker &#x7684;&#x4F5C;&#x7528;&#x57DF;&#x4E3A; <code>/a/</code>&#xFF0C;&#x6700;&#x597D;&#x662F;&#x5B58;&#x5728; <code>/a/sw.js</code> &#x5BF9;&#x5E94;&#x7684; Service Worker &#x6587;&#x4EF6; URL &#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x67D0;&#x4E00;&#x4E2A;&#x516C;&#x7528;&#x7684; <code>/sw.js</code> &#x5E76;&#x4F7F;&#x7528; scope &#x53C2;&#x6570;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x589E;&#x52A0;&#x540E;&#x671F;&#x7684;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#x4EE5;&#x53CA;&#x589E;&#x52A0;&#x51FA;&#x73B0; bug &#x7684;&#x98CE;&#x9669;&#x3002;</p>
+<p>&#x5B50;&#x7AD9;&#x5728;&#x5B9E;&#x73B0;&#x4E0A;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x4E00;&#x70B9;&#x662F;&#xFF0C;&#x9632;&#x6B62;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x7684; Service Worker &#x5BF9;&#x81EA;&#x8EAB;&#x9875;&#x9762;&#x9020;&#x6210;&#x6C61;&#x67D3;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x6CE8;&#x518C;&#x5B50;&#x7AD9; Service Worker &#x4E4B;&#x524D;&#x5C06;&#x4E0D;&#x662F;&#x5B50;&#x7AD9; path &#x4F5C;&#x7528;&#x57DF;&#x7684; Service Worker &#x5148;&#x6CE8;&#x9500;&#x6389;&#x3002;</p>
+<p>&#x6CE8;&#x518C;&#x591A;&#x4E2A; Service Worker &#x6709;&#x5982;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x9700;&#x8981;&#x4E25;&#x683C;&#x8981;&#x6C42;&#x6BCF;&#x4E2A;&#x5B50;&#x7AD9;&#x7BA1;&#x7406;&#x597D;&#x81EA;&#x5DF1;&#x7684; <code>sw.js</code> &#x53CA;&#x4F5C;&#x7528;&#x57DF;&#x3002;</li>
+<li>&#x9632;&#x6B62;&#x5BF9;&#x5176;&#x4ED6;&#x5B50;&#x7AD9;&#x7684; Service Worker &#x9020;&#x6210;&#x5F71;&#x54CD;&#x3002;</li>
+<li>&#x76F8;&#x6BD4;&#x8F83;&#x6574;&#x4E2A;&#x7AD9;&#x70B9;&#x53EA;&#x6CE8;&#x518C;&#x4E00;&#x4E2A; Service Worker&#xFF0C;&#x8FD9;&#x79CD;&#x7EF4;&#x62A4;&#x591A;&#x4E2A; Service Worker &#x7684;&#x65B9;&#x5F0F;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x3002;</li>
+<li>&#x968F;&#x7740;&#x5B50;&#x7AD9;&#x7684;&#x589E;&#x591A;&#xFF0C;&#x98CE;&#x9669;&#x76F8;&#x5BF9;&#x4F1A;&#x66F4;&#x52A0;&#x5927;&#xFF0C;&#x4E5F;&#x66F4;&#x52A0;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#x3002;</li>
+</ul>
+<h2 id="service-worker-&#x66F4;&#x65B0;"><a name="service-worker-&#x66F4;&#x65B0;" class="anchor-navigation-ex-anchor" href="#service-worker-&#x66F4;&#x65B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Service Worker &#x66F4;&#x65B0;</h2>
+<p>&#x5F53;&#x5728;&#x9875;&#x9762;&#x4E2D;&#x901A;&#x8FC7; <code>sw.js</code> &#x6CE8;&#x518C;&#x4E86;&#x4E00;&#x4E2A; Service Worker &#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C; <code>sw.js</code> &#x5185;&#x5BB9;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x66F4;&#xFF0C;Service Worker &#x8BE5;&#x5982;&#x4F55;&#x66F4;&#x65B0;&#x5462;&#xFF1F;</p>
+<p>&#x62FF; SPA &#x4E3A;&#x4F8B;&#xFF0C;&#x4F5C;&#x4E3A; AppShell &#x7684;&#x8F7D;&#x4F53; <code>index.html</code> &#x662F;&#x4F1A;&#x88AB;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#x7684;&#xFF0C;AppShell &#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x4E5F;&#x90FD;&#x4F1A;&#x88AB;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#x7684;&#xFF0C;&#x7531;&#x4E8E; Service Worker &#x7684;&#x6CE8;&#x518C;&#x5165;&#x53E3;&#x5FC5;&#x987B;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x5B8C;&#x6210;&#xFF0C;&#x6240;&#x4EE5; Service Worker &#x7684;&#x6CE8;&#x518C;&#x5FC5;&#x7136;&#x662F;&#x9700;&#x8981;&#x5728; <code>index.html</code> &#x7684; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code> &#x6807;&#x7B7E;&#x6216;&#x8005;&#x88AB;&#x7F13;&#x5B58;&#x4F4F;&#x7684; JavaScript &#x6587;&#x4EF6;&#x4E2D;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x5982;&#x679C; Web App &#x529F;&#x80FD;&#x53D1;&#x751F;&#x4E86;&#x5347;&#x7EA7;&#x66F4;&#x65B0;&#xFF0C;&#x6211;&#x4EEC;&#x9884;&#x671F;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x5F53;&#x7528;&#x6237;&#x5237;&#x65B0;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#x5E0C;&#x671B;&#x6D4F;&#x89C8;&#x5668;&#x7ACB;&#x5373;&#x66F4;&#x65B0;&#x5F53;&#x524D;&#x9875;&#x9762;&#x7684;&#x7F13;&#x5B58;&#xFF0C;&#x5E76;&#x4E14;&#x7ACB;&#x5373;&#x52A0;&#x8F7D;&#x6700;&#x65B0;&#x7684;&#x5185;&#x5BB9;&#x548C;&#x8D44;&#x6E90;&#xFF0C;&#x5448;&#x73B0;&#x6700;&#x65B0;&#x7684;&#x6548;&#x679C;&#x7ED9;&#x7528;&#x6237;&#x770B;&#x5230;&#x3002;&#x53EF;&#x662F;&#x7528;&#x6237;&#x5728;&#x5237;&#x65B0;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#x770B;&#x5230;&#x7684;&#x8FD8;&#x662F;&#x4E4B;&#x524D;&#x7F13;&#x5B58;&#x7684;&#x8001;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x8BE5;&#x5982;&#x4F55;&#x5904;&#x7406;&#x5462;&#xFF1F;</p>
+<p>&#x901A;&#x5E38;&#x5728;&#x6BCF;&#x6B21;&#x8FDB;&#x884C; Web App &#x5347;&#x7EA7;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x5FC5;&#x987B;&#x4F34;&#x968F;&#x7740; Service Worker &#x6587;&#x4EF6; <code>sw.js</code> &#x7684;&#x5347;&#x7EA7;&#xFF0C;&#x5F53;&#x6D4F;&#x89C8;&#x5668;&#x68C0;&#x6D4B;&#x5230; <code>sw.js</code> &#x7684;&#x5347;&#x7EA7;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x89E6;&#x53D1;&#x6CE8;&#x518C;&#x3001;&#x5B89;&#x88C5;&#x3001;&#x6FC0;&#x6D3B;&#x3001;&#x63A7;&#x5236;&#x9875;&#x9762;&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x5E76;&#x5728;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C31;&#x4F1A;&#x66F4;&#x65B0;&#x5F53;&#x524D; Web App &#x7684;&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x4E3A;&#x6700;&#x65B0;&#x7684;&#x4E0A;&#x7EBF;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x5728;&#x6267;&#x884C; <code>navigator.serviceWorker.register()</code> &#x65B9;&#x6CD5;&#x6CE8;&#x518C; Service Worker &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x901A;&#x8FC7;&#x81EA;&#x8EAB; diff &#x7B97;&#x6CD5;&#x80FD;&#x591F;&#x68C0;&#x6D4B; <code>sw.js</code> &#x7684;&#x66F4;&#x65B0;&#x5305;&#x542B;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>Service Worker &#x6587;&#x4EF6; URL &#x7684;&#x66F4;&#x65B0;</li>
+<li>Service Worker &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x7684;&#x66F4;&#x65B0;</li>
+</ul>
+<p>&#x5728;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5728; Web App &#x65B0;&#x4E0A;&#x7EBF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x5728;&#x6CE8;&#x518C; Service Worker &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x901A;&#x8FC7;&#x4FEE;&#x6539; Service Worker &#x6587;&#x4EF6;&#x7684; URL &#x6765;&#x8FDB;&#x884C; Service Worker &#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x4E00;&#x822C;&#x91C7;&#x7528;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#x7684;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&apos;serviceWorker&apos;</span> <span class="token keyword">in</span> navigator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  navigator<span class="token punctuation">.</span>serviceWorker<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">&apos;./sw.js?v=20190401235959&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6BCF;&#x6B21; Web App &#x4E0A;&#x7EBF;&#x6784;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x6700;&#x65B0;&#x7684;&#x552F;&#x4E00;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5C06;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x53F7;&#x5199;&#x5165; Service Worker &#x6587;&#x4EF6; URL &#x7684;&#x7248;&#x672C;&#x53F7;&#x53C2;&#x6570;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x80FD;&#x591F;&#x4FDD;&#x8BC1;&#x6BCF;&#x6B21; Web App &#x6709;&#x6700;&#x65B0;&#x4E0A;&#x7EBF;&#x529F;&#x80FD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x80FD;&#x591F;&#x6709;&#x6700;&#x65B0;&#x7684; Service Worker &#x6587;&#x4EF6; diff &#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x80FD;&#x591F;&#x68C0;&#x6D4B;&#x5230;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x9664;&#x4E86;&#x6539;&#x53D8; Service Worker &#x6587;&#x4EF6; URL&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6539;&#x53D8; Service Worker &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// sw.js</span>
+self<span class="token punctuation">.</span>version <span class="token operator">=</span> <span class="token string">&apos;20190401235959&apos;</span>
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;
+&#x5728; sw.js &#x4E2D;&#xFF0C;<code>self</code> &#x4E3A; Service Worker &#x7EBF;&#x7A0B;&#x7684;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684; <code>window</code>&#xFF0C;&#x5728; sw.js &#x4E2D;&#x662F;&#x8BBF;&#x95EE;&#x4E0D;&#x5230; <code>window</code> &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x3002;</p>
+</blockquote>
+<p>&#x5728; Web App &#x6BCF;&#x6B21;&#x4E0A;&#x7EBF;&#x65B0;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x6784;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6700;&#x65B0;&#x7684;&#x552F;&#x4E00;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x53F7;&#x5199;&#x5728; <code>sw.js</code> &#x6587;&#x4EF6;&#x5185;&#xFF0C;&#x8FD9;&#x6837;&#x4E5F;&#x80FD;&#x4FDD;&#x8BC1;&#x6BCF;&#x6B21; Web App &#x90FD;&#x80FD;&#x591F;&#x6709;&#x6700;&#x65B0;&#x7684; Service Worker &#x6587;&#x4EF6; diff &#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x68C0;&#x6D4B;&#x5230;&#x3002;</p>
+<h2 id="service-worker-&#x5BB9;&#x9519;"><a name="service-worker-&#x5BB9;&#x9519;" class="anchor-navigation-ex-anchor" href="#service-worker-&#x5BB9;&#x9519;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. Service Worker &#x5BB9;&#x9519;</h2>
+<p>&#x7531;&#x4E8E; Service Worker &#x4E00;&#x65E6;&#x4E0A;&#x7EBF;&#x5C31;&#x4F1A;&#x6C38;&#x4E45;&#x751F;&#x6548;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x7EBF;&#x4E0A; Service Worker &#x6709; bug &#x8BE5;&#x600E;&#x4E48;&#x529E;&#x5462;&#xFF1F;&#x6709;&#x4E00;&#x79CD;&#x4EA1;&#x7F8A;&#x8865;&#x7262;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x91CD;&#x65B0;&#x4E0A;&#x4E00;&#x6B21;&#x7EBF;&#xFF0C;&#x6CE8;&#x9500;&#x6389;&#x6709; bug &#x7684; Service Worker&#xFF0C;&#x5047;&#x5982;&#x73B0;&#x5728;&#x6709;&#x4E00;&#x4E2A;&#x73B0;&#x5B58;&#x7684;&#x9879;&#x76EE; serviceWorkerUnregisterDemo&#xFF0C;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token keyword">.</span>
+&#x2514;&#x2500;&#x2500; serviceWorkerUnregisterDemo/
+    &#x251C;&#x2500;&#x2500; index.html
+    &#x2514;&#x2500;&#x2500; sw.js
+</code></pre>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x7D27;&#x6025;&#x4E0B;&#x7EBF;&#x8BE5;&#x9879;&#x76EE;&#x7684; Service Worker&#xFF0C;&#x5219; <code>index.html</code> &#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Unregister Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        navigator.serviceWorker.getRegistrations()
+          .then(regs =&gt; {
+            for (let reg of regs) {
+              // &#x6CE8;&#x9500;&#x6389;&#x6240;&#x6709;&#x7684; Service Worker
+              reg.unregister()
+            }
+          })
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x53D1;&#x73B0; Service Worker &#x51FA;&#x73B0;&#x95EE;&#x9898;&#x4E4B;&#x540E;&#xFF0C;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x4E0A;&#x7EBF; Web App &#x6765;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x6210;&#x672C;&#x6BD4;&#x8F83;&#x9AD8;&#x3002;&#x4E00;&#x822C;&#x5927;&#x578B; Web App &#x4E0A;&#x7EBF;&#x7684;&#x8FC7;&#x7A0B;&#x4E5F;&#x975E;&#x5E38;&#x590D;&#x6742;&#xFF0C;&#x4E0A;&#x7EBF;&#x5468;&#x671F;&#x957F;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x79CD;&#x6B62;&#x635F;&#x6548;&#x679C;&#x8F83;&#x5DEE;&#xFF0C;&#x4E0D;&#x662F;&#x5F88;&#x53EF;&#x53D6;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x91CD;&#x65B0;&#x4E0A;&#x7EBF; Web App&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728; Service Worker &#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#x901A;&#x8FC7;&#x4E00;&#x4E2A; &#x201C;<strong>&#x5F00;&#x5173;&#x8BF7;&#x6C42;</strong>&#x201D; &#x505A;&#x4E00;&#x4E2A;&#x5BB9;&#x9519;&#x964D;&#x7EA7;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x4E2A;&#x5F00;&#x5173;&#x8BF7;&#x6C42;&#x9700;&#x8981;&#x6EE1;&#x8DB3;&#x51E0;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>&#x80FD;&#x591F;&#x5FEB;&#x901F;&#x4E0A;&#x7EBF;&#xFF0C;&#x548C; Web App &#x7684;&#x4E0A;&#x7EBF;&#x89E3;&#x8026;</li>
+<li>&#x4E0D;&#x80FD;&#x88AB;&#x7F13;&#x5B58;&#xFF08;&#x65E0;&#x8BBA;&#x662F; HTTP &#x7F13;&#x5B58;&#x8FD8;&#x662F; Service Worker &#x7F13;&#x5B58;&#xFF09;</li>
+</ul>
+<p>&#x5728;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x901A;&#x5E38;&#x5F00;&#x5173;&#x8BF7;&#x6C42;&#x4F1A;&#x7EF4;&#x62A4;&#x6210;&#x4E00;&#x4E2A; JavaScript &#x6587;&#x4EF6;&#xFF08;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x4E00;&#x79CD;&#x8BF7;&#x6C42;&#x7C7B;&#x578B;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7; JavaScript &#x6587;&#x4EF6;&#x901A;&#x5E38;&#x6BD4;&#x8F83;&#x597D;&#x7EF4;&#x62A4;&#xFF0C;&#x800C;&#x4E14;&#x65E0;&#x9700;&#x8003;&#x8651;&#x8BF7;&#x6C42;&#x8DE8;&#x57DF;&#x7684;&#x95EE;&#x9898;&#xFF09;&#xFF0C;&#x653E;&#x5728;&#x67D0;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x4E0A;&#x7EBF;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x3002;&#x90A3;&#x4E48;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x4FEE;&#x6539; serviceWorkerUnregisterDemo &#x9879;&#x76EE;&#x7684; <code>index.html</code> &#x4EE3;&#x7801;&#x6765;&#x770B;&#x770B;&#x5177;&#x4F53;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x7684;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x9762;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Service Worker Unregister Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+      if (&apos;serviceWorker&apos; in navigator) {
+        // &#x6B63;&#x5E38;&#x8FDB;&#x884C;&#x6CE8;&#x518C; Service Worker
+        navigator.serviceWorker.register(&apos;./sw.js?v=20190401235959&apos;)
+        let script = document.createElement(&apos;script&apos;)
+        // &#x5047;&#x8BBE;&#x8FD9;&#x4E2A; JS &#x4E2D;&#x5B58;&#x5728; Service Worker &#x5F00;&#x5173;&#x5168;&#x5C40;&#x53D8;&#x91CF;
+        script.src = &apos;https://some-static-cdn-host/sw-on-off.js&apos;
+        script.async = true
+        script.onload = () =&gt; {
+          // Service Worker &#x5F00;&#x5173;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x79F0;
+          if (window.SW_TURN_OFF) {
+            navigator.serviceWorker.getRegistrations()
+              .then(regs =&gt; {
+                for (let reg of regs) {
+                  // &#x6CE8;&#x9500;&#x6389;&#x6240;&#x6709;&#x7684; Service Worker
+                  reg.unregister()
+                }
+              })
+          }
+        }
+        document.body.appendChild(script)
+      }
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x5047;&#x5982;&#x5728; <code>https://some-static-cdn-host/sw-on-off.js</code> &#x9759;&#x6001;&#x8D44;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x7EF4;&#x62A4;&#x4E86;&#x4E00;&#x4E2A;&#x5F00;&#x5173; JavaScript &#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">/**
+ * @file https://some-static-cdn-host/sw-on-off.js
+ */</span>
+
+<span class="token comment">// &#x5F53; Web App &#x7EBF;&#x4E0A;&#x51FA;&#x73B0;&#x7D27;&#x6025;&#x95EE;&#x9898;&#x7684;&#x65F6;&#x5019;&#x5C06;&#x503C;&#x8BBE;&#x4E3A; true &#x5E76;&#x4E0A;&#x7EBF;</span>
+window<span class="token punctuation">.</span><span class="token constant">SW_TURN_OFF</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+</code></pre>
+<h2 id="&#x5C0F;&#x7ED3;"><a name="&#x5C0F;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x5C0F;&#x7ED3;</h2>
+<p>&#x672C;&#x8282;&#x4ECE;&#x6CE8;&#x518C; Service Worker &#x7684;&#x89D2;&#x5EA6;&#x51FA;&#x53D1;&#xFF0C;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#x4E86;&#x5728;&#x6CE8;&#x518C; Service Worker &#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x8003;&#x8651;&#x54EA;&#x4E9B;&#x95EE;&#x9898;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x9879;&#x76EE;&#x67B6;&#x6784;&#x6216;&#x8005;&#x4E0D;&#x540C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6CE8;&#x518C; Service Worker &#x7684;&#x8003;&#x91CF;&#x70B9;&#x90FD;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x63A5;&#x6765;&#x4E0B;&#x5C06;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD; Service Worker &#x7684;&#x6280;&#x672F;&#x7EC6;&#x8282;&#xFF0C;&#x4E86;&#x89E3; Service Worker &#x5230;&#x5E95;&#x662F;&#x5982;&#x4F55;&#x8FDB;&#x884C; PWA &#x7684;&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x7684;&#x3002;</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9;2019 <a href="https://github.com/lavas-project" target="_blank">&#x767E;&#x5EA6; Web &#x751F;&#x6001;&#x56E2;&#x961F;</a> <br>   <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;"></a> &#x672C;&#x4E66;&#x91C7;&#x7528; <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x56FD;&#x9645;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a> &#x8FDB;&#x884C;&#x8BB8;&#x53EF;&#x3002;<br>    &#x672C;&#x4E66;&#x4ECD;&#x5728;&#x52D8;&#x8BEF;&#x9636;&#x6BB5;&#xFF0C;&#x8BF7;&#x52FF;&#x4EE5;&#x4EFB;&#x4F55;&#x5F62;&#x5F0F;&#x79C1;&#x81EA;&#x4F20;&#x64AD;&#xFF0C;&#x6211;&#x4EEC;&#x4FDD;&#x7559;&#x5BF9;&#x672C;&#x4E66;&#x7684;&#x7248;&#x6743; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-05-17 16:26:29 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-service-worker-introduction.html" class="navigation navigation-prev " aria-label="Previous page: 4.1 Service Worker 简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3-service-worker-dive.html" class="navigation navigation-next " aria-label="Next page: 4.3 Service Worker 工作原理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.2 Service Worker 注册","level":"1.5.2","depth":2,"next":{"title":"4.3 Service Worker 工作原理","level":"1.5.3","depth":2,"path":"chapter04/3-service-worker-dive.md","ref":"chapter04/3-service-worker-dive.md","articles":[]},"previous":{"title":"4.1 Service Worker 简介","level":"1.5.1","depth":2,"path":"chapter04/1-service-worker-introduction.md","ref":"chapter04/1-service-worker-introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-livereload","simple-page-toc","prism","prism-themes","-highlight","advanced-emoji","include-codeblock","-sharing","sharing-plus","ace","emphasize","splitter","page-footer-ex","expandable-chapters-small","sectionx","local-video","anchor-navigation-ex","favicon","todo","3-ba","chart","github"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"emphasize":{},"ace":{},"github":{"url":"https://github.com/lavas-project/pwa-book"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"page-footer-ex":{"copyright":"Copyright ©2019 [百度 Web 生态团队](https://github.com/lavas-project) <br/>   [![知识共享许可协议](https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/) 本书采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-nd/4.0/) 进行许可。<br/>    本书仍在勘误阶段，请勿以任何形式私自传播，我们保留对本书的版权","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"该文件修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"isRewritePageTitle":false,"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"3-ba":{"configuration":"auto","token":"xxxxxxxx"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"lavas <lavas@baidu.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PWA 应用实战","language":"zh-hans","gitbook":"3.2.3","description":"PWA 开发实战"},"file":{"path":"chapter04/2-service-worker-register.md","mtime":"2019-05-17T08:26:29.441Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-22T11:13:00.503Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

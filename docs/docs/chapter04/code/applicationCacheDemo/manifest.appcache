@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# version xx.xx.xx
+CACHE:
+cached.png
+cached.js
+
+NETWORK:
+noCached.html
+noCached.css
+
+FALLBACK:
+/ 404.html

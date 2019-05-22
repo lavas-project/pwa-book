@@ -1,0 +1,1089 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第6章 用户留存 · PWA 应用实战</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lavas <lavas@baidu.com>">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter06/1-manifest-json.html" />
+    
+    
+    <link rel="prev" href="chapter05/5-workbox.html" />
+    
+
+    
+    <link rel="stylesheet" href="gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    
+        <link rel="shortcut icon" href='favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    HOME
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter01.html">
+            
+                <a href="chapter01.html">
+            
+                    
+                    第1章 PWA 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="chapter01/1-how-was-pwa-born.html">
+            
+                <a href="chapter01/1-how-was-pwa-born.html">
+            
+                    
+                    1.1 为什么会出现 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="chapter01/2-what-is-pwa.html">
+            
+                <a href="chapter01/2-what-is-pwa.html">
+            
+                    
+                    1.2 什么是 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="chapter01/3-what-are-key-techs.html">
+            
+                <a href="chapter01/3-what-are-key-techs.html">
+            
+                    
+                    1.3 PWA 的核心技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="chapter01/4-how-is-pwa-going.html">
+            
+                <a href="chapter01/4-how-is-pwa-going.html">
+            
+                    
+                    1.4 PWA 的发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="chapter01/5-the-future-of-pwa.html">
+            
+                <a href="chapter01/5-the-future-of-pwa.html">
+            
+                    
+                    1.5 PWA 的未来
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="chapter01/6-your-first-pwa.html">
+            
+                <a href="chapter01/6-your-first-pwa.html">
+            
+                    
+                    1.6 你的第一个 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter02.html">
+            
+                <a href="chapter02.html">
+            
+                    
+                    第2章 设计与体验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="chapter02/1-what-is-good-ux.html">
+            
+                <a href="chapter02/1-what-is-good-ux.html">
+            
+                    
+                    2.1 什么是好的用户体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="chapter02/2-design-and-tech.html">
+            
+                <a href="chapter02/2-design-and-tech.html">
+            
+                    
+                    2.2 设计与技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="chapter02/3-app-shell.html">
+            
+                <a href="chapter02/3-app-shell.html">
+            
+                    
+                    2.3 App Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="chapter02/4-app-skeleton.html">
+            
+                <a href="chapter02/4-app-skeleton.html">
+            
+                    
+                    2.4 骨架屏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="chapter02/5-responsive-design.html">
+            
+                <a href="chapter02/5-responsive-design.html">
+            
+                    
+                    2.5 响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter03.html">
+            
+                <a href="chapter03.html">
+            
+                    
+                    第3章 基础技术简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="chapter03/1-promise.html">
+            
+                <a href="chapter03/1-promise.html">
+            
+                    
+                    3.1 Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="chapter03/2-async-function.html">
+            
+                <a href="chapter03/2-async-function.html">
+            
+                    
+                    3.2 Async 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="chapter03/3-fetch-api.html">
+            
+                <a href="chapter03/3-fetch-api.html">
+            
+                    
+                    3.3 Fetch API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="chapter03/4-cache-api.html">
+            
+                <a href="chapter03/4-cache-api.html">
+            
+                    
+                    3.4 Cache API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="chapter03/5-indexeddb.html">
+            
+                <a href="chapter03/5-indexeddb.html">
+            
+                    
+                    3.5 IndexedDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter04.html">
+            
+                <a href="chapter04.html">
+            
+                    
+                    第4章 Service Worker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="chapter04/1-service-worker-introduction.html">
+            
+                <a href="chapter04/1-service-worker-introduction.html">
+            
+                    
+                    4.1 Service Worker 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="chapter04/2-service-worker-register.html">
+            
+                <a href="chapter04/2-service-worker-register.html">
+            
+                    
+                    4.2 Service Worker 注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="chapter04/3-service-worker-dive.html">
+            
+                <a href="chapter04/3-service-worker-dive.html">
+            
+                    
+                    4.3 Service Worker 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="chapter04/4-service-worker-debug.html">
+            
+                <a href="chapter04/4-service-worker-debug.html">
+            
+                    
+                    4.4 Service Worker 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter05.html">
+            
+                <a href="chapter05.html">
+            
+                    
+                    第5章 离线与缓存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="chapter05/1-fetch-event-management.html">
+            
+                <a href="chapter05/1-fetch-event-management.html">
+            
+                    
+                    5.1 资源请求的拦截代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="chapter05/2-local-storage-management.html">
+            
+                <a href="chapter05/2-local-storage-management.html">
+            
+                    
+                    5.2 本地存储管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="chapter05/3-respond-strategy.html">
+            
+                <a href="chapter05/3-respond-strategy.html">
+            
+                    
+                    5.3 资源请求响应策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="chapter05/4-precache.html">
+            
+                <a href="chapter05/4-precache.html">
+            
+                    
+                    5.4 预缓存方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="chapter05/5-workbox.html">
+            
+                <a href="chapter05/5-workbox.html">
+            
+                    
+                    5.5 使用 Workbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="chapter06.html">
+            
+                <a href="chapter06.html">
+            
+                    
+                    第6章 用户留存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="chapter06/1-manifest-json.html">
+            
+                <a href="chapter06/1-manifest-json.html">
+            
+                    
+                    6.1 Web 应用清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="chapter06/2-credentials-api.html">
+            
+                <a href="chapter06/2-credentials-api.html">
+            
+                    
+                    6.2 凭证管理 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="chapter06/3-notification-api.html">
+            
+                <a href="chapter06/3-notification-api.html">
+            
+                    
+                    6.3 桌面通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="chapter06/4-web-push-api.html">
+            
+                <a href="chapter06/4-web-push-api.html">
+            
+                    
+                    6.4 网络推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="chapter06/5-payment-request-api.html">
+            
+                <a href="chapter06/5-payment-request-api.html">
+            
+                    
+                    6.5 Payment Request API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter07.html">
+            
+                <a href="chapter07.html">
+            
+                    
+                    第7章 安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="chapter07/1-https.html">
+            
+                <a href="chapter07/1-https.html">
+            
+                    
+                    7.1 使用 HTTPS 保护站点安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="chapter07/2-CSP.html">
+            
+                <a href="chapter07/2-CSP.html">
+            
+                    
+                    7.2 内容安全策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="chapter07/3-policy.html">
+            
+                <a href="chapter07/3-policy.html">
+            
+                    
+                    7.3 同源策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="chapter07/4-vulnerability.html">
+            
+                <a href="chapter07/4-vulnerability.html">
+            
+                    
+                    7.4 典型的安全漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter08.html">
+            
+                <a href="chapter08.html">
+            
+                    
+                    第8章 性能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="chapter08/1-loading-performance.html">
+            
+                <a href="chapter08/1-loading-performance.html">
+            
+                    
+                    8.1 加载性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="chapter08/2-rendering-performance.html">
+            
+                <a href="chapter08/2-rendering-performance.html">
+            
+                    
+                    8.2 渲染性能 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter09.html">
+            
+                <a href="chapter09.html">
+            
+                    
+                    第9章 PWA 与搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="chapter09/1-search-engine-index.html">
+            
+                <a href="chapter09/1-search-engine-index.html">
+            
+                    
+                    9.1 搜索引擎收录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="chapter09/2-pwa-and-amp-and-mip.html">
+            
+                <a href="chapter09/2-pwa-and-amp-and-mip.html">
+            
+                    
+                    9.2 PWA 与 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="chapter09/3-whole-site-amp-and-mip.html">
+            
+                <a href="chapter09/3-whole-site-amp-and-mip.html">
+            
+                    
+                    9.3 全站 AMP/MIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="chapter09/4-preload-pwa.html">
+            
+                <a href="chapter09/4-preload-pwa.html">
+            
+                    
+                    9.4 AMP/MIP 预加载 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="appendix01.html">
+            
+                <a href="appendix01.html">
+            
+                    
+                    附录1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="appendix01/1-lighthouse.html">
+            
+                <a href="appendix01/1-lighthouse.html">
+            
+                    
+                    1 使用 Lighthouse 测评 PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="appendix01/2-lighthouse-score-guide.html">
+            
+                <a href="appendix01/2-lighthouse-score-guide.html">
+            
+                    
+                    2 Lighthouse 评分指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="appendix01/3-lighthouse-case.html">
+            
+                <a href="appendix01/3-lighthouse-case.html">
+            
+                    
+                    3 Lighthouse 使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="thanks.html">
+            
+                <a href="thanks.html">
+            
+                    
+                    感谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第6章 用户留存</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7528;&#x6237;&#x5B58;&#x7559;"><b>1. </b>&#x7528;&#x6237;&#x5B58;&#x7559;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6DFB;&#x52A0;&#x5230;&#x4E3B;&#x5C4F;&#x5E55;"><b>1.1. </b>&#x6DFB;&#x52A0;&#x5230;&#x4E3B;&#x5C4F;&#x5E55;</a></li><li><span class="title-icon "></span><a href="#&#x51ED;&#x8BC1;&#x7BA1;&#x7406;"><b>1.2. </b>&#x51ED;&#x8BC1;&#x7BA1;&#x7406;</a></li><li><span class="title-icon "></span><a href="#&#x684C;&#x9762;&#x901A;&#x77E5;"><b>1.3. </b>&#x684C;&#x9762;&#x901A;&#x77E5;</a></li><li><span class="title-icon "></span><a href="#&#x6D88;&#x606F;&#x63A8;&#x9001;"><b>1.4. </b>&#x6D88;&#x606F;&#x63A8;&#x9001;</a></li><li><span class="title-icon "></span><a href="#&#x652F;&#x4ED8;&#x65B9;&#x6CD5;"><b>1.5. </b>&#x652F;&#x4ED8;&#x65B9;&#x6CD5;</a></li></ul></ul></div><a href="#&#x7528;&#x6237;&#x5B58;&#x7559;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7528;&#x6237;&#x5B58;&#x7559;"><a name="&#x7528;&#x6237;&#x5B58;&#x7559;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6237;&#x5B58;&#x7559;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x7528;&#x6237;&#x5B58;&#x7559;</h1>
+<p>&#x7528;&#x6237;&#x5B58;&#x7559;&#x4E00;&#x76F4;&#x662F;&#x7F51;&#x7AD9;&#x5E94;&#x7528;&#x4FDD;&#x6301;&#x6D3B;&#x8DC3;&#x5EA6;&#x7684;&#x4E00;&#x9879;&#x91CD;&#x5927;&#x8BFE;&#x9898;&#x3002;&#x901A;&#x8FC7;&#x81EA;&#x8EAB;&#x8FC7;&#x786C;&#x7684;&#x54C1;&#x8D28;&#x548C;&#x9002;&#x5F53;&#x7684;&#x8425;&#x9500;&#x624B;&#x6BB5;&#x5438;&#x5F15;&#x5230;&#x7528;&#x6237;&#x4E4B;&#x540E;&#xFF0C;PWA &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x9AD8;&#x7F51;&#x7AD9;&#x5438;&#x5F15;&#x529B;&#xFF0C;&#x589E;&#x52A0;&#x7F51;&#x7AD9;&#x4E0E;&#x7528;&#x6237;&#x7684;&#x4E92;&#x52A8;&#x6027;&#x7B49;&#x7B49;&#xFF0C;&#x8FBE;&#x5230;&#x63D0;&#x9AD8;&#x7528;&#x6237;&#x7559;&#x5B58;&#x7387;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<h2 id="&#x6DFB;&#x52A0;&#x5230;&#x4E3B;&#x5C4F;&#x5E55;"><a name="&#x6DFB;&#x52A0;&#x5230;&#x4E3B;&#x5C4F;&#x5E55;" class="anchor-navigation-ex-anchor" href="#&#x6DFB;&#x52A0;&#x5230;&#x4E3B;&#x5C4F;&#x5E55;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x6DFB;&#x52A0;&#x5230;&#x4E3B;&#x5C4F;&#x5E55;</h2>
+<p>&#x7F51;&#x7AD9;&#x5E94;&#x7528;&#x5411;&#x6765;&#x9700;&#x8981;&#x4F9D;&#x9644;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x5728;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7F51;&#x7AD9;&#x9996;&#x5148;&#x9700;&#x8981;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x5165;&#x7F51;&#x5740;&#x6216;&#x8005;&#x6253;&#x5F00;&#x4E66;&#x7B7E;&#xFF0C;&#x624D;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x5230;&#x7F51;&#x9875;&#x5185;&#x5BB9;&#x3002;&#x8FD9;&#x4E00;&#x6D41;&#x7A0B;&#x76F8;&#x6BD4;&#x8D77;&#x76F4;&#x63A5;&#x5360;&#x9886;&#x4E3B;&#x5C4F;&#x7684;&#x539F;&#x751F;&#x5E94;&#x7528;&#x6765;&#x8BF4;&#x7B80;&#x76F4;&#x662F;&#x7ED5;&#x4E86;&#x4E00;&#x4E2A;&#x5927;&#x5F2F;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x539F;&#x751F;&#x5E94;&#x7528;&#x76F8;&#x5BF9;&#x4E8E;&#x7F51;&#x7AD9;&#x5E94;&#x7528;&#x66F4;&#x4E3A;&#x65B9;&#x4FBF;&#x7684;&#x539F;&#x56E0;&#x4E4B;&#x4E00;&#x3002;&#x56E0;&#x6B64;&#x7F51;&#x7AD9;&#x5E94;&#x7528;&#x4E5F;&#x8FEB;&#x5207;&#x5730;&#x9700;&#x8981;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#x3002;PWA &#x65B0;&#x589E;&#x4E86; <code>manifest.json</code> &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x6DFB;&#x52A0;&#x5230;&#x684C;&#x9762;&#x7684;&#x56FE;&#x6807;&#x548C;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x3001;&#x6253;&#x5F00;&#x5E94;&#x7528;&#x7684;&#x542F;&#x52A8;&#x52A8;&#x753B;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x663E;&#x793A;&#x7C7B;&#x578B;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x9690;&#x85CF;&#x6389;&#x6D4F;&#x89C8;&#x5668;&#x76F8;&#x5173; UI&#xFF08;&#x5982;&#x5BFC;&#x822A;&#x680F;&#x3001;&#x5DE5;&#x5177;&#x680F;&#x7B49;&#x7B49;&#xFF09;&#xFF0C;&#x4F7F;&#x5F97;&#x4ECE;&#x4E3B;&#x5C4F;&#x5E55;&#x76F4;&#x63A5;&#x6253;&#x5F00;&#x7684;&#x7F51;&#x7AD9;&#x5E94;&#x7528;&#x66F4;&#x50CF;&#x539F;&#x751F;&#x5E94;&#x7528;&#x3002;</p>
+<h2 id="&#x51ED;&#x8BC1;&#x7BA1;&#x7406;"><a name="&#x51ED;&#x8BC1;&#x7BA1;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x51ED;&#x8BC1;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x51ED;&#x8BC1;&#x7BA1;&#x7406;</h2>
+<p>&#x63D0;&#x9AD8;&#x7F51;&#x7AD9;&#x5438;&#x5F15;&#x529B;&#x7684;&#x65B9;&#x6CD5;&#x5C11;&#x4E0D;&#x4E86;&#x957F;&#x6548;&#x7684;&#x8D26;&#x53F7;&#x673A;&#x5236;&#x5EFA;&#x7ACB;&#xFF0C;&#x53EA;&#x6709;&#x901A;&#x8FC7;&#x8D26;&#x53F7;&#x673A;&#x5236;&#x624D;&#x80FD;&#x591F;&#x66F4;&#x6709;&#x6548;&#x5730;&#x83B7;&#x53D6;&#x5E76;&#x5206;&#x6790;&#x7528;&#x6237;&#x9700;&#x6C42;&#xFF0C;&#x4ECE;&#x800C;&#x7ED9;&#x4E88;&#x66F4;&#x4E3A;&#x51C6;&#x786E;&#x7684;&#x4E2A;&#x6027;&#x5316;&#x670D;&#x52A1;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x9762;&#xFF0C;PWA &#x65B0;&#x589E;&#x4E86;&#x51ED;&#x8BC1;&#x7BA1;&#x7406; API&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x4E3A;&#x9AD8;&#x6548;&#x548C;&#x5B89;&#x5168;&#x7684;&#x7528;&#x6237;&#x8EAB;&#x4EFD;&#x51ED;&#x8BC1;&#x5B58;&#x50A8;&#x548C;&#x8BFB;&#x53D6;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x7528;&#x4EE5;&#x7B80;&#x5316;&#x53CA;&#x4F18;&#x5316;&#x7528;&#x6237;&#x767B;&#x5F55;&#x6D41;&#x7A0B;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x9AD8;&#x7528;&#x6237;&#x767B;&#x5F55;&#x7387;&#x3002;</p>
+<h2 id="&#x684C;&#x9762;&#x901A;&#x77E5;"><a name="&#x684C;&#x9762;&#x901A;&#x77E5;" class="anchor-navigation-ex-anchor" href="#&#x684C;&#x9762;&#x901A;&#x77E5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x684C;&#x9762;&#x901A;&#x77E5;</h2>
+<!-- FIXME: 与1.3 离线通知部分第三段重复 -->
+<p>&#x684C;&#x9762;&#x901A;&#x77E5;&#x662F;&#x4E00;&#x79CD;&#x65F6;&#x6548;&#x6027;&#x6700;&#x5F3A;&#x7684;&#x4E0E;&#x7528;&#x6237;&#x6C9F;&#x901A;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5373;&#x4F7F;&#x5728;&#x5E94;&#x7528;&#x672A;&#x6253;&#x5F00;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x684C;&#x9762;&#x901A;&#x77E5;&#x4F9D;&#x7136;&#x80FD;&#x591F;&#x5728;&#x8BBE;&#x5907;&#x7684;&#x901A;&#x77E5;&#x680F;&#x663E;&#x793A;&#x63A8;&#x9001;&#x7684;&#x901A;&#x77E5;&#xFF0C;&#x80FD;&#x591F;&#x7ACB;&#x5373;&#x5F15;&#x8D77;&#x7528;&#x6237;&#x7684;&#x6CE8;&#x610F;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x7A81;&#x53D1;&#x4E8B;&#x4EF6;&#x3001;&#x9650;&#x65F6;&#x6D3B;&#x52A8;&#x3001;&#x91CD;&#x5927;&#x5347;&#x7EA7;&#x7B49;&#x7B49;&#x65F6;&#x6548;&#x6027;&#x8981;&#x6C42;&#x5F88;&#x9AD8;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x684C;&#x9762;&#x901A;&#x77E5;&#x603B;&#x662F;&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#x3002;&#x8FD9;&#x4E5F;&#x662F;&#x8FC7;&#x53BB;&#x539F;&#x751F;&#x5E94;&#x7528;&#x529F;&#x80FD;&#x5F3A;&#x4E8E;&#x7F51;&#x7AD9;&#x5E94;&#x7528;&#x7684;&#x539F;&#x56E0;&#x4E4B;&#x4E00;&#x3002;&#x56E0;&#x6B64; PWA &#x63D0;&#x4F9B;&#x4E86; Notification API&#xFF0C;&#x8865;&#x5168;&#x4E86;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="&#x6D88;&#x606F;&#x63A8;&#x9001;"><a name="&#x6D88;&#x606F;&#x63A8;&#x9001;" class="anchor-navigation-ex-anchor" href="#&#x6D88;&#x606F;&#x63A8;&#x9001;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x6D88;&#x606F;&#x63A8;&#x9001;</h2>
+<p>&#x6709;&#x4E86;&#x684C;&#x9762;&#x901A;&#x77E5;&#x4F5C;&#x4E3A;&#x6D88;&#x606F;&#x5C55;&#x793A;&#x7684;&#x8F7D;&#x4F53;&#x4E4B;&#x540E;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E13;&#x95E8;&#x7684;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x5F97;&#x7F51;&#x9875;&#x5373;&#x4F7F;&#x5728;&#x672A;&#x6253;&#x5F00;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E5F;&#x80FD;&#x591F;&#x63A5;&#x6536;&#x5230;&#x540E;&#x7AEF;&#x63A8;&#x9001;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x7ED3;&#x5408; Notification API &#x5C31;&#x80FD;&#x591F;&#x505A;&#x5230;&#x79BB;&#x7EBF;&#x7684;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x4E0E;&#x901A;&#x77E5;&#x5C55;&#x73B0;&#x4E86;&#x3002;</p>
+<h2 id="&#x652F;&#x4ED8;&#x65B9;&#x6CD5;"><a name="&#x652F;&#x4ED8;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x652F;&#x4ED8;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x652F;&#x4ED8;&#x65B9;&#x6CD5;</h2>
+<p>&#x5BF9;&#x4E8E;&#x7528;&#x6237;&#x7559;&#x5B58;&#x6765;&#x8BF4;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x652F;&#x4ED8;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x57F9;&#x517B;&#x7528;&#x6237;&#x4E60;&#x60EF;&#x7684;&#x5229;&#x5668;&#xFF0C;&#x4E00;&#x65E6;&#x7528;&#x6237;&#x4E60;&#x60EF;&#x4E86;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x652F;&#x4ED8; API &#x8FDB;&#x884C;&#x8D2D;&#x7269;&#x7B49;&#x6D88;&#x8D39;&#x6D3B;&#x52A8;&#xFF0C;&#x90A3;&#x4E48;&#x7528;&#x6237;&#x7559;&#x5B58;&#x7387;&#x81EA;&#x7136;&#x5C31;&#x63D0;&#x9AD8;&#x4E86;&#x3002;&#x800C;&#x4E14;&#x73B0;&#x4EE3;&#x793E;&#x4F1A;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x4F1A;&#x6709;&#x7F51;&#x4E0A;&#x8D2D;&#x7269;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x63D0;&#x4F9B;&#x7EDF;&#x4E00;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#x7684;&#x652F;&#x4ED8;&#x754C;&#x9762;&#x662F; Payment Request API &#x7684;&#x76EE;&#x6807;&#x4E4B;&#x4E00;&#x3002;</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9;2019 <a href="https://github.com/lavas-project" target="_blank">&#x767E;&#x5EA6; Web &#x751F;&#x6001;&#x56E2;&#x961F;</a> <br>   <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;"></a> &#x672C;&#x4E66;&#x91C7;&#x7528; <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x56FD;&#x9645;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;</a> &#x8FDB;&#x884C;&#x8BB8;&#x53EF;&#x3002;<br>    &#x672C;&#x4E66;&#x4ECD;&#x5728;&#x52D8;&#x8BEF;&#x9636;&#x6BB5;&#xFF0C;&#x8BF7;&#x52FF;&#x4EE5;&#x4EFB;&#x4F55;&#x5F62;&#x5F0F;&#x79C1;&#x81EA;&#x4F20;&#x64AD;&#xFF0C;&#x6211;&#x4EEC;&#x4FDD;&#x7559;&#x5BF9;&#x672C;&#x4E66;&#x7684;&#x7248;&#x6743; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-05-17 16:26:29 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter05/5-workbox.html" class="navigation navigation-prev " aria-label="Previous page: 5.5 使用 Workbox">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter06/1-manifest-json.html" class="navigation navigation-next " aria-label="Next page: 6.1 Web 应用清单">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第6章 用户留存","level":"1.7","depth":1,"next":{"title":"6.1 Web 应用清单","level":"1.7.1","depth":2,"path":"chapter06/1-manifest-json.md","ref":"chapter06/1-manifest-json.md","articles":[]},"previous":{"title":"5.5 使用 Workbox","level":"1.6.5","depth":2,"path":"chapter05/5-workbox.md","ref":"chapter05/5-workbox.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-livereload","simple-page-toc","prism","prism-themes","-highlight","advanced-emoji","include-codeblock","-sharing","sharing-plus","ace","emphasize","splitter","page-footer-ex","expandable-chapters-small","sectionx","local-video","anchor-navigation-ex","favicon","todo","3-ba","chart","github"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"emphasize":{},"ace":{},"github":{"url":"https://github.com/lavas-project/pwa-book"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"page-footer-ex":{"copyright":"Copyright ©2019 [百度 Web 生态团队](https://github.com/lavas-project) <br/>   [![知识共享许可协议](https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/) 本书采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-nd/4.0/) 进行许可。<br/>    本书仍在勘误阶段，请勿以任何形式私自传播，我们保留对本书的版权","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"该文件修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"isRewritePageTitle":false,"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"3-ba":{"configuration":"auto","token":"xxxxxxxx"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"lavas <lavas@baidu.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PWA 应用实战","language":"zh-hans","gitbook":"3.2.3","description":"PWA 开发实战"},"file":{"path":"chapter06.md","mtime":"2019-05-17T08:26:29.480Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-22T11:13:00.503Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
