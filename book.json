@@ -11,6 +11,7 @@
   "plugins": [
     "-lunr",
     "-search",
+    "anchors",
     "search-plus",
     "-livereload",
     "simple-page-toc",
@@ -31,11 +32,16 @@
     "anchor-navigation-ex",
     "favicon",
     "todo",
+    "edit-link",
     "3-ba",
     "chart",
     "github"
   ],
   "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/lavas-project/pwa-book/edit/master",
+      "label": "编辑此页"
+    },
     "theme-default": {
       "showLevel": false
     },
@@ -86,11 +92,8 @@
       "update_label": "该文件修订时间：",
       "update_format": "YYYY-MM-DD HH:mm:ss"
     },
-    "simple-page-toc": {
-      "maxDepth": 3,
-      "skipFirstH1": true
-    },
     "anchor-navigation-ex": {
+      "showLevel": false,
       "isRewritePageTitle": false,
       "tocLevel1Icon": "fa fa-hand-o-right",
       "tocLevel2Icon": "fa fa-hand-o-right",
