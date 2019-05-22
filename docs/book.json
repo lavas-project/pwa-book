@@ -1,0 +1,118 @@
+{
+  "title": "PWA 应用实战",
+  "description": "PWA 开发实战",
+  "author": "lavas <lavas@baidu.com>",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "root": ".",
+  "structure": {
+    "readme": "README.md"
+  },
+  "plugins": [
+    "-lunr",
+    "-search",
+    "search-plus",
+    "-livereload",
+    "simple-page-toc",
+    "prism",
+    "prism-themes",
+    "-highlight",
+    "advanced-emoji",
+    "include-codeblock",
+    "-sharing",
+    "sharing-plus",
+    "ace",
+    "emphasize",
+    "splitter",
+    "page-footer-ex",
+    "expandable-chapters-small",
+    "sectionx",
+    "local-video",
+    "anchor-navigation-ex",
+    "favicon",
+    "todo",
+    "3-ba",
+    "chart",
+    "github"
+  ],
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": false
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-okaidia.css"
+      ]
+    },
+    "include-codeblock": {
+      "template": "ace",
+      "unindent": true,
+      "edit": true
+    },
+    "sharing": {
+      "douban": true,
+      "facebook": false,
+      "google": false,
+      "hatenaBookmark": false,
+      "instapaper": false,
+      "line": false,
+      "linkedin": true,
+      "messenger": false,
+      "pocket": false,
+      "qq": false,
+      "qzone": false,
+      "stumbleupon": false,
+      "twitter": false,
+      "viber": false,
+      "vk": false,
+      "weibo": true,
+      "whatsapp": false,
+      "all": [
+        "facebook",
+        "google",
+        "twitter",
+        "weibo",
+        "instapaper",
+        "linkedin",
+        "pocket",
+        "stumbleupon",
+        "qq",
+        "qzone"
+      ]
+    },
+    "page-footer-ex": {
+      "copyright": "Copyright ©2019 [百度 Web 生态团队](https://github.com/lavas-project) <br/>   [![知识共享许可协议](https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/) 本书采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-nd/4.0/) 进行许可。<br/>    本书仍在勘误阶段，请勿以任何形式私自传播，我们保留对本书的版权",
+      "markdown": true,
+      "update_label": "该文件修订时间：",
+      "update_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "simple-page-toc": {
+      "maxDepth": 3,
+      "skipFirstH1": true
+    },
+    "anchor-navigation-ex": {
+      "isRewritePageTitle": false,
+      "tocLevel1Icon": "fa fa-hand-o-right",
+      "tocLevel2Icon": "fa fa-hand-o-right",
+      "tocLevel3Icon": "fa fa-hand-o-right"
+    },
+    "sectionx": {
+      "tag": "b"
+    },
+    "favicon": {
+      "shortcut": "favicon.ico",
+      "bookmark": "favicon.ico"
+    },
+    "terminal": {
+      "copyButtons": true,
+      "fade": false,
+      "style": "flat"
+    },
+    "3-ba": {
+      "token": "xxxxxxxx"
+    },
+    "github": {
+      "url": "https://github.com/lavas-project/pwa-book"
+    }
+  }
+}

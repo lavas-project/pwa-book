@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+  <head>
+    <title>Service Worker Scope Demo</title>
+  </head>
+  <body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./a/b/sw.js')
+          .then(reg => {
+            console.log(reg.scope)
+            // http://127.0.0.1:8000/a/b/
+          })
+      }
+    </script>
+  </body>
+</html>
