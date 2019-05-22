@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <head>
+    <title>Service Worker Scope Demo1 PageA</title>
+  </head>
+  <body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations()
+          .then(regs => {
+            for (let reg of regs) {
+              if (reg.scope !== 'https://127.0.0.1:8000/a/') {
+                reg.unregister()
+              }
+            }
+            // 注销掉污染 Service Worker 之后再重新注册自己作用域的 Service Worker
+            navigator.serviceWorker.register('./a-sw.js')
+          })
+      }
+    </script>
+  </body>
+</html>
