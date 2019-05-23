@@ -42,9 +42,9 @@ $ ws
 > 提示：
 > 为了方便介绍，本章所有的 Demo 示例在提到 “运行” 的时候，都指的是在 Demo 项目的根目录通过 `ws` 命令启动 local-web-server，其默认 host 为 `127.0.0.1`，默认端口号为 `8000`。
 
-使用 Chrome 浏览器访问示例站点 `http://127.0.0.1:8000` 的，可以在开发者模式的 `Applications > Service Worker` 面板中看到当前 Service Worker 线程的状态，在完成了 Service Worker 注册安装之后，结果如下图 4-1 所示：
+使用 Chrome 浏览器访问示例站点 `http://127.0.0.1:8000` 的，可以在开发者模式的 `Applications > Service Worker` 面板中看到当前 Service Worker 线程的状态，在完成了 Service Worker 注册安装之后，结果如下图所示：
 
-![图 4-1 Chrome 下运行 Service Worker 示例的结果](./img/service_worker_chrome_devtools.png)
+![Chrome 下运行 Service Worker 示例的结果](./img/service_worker_chrome_devtools.png)
 
 当调节当前的网络状态为「离线」，依然可以看到 Service Worker 还是生效状态，通过这个例子可以发现，Service Worker 不仅是一个独立于主线程的的一个工作线程，并且还是一个可以在离线环境下运行的工作线程，这样就为 PWA 的离线与缓存功能提供了可行性基础。
 
@@ -121,11 +121,11 @@ Service Worker **可以拦截并代理请求，可以处理请求的返回内容
 
 ## 浏览器支持程度
 
-由于 W3C 标准或草案的提出之后各大浏览器的实现步伐是不一样的，参考 [Can I Use](https://caniuse.com) 截止 2019-04-02 的数据，如下图 4-2 所示当前各大浏览器对 Service Worker 的支持情况如下。
+由于 W3C 标准或草案的提出之后各大浏览器的实现步伐是不一样的，参考 [Can I Use](https://caniuse.com) 截止 2019-04-02 的数据，如下图所示当前各大浏览器对 Service Worker 的支持情况如下。
 
-![图 4-2 caniuse.com 给出的 Service Worker 浏览器支持情况](./img/service_worker_support.png)
+![caniuse.com 给出的 Service Worker 浏览器支持情况](./img/service_worker_support.png)
 
-从上图 4-2 可以看出，Service Worker 的支持程度已经达到 `89.84%`。其中 Chrome 作为开路先锋早早的在 V40 版本就已经支持 Service Worker，并在 Devtools 中还提供了完善的 Debug 方案，Apple 方面从 MacOS Safari 11.1 和 iOS Safari 11.3 开始全面支持，IE Edge 从 17 版本开始也全面支持。
+从上图可以看出，Service Worker 的支持程度已经达到 `89.84%`。其中 Chrome 作为开路先锋早早的在 V40 版本就已经支持 Service Worker，并在 Devtools 中还提供了完善的 Debug 方案，Apple 方面从 MacOS Safari 11.1 和 iOS Safari 11.3 开始全面支持，IE Edge 从 17 版本开始也全面支持。
 
 目前 Apple 和微软都已经支持了 Service Worker，所以对于 “离线可访问” 这样的 PWA 特性来讲，几乎可以在任何的现代浏览器中被实现。
 

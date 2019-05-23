@@ -33,9 +33,9 @@ Service Worker 是有自己的作用域的，Service Worker 作用域是一个 U
 </html>
 ```
 
-首先从上面代码可以看出 `navigator.serviceWorker.register()` 方法返回的是一个 Promise，这个 Promise 中 resolve 返回的是 Service Worker 注册成功后返回的 ServiceWorkerRegistration 对象。运行之后将这个对象打印出来的结果如下图 4-4 所示。
+首先从上面代码可以看出 `navigator.serviceWorker.register()` 方法返回的是一个 Promise，这个 Promise 中 resolve 返回的是 Service Worker 注册成功后返回的 ServiceWorkerRegistration 对象。运行之后将这个对象打印出来的结果如下图所示。
 
-![图 4-4 ServiceWorkerRegistration 对象内容](./img/service_worker_registration.png)
+![ServiceWorkerRegistration 对象内容](./img/service_worker_registration.png)
 
 ServiceWorkerRegistration 对象中的 scope 的值就是当前的 Service Worker 的作用域，在这个示例中为 `http://127.0.0.1:8000/`。
 
@@ -117,9 +117,9 @@ ServiceWorkerRegistration 对象中的 scope 的值就是当前的 Service Worke
 </html>
 ```
 
-上面代码将作用域指定为 `/a/`，运行后浏览器会报错，报错的内容如下图 4-5 所示。
+上面代码将作用域指定为 `/a/`，运行后浏览器会报错，报错的内容如下图所示。
 
-![图 4-5 Service Worker 作用域报错信息](./img/service_worker_scope_error.png)
+![Service Worker 作用域报错信息](./img/service_worker_scope_error.png)
 
 通过报错信息知道 `sw.js` 文件所在的 URL 的 path 是 `/a/b/`，则默认的作用域和最大的作用域都是 `/a/b/`，不允许指定超过最大作用域范围的 `/a/` 为作用域。
 
@@ -177,9 +177,9 @@ ServiceWorkerRegistration 对象中的 scope 的值就是当前的 Service Worke
 </html>
 ```
 
-`http://127.0.0.1:8000/a/index.html` 页面（称为 A 页面）在 `/a/` 作用域下注册了一个 Service Worker，而 `http://127.0.0.1:8000/b/index.html` 页面（称为 B 页面）在 `/` 作用域下注册了一个 Service Worker，这种情况下 B 页面的 Service Worker 就可以控制 A 页面，因为 B 页面的作用域是包含 A 页面的最大作用域的，这个时候这种情况就称之为**作用域污染**，这时候就会出现如下图 4-6 所示的情况，A 页面被两个 Service Worker 所控制。
+`http://127.0.0.1:8000/a/index.html` 页面（称为 A 页面）在 `/a/` 作用域下注册了一个 Service Worker，而 `http://127.0.0.1:8000/b/index.html` 页面（称为 B 页面）在 `/` 作用域下注册了一个 Service Worker，这种情况下 B 页面的 Service Worker 就可以控制 A 页面，因为 B 页面的作用域是包含 A 页面的最大作用域的，这个时候这种情况就称之为**作用域污染**，这时候就会出现如下图所示的情况，A 页面被两个 Service Worker 所控制。
 
-![图 4-6 Service Worker 作用域污染](./img/service_worker_scope_pollute.png)
+![Service Worker 作用域污染](./img/service_worker_scope_pollute.png)
 
 在开发环境开发者在 Chrome 浏览器还可以通过 Devtools 进行手动 “unregister” 来清除掉污染的 Service Worker，但是如果在线上环境被安装了 Service Worker 之后这就是个持久的过程。除非用户手动清除存储的缓存（这个也是不可能的），否则就会出现 Service Worker 交叉控制页面的问题。
 

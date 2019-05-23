@@ -269,4 +269,3 @@ workbox.routing.registerRoute(
 ## 小结
 
 Workbox 的功能非常完善，插件机制也能够很好的满足各种业务场景需求，如果自己手动维护一个应用的原生的 Service Worker 文件工作量非常巨大，而且有很多潜在的问题不容易被发现，Workbox 很好的规避了很多 Service Worker 潜在的问题，也大大减小了 Service Worker 的维护成本，所以建议大家在开始考虑使用 Service Worker 的时候优先考虑 Workbox。
-

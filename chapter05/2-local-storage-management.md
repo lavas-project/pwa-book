@@ -229,4 +229,3 @@ router.registerRoute(/\.(jpe?g|png)$/, async request => {
 ```
 
 资源管理除了上面所演示的过期管理之外，还可以对某一类资源限制存储的数量，比如限制图片最多缓存 10 张等等，这些管理方案都可以通过 Cache API 与 IndexedDB 相结合的方式实现，在这里就不一一做演示了，读者可以根据 CacheWrapper 的思路进行相关功能的实现。
-

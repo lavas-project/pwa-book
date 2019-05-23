@@ -83,8 +83,8 @@ onFulfilled、onRejected 两个都为可选参数。
 - Rejected：reject 时。此时会调用 onRejected。
 - Pending：既不是 resolve 也不是 reject 的状态。也就是 promise 对象刚被创建后的初始化状态等。
 
-图 4-3 展示了 Promise 三种状态之间的关系：
+下图展示了 Promise 三种状态之间的关系：
 
-![图 4-3 Promise 的三种状态](./img/promise_states.png)
+![Promise 的三种状态](./img/promise_states.png)
 
 promise 对象的状态从 Pending 转换为 Fulfilled 或 Rejected 之后，这个 promise 对象的状态就不会再发生任何变化。也就是说，Promise 与 Event 等不同，在 `.then()` 后执行的函数可以肯定地说只会被调用一次。另外，Fulfilled 和 Rejected 这两个中的任一状态都可以表示为 Settled（不变的）。

@@ -256,4 +256,3 @@ router.registerRoute(
 ## 小结
 
 本节内容主要介绍了如何在 Service Worker 中监听 `fetch` 事件来实现对资源请求拦截代理，介绍了如何通过 event.request 进行资源请求判断，如何通过 event.respondWith 实现对资源请求的响应。最后实现了 Router 类来实现对资源请求和响应操作的统一管理。在下一节，将会进一步探讨资源响应的策略。
-

@@ -390,6 +390,3 @@ let resources = [
 之后在控制台点击 skipWaiting 按钮或刷新页面触发 Service Worker 进入激活阶段。当 Service Worker 激活完成时，旧的“/index.html”缓存会被删除，同时页面显示了新添加的文案，说明 Precacher 成功实现了新旧资源交替更换的管理。
 
 ![同名资源替换](./img/precache-demo-update-success.png)
-
-
-

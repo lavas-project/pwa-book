@@ -25,11 +25,11 @@ self.addEventListener('install', () => {
 
 ## 借助 Chrome Devtool 进行调试
 
-使用 Chrome 浏览器，可以通过进入控制台 `Application -> Service Workers` 面板查看和调试。其效果如下图 4-16 所示：
+使用 Chrome 浏览器，可以通过进入控制台 `Application -> Service Workers` 面板查看和调试。其效果如下图所示：
 
-![图 4-16 Chrome Devtools Service Worker 调试面板](./img/chrome_debug.png)
+![Chrome Devtools Service Worker 调试面板](./img/chrome_debug.png)
 
-如果 Service Worker 线程已安装到当前打开的页面上，接下来会看到它将列示在此窗格中。例如：在上图 4-16 中，展示的是在 `https://lavas-project.github.io/lavas-demo/news-v2/#/` 的作用域内安装了一个 Service Worker 线程。
+如果 Service Worker 线程已安装到当前打开的页面上，接下来会看到它将列示在此窗格中。例如：在上图中，展示的是在 `https://lavas-project.github.io/lavas-demo/news-v2/#/` 的作用域内安装了一个 Service Worker 线程。
 
 为了更熟练的运用 Chrome Devtools 调试 Service Worker，首先需要熟悉以下这些选项：
 
@@ -53,9 +53,9 @@ self.addEventListener('install', () => {
 
 - **Clients**：告诉 Service Worker 线程作用域的原点。如果已启用 `show all` 复选框，`focus` 按钮将非常实用。 在此复选框启用时，系统会列出所有注册的 Service Worker 线程。如果这时候点击正在不同标签中运行的 Service Worker 线程旁的 `focus` 按钮，Chrome 会聚焦到该标签。
 
-如果 Service Worker 文件在运行过程中出现了任何的错误，将显示一个 `Error` 新标签，如下图 4-17 所示。
+如果 Service Worker 文件在运行过程中出现了任何的错误，将显示一个 `Error` 新标签，如下图所示。
 
-![图 4-17 Chrome Devtools 中的 Service Worker 报错信息](./img/chrome_debug_error.png)
+![Chrome Devtools 中的 Service Worker 报错信息](./img/chrome_debug_error.png)
 
 当然也可以直接访问 `Chrome://serviceworker-internals` 来打开 serviceWorker 的配置面板，查看所有注册的 Service Worker 情况。
 
@@ -68,17 +68,17 @@ self.addEventListener('install', () => {
 
 通过前面的章节已经了解过，Service Worker 使用 Cache API 进行缓存的读写，同样可以在 Chrome DevTools 上查看缓存的资源列表。
 
-Cache Storage 选项卡提供了一个已使用（Service Worker 线程）Cache API 缓存的只读资源列表，如下图 4-18 所示。
+Cache Storage 选项卡提供了一个已使用（Service Worker 线程）Cache API 缓存的只读资源列表，如下图所示。
 
-![图 4-18 Chrome Devtools 中展示的缓存列表](./img/sw_cache.png)
+![Chrome Devtools 中展示的缓存列表](./img/sw_cache.png)
 
-如果打开了两个或多个缓存，那在 Application 标签下的 Caches 面板将看到它们会陈列在 Cache Storage 下拉菜单下方，如下图 4-19 所示。
+如果打开了两个或多个缓存，那在 Application 标签下的 Caches 面板将看到它们会陈列在 Cache Storage 下拉菜单下方，如下图所示。
 
-![图 4-19 Chrome Devtools  中展示多个缓存列表](./img/multiple_caches.png)
+![Chrome Devtools  中展示多个缓存列表](./img/multiple_caches.png)
 
-当然，Cache Storage 提供清除 Cache 列表的功能，在选择 `Cache Storage` 选项卡后在 Cache Storge 缓存的 key 的 item 上右键点击出现 `delete` ，点击 `delete` 就可以清除该缓存了，如下图 4-20 所示。
+当然，Cache Storage 提供清除 Cache 列表的功能，在选择 `Cache Storage` 选项卡后在 Cache Storge 缓存的 key 的 item 上右键点击出现 `delete` ，点击 `delete` 就可以清除该缓存了，如下图所示。
 
-![图 4-20 Chrome Devtools 中清楚缓存内容](./img/clear_caches.png)
+![Chrome Devtools 中清楚缓存内容](./img/clear_caches.png)
 
 也可以选择 `Clear Storage` 选项卡进行清除缓存。
 
@@ -89,11 +89,11 @@ Cache Storage 选项卡提供了一个已使用（Service Worker 线程）Cache 
 - 来自 Service Worker 的内容会在 Size 字段中标注为 `from ServiceWorker`
 - Service Worker 发出的请求会在 Name 字段中添加 ⚙  图标。
 
-如下图 4-21 所示，第一个名为 `300` 的请求是一张 jpeg 图片， 其 URL 为 `https://unsplash.it/200/300`，该请求是由 Service Worker 代理的， 因此被标注为 `from ServiceWorker`。
+如下图所示，第一个名为 `300` 的请求是一张 jpeg 图片， 其 URL 为 `https://unsplash.it/200/300`，该请求是由 Service Worker 代理的， 因此被标注为 `from ServiceWorker`。
 
-为了响应页面请求，Service Worker 也发出了名为 `300` 的请求（这是图 4-21 中第二个请求），但 Service Worker 把 URL 改成了 `https://unsplash.it/g/200/300`，因此返回给页面的图片是灰色的。
+为了响应页面请求，Service Worker 也发出了名为 `300` 的请求（这是下图中第二个请求），但 Service Worker 把 URL 改成了 `https://unsplash.it/g/200/300`，因此返回给页面的图片是灰色的。
 
-![图 4-21 Service Worker 网络跟踪情况](./img/service_worker_network.png)
+![Service Worker 网络跟踪情况](./img/service_worker_network.png)
 
 ## 真机调试
 
