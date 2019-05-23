@@ -35,6 +35,7 @@
     "edit-link",
     "3-ba",
     "chart",
+    "disqus",
     "github"
   ],
   "pluginsConfig": {
@@ -105,6 +106,9 @@
     "favicon": {
       "shortcut": "favicon.ico",
       "bookmark": "favicon.ico"
+    },
+    "disqus": {
+      "shortName": "lavas-project-github-io"
     },
     "terminal": {
       "copyButtons": true,
