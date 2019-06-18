@@ -81,11 +81,11 @@ promise.catch(error => {
 
 ```js
 let promise = new Promise((resolve, reject) => {
-    throw Error('操作失败！')
+  throw Error('操作失败！')
 })
 promise.catch(error => {
-    // 打印“操作失败！”
-    console.log(error.message)
+  // 打印“操作失败！”
+  console.log(error.message)
 })
 ```
 
@@ -96,19 +96,19 @@ let resolve
 let reject
 
 let promise = new Promise((res, rej) => {
-    resolve = res
-    reject = rej
+  resolve = res
+  reject = rej
 })
 
 promise.then(value => {
-    console.log(value)
+  console.log(value)
 })
 
 /* 一些神仙操作 */
 if (/* 异步操作成功 */) {
-    resolve(value)
+  resolve(value)
 } else {
-    reject(error)
+  reject(error)
 }
 ```
 
@@ -141,12 +141,12 @@ Promise 对象统一了异步状态管理的格式，经过 Promise 包装的异
 ```js
 // ajax 风格的回调写法
 run({
-    success (value) {
-        console.log('执行成功！')
-    },
-    error (error) {
-        console.log('执行失败！')
-    }
+  success (value) {
+    console.log('执行成功！')
+  },
+  error (error) {
+    console.log('执行失败！')
+  }
 })
 // nodejs 风格的回调写法
 run((error, result) => {
@@ -275,25 +275,25 @@ setTimeout(() => {
 
 ```js
 let promise = new Promise(resolve => {
-    setTimeout(() => {
-        resolve('操作成功！')
-    }, 1000)
+  setTimeout(() => {
+    resolve('操作成功！')
+  }, 1000)
 })
 
 // 1 秒后执行回调并抛错
 promise.then(value => {
-    throw Error('出错了')
+  throw Error('出错了')
 })
 
 // 永远不会进到 onRejected 回调中
 // 因为onFulfilled 执行出错不会影响 promise 的状态
 promise.catch(error => {
-    console.log(error)
+  console.log(error)
 })
 
 // 1 秒后打印“操作成功！”
 promise.then(value => {
-    console.log(value)
+  console.log(value)
 })
 ```
 
