@@ -15,8 +15,28 @@
   "license": "GPL",
   "dependencies": {
     "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-3-ba": "^0.9.0",
+    "gitbook-plugin-ace": "^0.3.2",
+    "gitbook-plugin-advanced-emoji": "^0.2.2",
+    "gitbook-plugin-anchor-navigation-ex": "^1.0.14",
     "gitbook-plugin-anchors": "^0.7.1",
+    "gitbook-plugin-chart": "^0.2.2",
     "gitbook-plugin-disqus": "^0.1.0",
-    "gitbook-plugin-edit-link": "^2.0.2"
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-emphasize": "^1.1.0",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-favicon": "0.0.2",
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-include-codeblock": "^3.2.2",
+    "gitbook-plugin-local-video": "^1.0.1",
+    "gitbook-plugin-page-footer-ex": "^0.1.2",
+    "gitbook-plugin-prism": "^2.4.0",
+    "gitbook-plugin-prism-themes": "0.0.2",
+    "gitbook-plugin-search-plus": "^1.0.3",
+    "gitbook-plugin-sectionx": "^3.1.0",
+    "gitbook-plugin-sharing-plus": "0.0.2",
+    "gitbook-plugin-simple-page-toc": "^0.1.2",
+    "gitbook-plugin-splitter": "0.0.8",
+    "gitbook-plugin-todo": "^0.1.3"
   }
 }
