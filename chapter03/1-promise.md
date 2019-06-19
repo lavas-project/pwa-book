@@ -373,47 +373,32 @@ promise.then(
 )
 ```
 
-`.then()` 方法会返回一个 Promise 对象，用于表征回调函数的执行情况。这个 Promise 对象满足以下规则：
+`.then()` 方法会创建并返回一个新的 Promise 对象（用 p2 指代，当前监听的 Promise 对象用 p1 指代），用于表征回调函数的执行情况。这个过程满足如下规则：
 
-1. 当回调函数返回 Promise 对象时，这个 Promise 对象就是 `.then()` 方法所返回的 Promise；
-2. 当回调函数返回其他的结果，甚至返回 undefined 时，`.then()` 方法将会返回 `Promise.resolve(value)` 所创建的 Promise 对象；
-3. 当回调函数抛出异常时，`.then()` 方法则会将异常值捕获并返回 `Promise.reject(error)` 所创建的 Promise 对象。
+1. p1 的状态只决定了何时执行回调以及执行那种类型的回调，并不会影响到 p2 状态；
+2. p2 的初始状态为 'pending'，当回调函数执行成功时状态变更为 'fulfilled'，如果回调执行过程抛出异常则变更为 'rejected'；
+3. 回调函数的返回值 value 将作为 p2 触发状态变更时 `resolve(value)` 的参数将其传递下去。
 
-
-下面通过一些例子来说明 `.then()` 方法在不同情况下的执行结果。
-
-#### 4. 回调函数返回 Promise 对象
+这里存在一个有意思的地方，由于回调函数可以返回任何的结果，因此返回一个 Promise 对象也是可行的。我们在这里用 p3 来指代这个 Promise 对象，在这种情况下首先明确 p2 与 p3 两个不同的 Promise 对象，但是 p2 与 p3 的状态是一致的，这里的“一致”包括最终的状态、状态触发的时机以及返回值的一致性。我们来举例说明这个过程：
 
 ```js
-// 初始 Promise 对象，2 秒后执行成功并返回 '[p1]'
 let p1 = new Promise(resolve => {
-  setTimeout(() => {
-    resolve('[p1]')
-  }, 2000)
+  resolve('[p1]')
 })
-// 用于缓存 p1 回调函数中创建的 Promise 对象用于与 p3 比对
-let p2
-
-let p3 = p1.then(result => {
-  p2 = new Promise(resolve => {
-    setTimeout(() => {
-      resolve('[p2]')
-    }, 1000)
-  })
-  return p2
+let p2 = new Promise(resolve => {
+  resolve(p1)
 })
-
-// 打印 true
-// 证明回调函数返回的 Promise 对象会作为 .then() 函数的返回值
-console.log(p3 === p2)
-
-// 3 秒后打印 '[p2]'
-p3.then(result => {
-  console.log(result)
+// 打印 false
+console.log(p1 === p2)
+// 打印 “[p1]”
+p2.then(value => {
+  console.log(value)
 })
 ```
 
-通过这个机制，就能够实现多个异步过程的顺序执行，只需要将所有的异步过程统一使用 Promise 进行包裹，并且将下一个异步过程的 Promise 对象作为上一个异步过程 Promise 对象的 `onFulfilled` 回调函数的返回值即可。
+通过这个机制就给异步状态提供了可传递性，为 Promise 的链式调用提供了状态传递基础。
+
+下面通过一些例子来说明 `.then()` 方法在不同情况下的执行结果。
 
 #### 1. 正常顺序执行
 
@@ -484,6 +469,33 @@ let p3 = p2.then(value => {
   console.log(value)
 })
 ```
+
+#### 4. 回调函数返回 Promise 对象
+
+```js
+// 初始 Promise 对象，2 秒后执行成功并返回 '[p1]'
+let p1 = new Promise(resolve => {
+  setTimeout(() => {
+    resolve('[p1]')
+  }, 2000)
+})
+
+let p2 = p1.then(result => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('[p3]')
+    }, 1000)
+  })
+})
+
+// 3 秒后打印 '[p3]'
+p2.then(result => {
+  console.log(result)
+})
+```
+
+通过这个机制就实现了多个异步过程的串行执行，只需要将所有的异步过程统一使用 Promise 进行包裹，并且将下一个异步过程的 Promise 对象作为上一个异步过程 Promise 对象的 `onFulfilled` 回调函数的返回值即可。
+
 
 ### Promise 的链式调用
 
