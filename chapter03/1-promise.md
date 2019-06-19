@@ -7,7 +7,7 @@
 
 Promise 是 ES6 引入的一种异步编程的解决方案，通过 Promise 对象来提供统一的异步状态管理方法。
 
-过去我们通常使用注册异步回调函数的形式来进行异步编程，这里的异步回调实际上是具体的异步函数与开发者的接口约定，并不存在任何的标准，因此回调的注册形式、触发方式、异步状态管理等等都得不到统一且稳定的保证。同时这种异步回调的写法不利于状态管理，在处理多个异步过程的时候容易走进回调地狱，因此 JavaScript 异步编程需要一个统一且可靠的方案来进行异步状态管理，因此 Promise 应运而生。事实上 Promise 是社区推动的产物，在早期就出现了比如 $.Deferred、Blubird 等库用于解决异步状态管理和回调地狱的问题，并最终促进并推动了 Promise 写进了 ES6 规范当中。
+过去我们通常使用注册异步回调函数的形式来进行异步编程，这里的异步回调实际上是具体的异步函数与开发者的接口约定，并不存在任何的标准，因此回调的注册形式、触发方式、异步状态管理等等都得不到统一且稳定的保证。同时这种异步回调的写法不利于状态管理，在处理多个异步过程的时候容易走进回调地狱，因此 JavaScript 异步编程需要一个统一且可靠的方案来进行异步状态管理，因此 Promise 应运而生。事实上 Promise 是社区推动的产物，在早期就出现了比如 $.Deferred、Bluebird 等库用于解决异步状态管理和回调地狱的问题，并最终促进并推动了 Promise 写进了 ES6 规范当中。
 
 ## Promise 基本用法
 
@@ -15,7 +15,7 @@ Promise 是 ES6 引入的一种异步编程的解决方案，通过 Promise 对�
 
 ```js
 let promise = new Promise((resolve, reject) => {
-  if (/* 异步操作成功 */) {
+  if (/* 操作成功 */) {
     resolve(value)
   } else {
     reject(error)
@@ -28,12 +28,12 @@ let promise = new Promise((resolve, reject) => {
 Promise 具有三种状态：
 
 - 'pending'：初始状态，代表异步过程仍在进行中，尚未判定成功或者失败；
-- 'fulfilled'：异步操作成功。通过调用 `resolve()` 方法，promise 状态将由 'pending' 变更为 'fulfilled'；
-- 'rejected'：异步操作失败。通过调用 `reject()` 方法，promise 状态将变更为 'rejected'。
+- 'fulfilled'：操作成功。通过调用 `resolve()` 方法，promise 状态将由 'pending' 变更为 'fulfilled'；
+- 'rejected'：操作失败。通过调用 `reject()` 方法，promise 状态将变更为 'rejected'。
 
 在调用 `resolve()` 或 `reject()` 方法的时候可以传入任意值，比如 `resolve('操作成功')`、`reject(Error('操作失败'))` 等等，这个值会作为监听状态变更的回调函数的参数透传出去。
 
-Promise 提供了 `.then(onFulfilled, onRejected)` 和 `.catch(onRejected)` 等原型链方法用于注册状态变更所触发的回调函数。其中 `.catch(onRejected)` 等价于 `.then(value => value, onRejected)`，因此为了行文方便，在没有特殊说明的情况下，后续所提到的 `.then()` 方法均用于指代 `.then()` 或 `.catch()`。
+Promise 提供了 `.then(onFulfilled, onRejected)` 和 `.catch(onRejected)` 等原型链方法用于注册状态变更所触发的回调函数。其中 `.catch(onRejected)` 等价于 `.then(null, onRejected)`，因此为了行文方便，在没有特殊说明的情况下，后续所提到的 `.then()` 方法均用于指代 `.then()` 或 `.catch()`。
 
 下面的示例演示了 Promise 的基本使用方式。在这个例子中创建了一个 Promise 对象，并且利用 `setTimeout()` 方法在 1 秒后触发 Promise 的状态变更，状态变更后便会触发 `onFulfilled` 回调函数并在控制台打印出 Promise 的返回值。
 
@@ -375,9 +375,9 @@ promise.then(
 
 `.then()` 方法会创建并返回一个新的 Promise 对象（用 p2 指代，当前监听的 Promise 对象用 p1 指代），用于表征回调函数的执行情况。这个过程满足如下规则：
 
-1. p1 的状态只决定了何时执行回调以及执行那种类型的回调，并不会影响到 p2 状态；
-2. p2 的初始状态为 'pending'，当回调函数执行成功时状态变更为 'fulfilled'，如果回调执行过程抛出异常则变更为 'rejected'；
-3. 回调函数的返回值 value 将作为 p2 触发状态变更时 `resolve(value)` 的参数将其传递下去。
+- p1 的状态只决定了何时执行回调以及执行那种类型的回调，并不会影响到 p2 状态；
+- p2 的初始状态为 'pending'，当回调函数执行成功时状态变更为 'fulfilled'，如果回调执行过程抛出异常则变更为 'rejected'；
+- 回调函数的返回值 value 将作为 p2 触发状态变更时 `resolve(value)` 的参数将其传递下去。
 
 这里存在一个有意思的地方，由于回调函数可以返回任何的结果，因此返回一个 Promise 对象也是可行的。我们在这里用 p3 来指代这个 Promise 对象，在这种情况下首先明确 p2 与 p3 两个不同的 Promise 对象，但是 p2 与 p3 的状态是一致的，这里的“一致”包括最终的状态、状态触发的时机以及返回值的一致性。我们来举例说明这个过程：
 
@@ -396,7 +396,25 @@ p2.then(value => {
 })
 ```
 
-通过这个机制就给异步状态提供了可传递性，为 Promise 的链式调用提供了状态传递基础。
+- 当 p1 需要调用的回调函数不存在时，则会调用 p2 的 `resolve(p1)` 方法，将这个状态持续传递下去；
+
+```js
+// 产生一个 rejected 状态的 Promise 对象
+let p1 = new Promise((resolve, reject) => {
+  reject('[p1]')
+})
+// 当前注册的 onFulfilled 回调不会触发
+// 同时 onRejected 回调并未注册，因此 p1 的状态会继续向下传递：
+let p2 = p1.then(value => {
+  console.log(value)
+})
+// 打印 '[p1]'
+p2.catch(error => {
+  console.log(error)
+})
+```
+
+以上这些就给异步状态提供了可传递性，为 Promise 的链式调用提供了状态传递的基础。
 
 下面通过一些例子来说明 `.then()` 方法在不同情况下的执行结果。
 
