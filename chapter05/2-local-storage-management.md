@@ -2,7 +2,7 @@
 
 在上一节解决了如何对资源请求进行拦截代理之后，要实现网页的离线缓存还需要解决本地存储的选择与管理问题。
 
-从前面学习中我们知道，处于同一作用域下的网页会共用一个 Service Worker 线程，这个 Service Worker 会同时处理来自不同页面的资源请求的拦截和响应，因此基于性能上的考虑，Service Worker 在设计标准时就要求了任何耗时操作都必须异步实现。这也就导致了在 Service Worker 作用域下能够使，前只有 Cache API 和 IndexedDB，因为目前只有二者在功能实现上全部采用了异步形式，而其他诸如 localStorage 属于同步方法，因此无法在 Service Worker 中使用。
+从前面学习中我们知道，处于同一作用域下的网页会共用一个 Service Worker 线程，这个 Service Worker 会同时处理来自不同页面的资源请求的拦截和响应，因此基于性能上的考虑，Service Worker 在设计标准时就要求了任何耗时操作都必须异步实现。这也就导致了在 Service Worker 作用域下能够使用的缓存策略只有 Cache API 和 IndexedDB，因为目前只有二者在功能实现上全部采用了异步形式，而其他诸如 localStorage 属于同步方法，因此无法在 Service Worker 中使用。
 
 关于 Cache API 和 IndexedDB 在第三章基础技术的简介当中已经做了详细介绍，因此本节的重点将主要放在二者的对比，分析二者的使用场景，在使用时需要关心的注意事项等方面，并在最后举例说明如何结合两种存储方式来实现离线缓存的。
 
