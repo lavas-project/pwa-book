@@ -267,7 +267,7 @@ _map([1, 2, 3], addOne)
 
 ```js
 // webpack.config.js
-const {ContextReplacementPlugin} = require('wbepack')
+const {ContextReplacementPlugin} = require('webpack')
 
 module.exports = {
   // ...
