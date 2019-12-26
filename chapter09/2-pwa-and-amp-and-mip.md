@@ -1,6 +1,6 @@
 # PWA 与 AMP/MIP
 
-本节将会介绍 PWA 如何和 AMP/MIP 进行结合应用，以至于让 PWA 能够再搜索环境下体验变得更好。在看 PWA 如何和 AMP/MIP 结合之前，还是先了解一下什么是 AMP/MIP。
+本节将会介绍 PWA 如何和 AMP/MIP 进行结合应用，以至于让 PWA 能够在搜索环境下体验变得更好。在看 PWA 如何和 AMP/MIP 结合之前，还是先了解一下什么是 AMP/MIP。
 
 ## 什么是 AMP/MIP
 
