@@ -547,7 +547,7 @@ new Promise(resolve => {
 同时基于注册在同一 Promise 对象的回调函数彼此不相干扰的特性，我们可以在任何需要的地方进行链分叉。在下面的例子当中，假设对于初始 Promise 对象的不同状态将采取两种完全不一样的异步操作的时候，就可以这么实现：
 
 ```js
-let p1 = new Promise((resolve, reject) => {
+let promise = new Promise((resolve, reject) => {
   if (Math.random() > 0.5) {
     resolve()
   } else {
