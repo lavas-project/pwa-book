@@ -13,7 +13,7 @@ PWA 本身强调**渐进式**（Progressive），可以从两个角度来理解�
 
 Google 在官网一篇名为《[Progressive Web App Checklist](https://developers.google.cn/web/progressive-web-apps/checklist)》的文章中给出了 PWA 的基准线，也给出了体验更好的示范性 PWA 的 Checklist，下面列出了 PWA 的最低要求。
 
-* 站点需要使用 HTTPS
+* 站点需要使用 HTTPS（本地localhost默认是安全的，可以使用pwa）
 * 页面需要响应式，能够在平板和移动设备上都具有良好的浏览体验
 * 所有的 URL 在断网的情况下有内容展现，不会展现浏览器默认页面
 * 需要支持 Wep App Manifest，能被添加到桌面
